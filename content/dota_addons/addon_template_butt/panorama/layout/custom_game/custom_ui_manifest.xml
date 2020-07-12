@@ -1,0 +1,17 @@
+<root>
+	<script>
+		GameEvents.Subscribe('dota_hud_error_message_player', (data)=>{
+			GameEvents.SendEventClientSide("dota_hud_error_message", {
+				splitscreenplayer: 0,
+				reason: 80,
+				message: data.message});
+		});
+	</script>
+	<Panel>
+		<CustomUIElement type="Hud"			layoutfile="file://{resources}/layout/custom_game/courier_fix.xml" />
+		<CustomUIElement type="GameSetup"	layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
+		<CustomUIElement type="GameSetup"	layoutfile="file://{resources}/layout/custom_game/team_select_butt.xml" />
+		<CustomUIElement type="GameInfo"	layoutfile="file://{resources}/layout/custom_game/game_info.xml" />
+		<CustomUIElement type="EndScreen"	layoutfile="file://{resources}/layout/custom_game/multiteam_end_screen.xml" />
+	</Panel>
+</root>

@@ -1,0 +1,21 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<!-- <include src="file://{resources}/styles/custom_game/current_options.css" /> -->
+	</styles>
+	<script>
+		function ToggleScreen() {
+			var mainPanel = $('#HostOptionsPanel');
+			if (mainPanel.BHasClass('toggledOff')) {
+				mainPanel.RemoveClass('toggledOff');
+			} else {
+				mainPanel.AddClass('toggledOff');
+			}
+		}
+		$.Msg($("#MenuButtons"));
+	</script>
+	<Panel hittest="false">
+		<Panel id="InfoButtonLalala" hittest="false"/>
+		<Label text="filled later"/>
+	</Panel>
+</root>

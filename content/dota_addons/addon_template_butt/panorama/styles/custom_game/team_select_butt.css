@@ -1,0 +1,218 @@
+.GameTitle
+{
+	margin-top: 45px;
+	margin-bottom: 20px;
+	margin-left: 16px;
+	width: 230px;
+	horizontal-align: left;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 14px;
+	color: #11ee11;
+}
+
+.CustomSettings
+{
+	width: fill-parent-flow(1);
+	/*height: fit-children;*/
+	/* horizontal-align: center; */
+	vertical-align: top;
+	/* margin-bottom: 280px; */
+	flow-children: down;
+	
+	/* background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) ); */
+	/* border-radius: 20px; */
+	/* box-shadow: inset #000000 0px 2px 6px 3px; */
+}
+
+
+.SettingsTitle
+{
+	margin-top: 20px;
+	margin-bottom: -20px;
+	horizontal-align: center;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 80px;
+	color: #ffffff;
+}
+
+.SettingsSubtitle
+{
+	padding: 10px 10px 4px 10px;
+	margin-bottom: 10px;
+	horizontal-align: center;
+	font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU;
+	font-size: 30px;
+	color: #ffffff;
+	border-radius: 5px;
+	background-color: #181a1e;
+	box-shadow: #000000 0px 2px 6px 3px;
+}
+
+.player_has_host_privileges .SettingsSubtitle
+{
+	box-shadow: #ffffff40 0px 2px 6px 3px;
+	// animation: none;
+}
+
+.SettingsBody
+{
+	width: 100%; /**** Panel SettingsBody has fill-parent-flow for width, but isn't in a flowing right layout*/
+	/*height: fit-children;*/ /*test*/
+	/* horizontal-align: right; */
+	/* vertical-align: top;   */
+	flow-children: down-wrap;
+	overflow: squish squish;
+	margin-bottom: 200px;
+}
+.ItemsBody {
+	width: 100%; /**** Panel SettingsBody has fill-parent-flow for width, but isn't in a flowing right layout*/
+	/*height: fit-children;*/ /*test*/
+	/* horizontal-align: right; */
+	/* vertical-align: top;   */
+	flow-children: down;
+	overflow: scroll;
+	margin-bottom: 200px;
+
+}
+/*.SplitThree
+{
+	min-width: 31%;
+	max-width: 100%;
+	height: 800px;
+	flow-children: down-wrap;
+}*/
+
+.w-31 {
+	width: 31%;
+}
+
+.SettingsGroup
+{
+	height: fit-children;
+	min-width: 300px;
+	/* horizontal-align: right; */
+	/* vertical-align: top; */
+	flow-children: down;
+	margin: 10px 10px;
+	background-color: #181a1e;
+	box-shadow: #000000 0px 2px 6px 3px;
+	border-radius: 0px;
+}
+
+.GreenShadow
+{
+	box-shadow: #00AA0022 0px 2px 6px 3px;
+}
+
+
+.SettingsGroupInsideSideBar
+{
+	width: 80%;
+}
+
+.SettingsGroupTitle
+{
+	width: fit-children;
+	min-width: fit-children;
+	padding: 10px 10px 5px 10px;
+	margin-bottom: 0px;
+	horizontal-align: left;
+	/* font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU; */
+	font-size: 20px;
+	
+	color: #ffffff;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.SettingsItem
+{
+	width: 100%; 
+	min-width: 140px;
+	/*max-width: 100%;*/
+	/*padding: 0px 10px 0px 10px;*/
+	margin: 5px 5px;
+	horizontal-align: left;
+	/* text-transform: none; */
+	/* font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,Gulim,MingLiU; */
+	font-size: 20px;
+	color: #ffffff;
+}
+
+/*TextEntry*/
+.HasInput
+{
+	min-width: 60px;
+	width: fit-children;
+	margin-right: 0px;
+}
+.TextEntryLabel
+{
+	width: fit-children;
+	margin-top: 13px;
+	/*margin-left: 0px;*/
+	font-size: 20px;
+	text-overflow: ellipsis;
+	/*vertical-align: top;*/
+	horizontal-align: left;
+}
+.TextEntryFrame
+{
+	flow-children: right;
+	width: fit-children;
+}
+#CHEAT_QUICK
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca922 -4px -4px 8px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+	/*#LockAndStartButton;*/
+}
+#CHEAT_QUICK:hover
+{
+	/*background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );*/
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+	box-shadow: fill #486ca966 -4px -4px 18px 8px;
+	border-top: 1px solid #ffffff03;
+	border-left: 1px solid #ffffff03; 
+}
+
+.ReturnButton
+{
+	horizontal-align: right; 
+}
+
+.XButton
+{
+	/* #PlayerLeaveTeamButton from team_select.css */
+	width: 24px;
+	height: 24px;
+	wash-color: #aa0000ee;
+	
+	background-image: url("file://{images}/control_icons/x_close.png");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin: 4px;
+}
+.XButton:hover
+{
+    wash-color: red;
+}
+
+
+.v-coll {
+	visibility: collapse;
+}
+
+.goodTextEntry {
+	border-color: #00AA00AA;
+}
+
+.waitTextEntry {
+	border-color: #AA8800AA;
+}
+
+.mt-70 {
+	margin-top: 70px;
+}
