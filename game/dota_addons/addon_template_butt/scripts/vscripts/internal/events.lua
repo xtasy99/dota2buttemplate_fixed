@@ -79,12 +79,6 @@ ListenToGameEvent("entity_killed", function(keys)
 	local killedUnit = EntIndexToHScript(keys.entindex_killed)
 	if killedUnit:IsRealHero() and not killedUnit:IsTempestDouble() and not killedUnit:IsReincarnating() then
 
-		-- fix respawn lvl>25
-		if (killedUnit:GetLevel()>25) then
-			print(killedUnit,killedUnit:GetName(),4*killedUnit:GetLevel())
-			killedUnit:SetTimeUntilRespawn(4*killedUnit:GetLevel())
-		end
-
 		-- tombstone
 		if (1==BUTTINGS.TOMBSTONE) then
 			local tombstoneItem = CreateItem("item_tombstone", killedUnit, killedUnit)
