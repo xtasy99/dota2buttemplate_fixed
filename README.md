@@ -5,3 +5,8 @@ https://drive.google.com/file/d/1-wBmORuUB6-hXUjR0QFzHyat0Vi-F8w4/view?usp=shari
 You might notice that at your first build, the minimap is just grey or blank. There's an easy way to fix that. Before building the map, tick the "Create new minimap on load" and build. Once you've built the map and the minimap is blank, click "Run (Skip Build)" and it will fix itself.
 
 
+# Contributors
+- RoboBro#8924
+
+Feel free to contribute as well! Just dm me in discord. Raiquia#1111
+
