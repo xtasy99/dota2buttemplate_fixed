@@ -23,6 +23,15 @@ ListenToGameEvent("npc_spawned", function(keys)
 	-- for k,v in pairs(keys) do print("npc_spawned",k,v) end
 	local spawnedUnit = keys.entindex and EntIndexToHScript(keys.entindex)
 
+	if hero:GetClassname() == "npc_dota_watch_tower" then       --- BugFix by RoboBro
+		Timers:CreateTimer(1, function()		    --- you could remove this if you want.
+		hero:RemoveModifierByName("modifier_invulnerable")
+		end
+	  )	
+	end
+
+	--- put your stuff here 
+
 end, nil)
 
 ListenToGameEvent("entity_hurt", function(keys)
