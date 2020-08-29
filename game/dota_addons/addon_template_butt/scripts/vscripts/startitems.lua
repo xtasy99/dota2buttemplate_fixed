@@ -43,16 +43,17 @@ ListenToGameEvent("npc_first_spawn",function(kv)
 	
 	-- Items
 
-	GameRules:GetGameModeEntity():SetThink( function()
+	Timers:CreateTimer(0.5, function ()
 		for item,data in pairs(startitems) do
 			local amt = data.amt or data.amount or 1
 			for i=1,amt do
-				local item = hero:AddItemByName(item)
-				if (data.cast) then item:CastAbility() end
-				if (data.cd) then item:StartCooldown(data.cd) end
+				local newitem = hero:AddItemByName(item)
+				if (data.cast) then newitem:CastAbility() end
+				if (data.cd) then newitem:StartCooldown(data.cd) end
 			end
 		end
-	end, 0.5)
+		return nil
+	end)
 
 	-- Modifiers
 
