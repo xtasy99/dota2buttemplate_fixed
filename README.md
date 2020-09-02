@@ -9,6 +9,7 @@ You might notice that at your first build, the minimap is just grey or blank. Th
 - RoboBro#8924
 - Snoresville#2486
 - SwordBacon#2301
+- Darkonius#7327
 
 Feel free to contribute as well! Just dm me in discord. Raiquia#1111
 
