@@ -9,7 +9,6 @@ ListenToGameEvent("game_rules_state_change", function()
 		GameRules:SetUseUniversalShopMode( 1 == BUTTINGS.UNIVERSAL_SHOP_MODE )
 		GameRules:SetGoldTickTime( 60/BUTTINGS.GOLD_PER_MINUTE )
 
-		
 		GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( BUTTINGS.ALTERNATIVE_XP_TABLE() )
 		GameRules:GetGameModeEntity():SetUseCustomHeroLevels(BUTTINGS.MAX_LEVEL~=25)
 		GameRules:SetUseCustomHeroXPValues(BUTTINGS.MAX_LEVEL~=25)
@@ -41,10 +40,9 @@ ListenToGameEvent("game_rules_state_change", function()
 			end
 		end
 
-	-- elseif (GameRules:State_Get()>=DOTA_GAMERULES_STATE_PRE_GAME) then
-		-- GameRules:GetGameModeEntity():SetThink( function(asd)
-		-- 	if (1==BUTTINGS.FREE_COURIER) then TeamList:GetFreeCouriers() end
-		-- end, 5 )
+		if BUTTINGS.FREE_COURIER == 0 then
+			GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+		end
 	end
 end, nil)
 
