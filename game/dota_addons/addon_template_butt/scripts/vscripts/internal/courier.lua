@@ -12,9 +12,12 @@ LinkLuaModifier("modifier_passive_gold", "internal/modifier_passive_gold.lua", L
 
 
 ListenToGameEvent("npc_first_spawn",function(event)
-	if 1~=BUTTINGS.FREE_COURIER then return end
 	local hero = EntIndexToHScript(event.entindex)
 	if (not hero:IsRealHero()) then return end
+	if BUTTINGS.FREE_COURIER == 0 then
+		hero:AddNewModifier(hero,nil,"modifier_passive_gold",{ gold_per_tick = 1, gold_tick_time = (60/BUTTINGS.GOLD_PER_MINUTE), courier_entindex = nil, always_gold = BUTTINGS.ALWAYS_PASSIVE_GOLD })
+		return
+	end
 	local courier = CreatePrivateCourier(hero:GetPlayerID(),hero,TeamResource:GetShop(hero:GetTeam()):GetAbsOrigin())
 	if courier then
 		local kv = LoadKeyValues(ADDON_FOLDER.."scripts/npc/npc_units_custom.txt").npc_dota_courier
