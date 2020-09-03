@@ -2,6 +2,7 @@
 
 ### Map Building Help
 You may notice that there is 2 dota maps, **dota_fixed and dota.vmap**. You can choose one of these for it to be the map for players to play in.
+
 **What's the difference?**
 - dota_fixed.vmap changes its terrain every season. The seasons are Autumn, Spring, Summer, and Winter. It also adds a weather effect suited to the season.
 - dota.vmap is the normal dota map which you play in normally.
