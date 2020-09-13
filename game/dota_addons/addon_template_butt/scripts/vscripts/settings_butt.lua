@@ -26,7 +26,7 @@ BUTTINGS = {
 	NO_UPHILL_MISS = 0,                 -- 0 = normal, 1 = 0% uphill muss chance
 	OUTPOST_SHOP = 0,                   -- 0 = normal, 1 = jungle shops
 	SIDE_SHOP = 0,                      -- 0 = normal, 1 = bring back sideshops
-	FREE_COURIER = 1,                   -- 0 = vanilla couriers, 1 = custom couriers
+	FREE_COURIER = 0,                   -- 0 = vanilla couriers, 1 = custom couriers
 	XP_PER_MINUTE = 0,                  -- (normal dota = 0) everyone gets passive experience (like the passive gold)
 	COMEBACK_TIMER = 30,                -- timer (minutes) to start comeback XP / gold 
 	COMEBACK_GPM = 60,                  -- passive gold for the poorest team
