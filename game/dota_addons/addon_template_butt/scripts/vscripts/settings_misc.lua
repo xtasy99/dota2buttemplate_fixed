@@ -9,7 +9,7 @@ ListenToGameEvent("created_game_mode_entity",function()
 	GameRules:SetPreGameTime( 90 )								-- Sets the amount of time players have between picking their hero and game start. 
 	GameRules:SetRuneSpawnTime( 120 )							-- Sets the amount of time between rune spawns. 
 	GameRules:SetTreeRegrowTime( 300 )							-- Sets the tree regrow time in seconds. 
-	GameRules:SetUseBaseGoldBountyOnHeroes( true )				-- Heroes will use the basic NPC functionality for determining their bounty, rather than DOTA specific formulas. 
+	GameRules:SetUseBaseGoldBountyOnHeroes( false )				
 
 	gameModeEnt:SetAlwaysShowPlayerInventory( false )			-- Show the player hero's inventory in the HUD, regardless of what unit is selected. 
 	gameModeEnt:SetAnnouncerDisabled( false )					-- Disables the dota announcer 
