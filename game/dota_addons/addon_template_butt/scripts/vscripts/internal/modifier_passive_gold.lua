@@ -27,7 +27,7 @@ function modifier_passive_gold:OnIntervalThink()
 	else
 		-- Put your conditions here when passive gold is ON/OFF
 		-- Custom couriers can be connected with passive gold, in vanilla they are not connected
-		if BUTTINGS.FREE_COURIER == 1 then
+		if BUTTINGS.FREE_COURIER == 0 then
 			local courier = self.courierEntity
 			if courier and courier.IsAlive then
 				if courier:IsAlive() then
