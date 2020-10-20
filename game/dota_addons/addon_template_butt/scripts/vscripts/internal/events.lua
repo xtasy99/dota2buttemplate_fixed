@@ -40,7 +40,7 @@ ListenToGameEvent("game_rules_state_change", function()
 			end
 		end
 
-		if BUTTINGS.FREE_COURIER == 0 then
+		if BUTTINGS.FREE_COURIER == 1 then
 			GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 		end
 	end
