@@ -10,10 +10,10 @@ BUTTINGS = {
 	MAX_LEVEL = MAX_LEVEL,              -- (default = 30) the max level a hero can reach
 
 	UNIVERSAL_SHOP_MODE = 1,            -- 0 = normal, 1 = you can buy every item in every shop (secret/side/base).
-	ALWAYS_PASSIVE_GOLD = 0,			-- 0 = normal (always),  1 = when custom courier is dead passive gold is disabled;
+	--ALWAYS_PASSIVE_GOLD = 0,			-- 0 = normal (always),  1 = when custom courier is dead passive gold is disabled; Not a useful function after Courier GPM was gone
 	COOLDOWN_PERCENTAGE = 100,          -- (default = 100) factor for all cooldowns
 	GOLD_GAIN_PERCENTAGE = 100,         -- (default = 100) factor for gold income
-	GOLD_PER_MINUTE = 90,               -- (default =  90) passive gold
+	GOLD_PER_MINUTE = 95,               -- (default =  95) passive gold
 	RESPAWN_TIME_PERCENTAGE = 100,      -- (default = 100) factor for respawn time
 	XP_GAIN_PERCENTAGE = 100,           -- (default = 100) factor for xp income
 
@@ -26,7 +26,7 @@ BUTTINGS = {
 	NO_UPHILL_MISS = 0,                 -- 0 = normal, 1 = 0% uphill muss chance
 	OUTPOST_SHOP = 0,                   -- 0 = normal, 1 = jungle shops
 	SIDE_SHOP = 0,                      -- 0 = normal, 1 = bring back sideshops
-	FREE_COURIER = 0,                   -- 0 = vanilla couriers, 1 = custom couriers
+	--FREE_COURIER = 0,                 -- 0 = vanilla couriers, 1 = custom couriers (Currently has no use)
 	XP_PER_MINUTE = 0,                  -- (normal dota = 0) everyone gets passive experience (like the passive gold)
 	COMEBACK_TIMER = 30,                -- timer (minutes) to start comeback XP / gold 
 	COMEBACK_GPM = 60,                  -- passive gold for the poorest team

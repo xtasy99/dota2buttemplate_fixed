@@ -40,24 +40,11 @@ ListenToGameEvent("game_rules_state_change", function()
 			end
 		end
 
-		if BUTTINGS.FREE_COURIER == 1 then
-			GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
-		end
+		
+		GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+		
 	end
 end, nil)
-
--- local l1 = ListenToGameEvent("npc_spawned", function(keys)
--- 	if (1==BUTTINGS.FREE_COURIER) then
--- 		local unit = EntIndexToHScript(keys.entindex)
--- 		local alreadyHasCourier = PlayerResource:GetNthCourierForTeam(0, unit:GetTeam())
--- 		if (unit:GetName()=="npc_dota_courier") and (alreadyHasCourier) and (unit~=alreadyHasCourier) then
--- 			unit:Destroy()
--- 		end
--- 	elseif (GameRules:State_Get()>=DOTA_GAMERULES_STATE_PRE_GAME) then
--- 		StopListeningToGameEvent(l1)
--- 	end
--- end, nil)
-
 
 ListenToGameEvent("dota_player_pick_hero", function(keys)
 end, self)
