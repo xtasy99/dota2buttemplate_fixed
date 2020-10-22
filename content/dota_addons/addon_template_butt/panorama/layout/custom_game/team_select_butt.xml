@@ -89,10 +89,6 @@
 																	onactivate="onPanelChange('SIDE_SHOP')"/>
 										<ToggleButton class="SettingsItem" id="OUTPOST_SHOP" text="Side Shops at Outposts"
 																	onactivate="onPanelChange('OUTPOST_SHOP')"/>
-										<ToggleButton class="SettingsItem" id="FREE_COURIER" text="Custom Couriers"
-																	onactivate="onPanelChange('FREE_COURIER')"/>
-										<ToggleButton class="SettingsItem" id="ALWAYS_PASSIVE_GOLD" text="Always Passive Gold"
-																	onactivate="onPanelChange('ALWAYS_PASSIVE_GOLD')"/>
 										<ToggleButton id="CLASSIC_ARMOR" class="SettingsItem" text="Classic Armor Formula"
 																	onactivate="onPanelChange('CLASSIC_ARMOR')"/>
 										<ToggleButton id="MAGIC_RES_CAP" class="SettingsItem" text="Cap Magic Resistance"
