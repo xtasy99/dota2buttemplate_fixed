@@ -3,7 +3,8 @@ ListenToGameEvent("created_game_mode_entity",function()
 	
 	GameRules:SetFirstBloodActive( true )						-- Sets whether First Blood should give bonus gold. 
 	GameRules:SetHeroRespawnEnabled( true )						-- Control if the normal DOTA hero respawn rules apply. 
-	GameRules:SetHeroSelectionTime( 110 )						-- Sets the amount of time players have to pick their hero. 
+	--GameRules:SetHeroSelectionTime( 110 )						-- (doesn't work)
+	gameModeEnt:SetDraftingHeroPickSelectTimeOverride( 110 )	-- Sets the amount of time players have to pick their hero. 
 	GameRules:SetStrategyTime( 10 ) 					-- Sets the amount of time players have between the hero selection and entering the showcase phase. 
 	GameRules:SetHideKillMessageHeaders( false )				-- Sets whether or not the kill banners should be hidden 
 	GameRules:SetPostGameTime( 180 )							-- Sets the amount of time players have between the game ending and the server disconnecting them. 

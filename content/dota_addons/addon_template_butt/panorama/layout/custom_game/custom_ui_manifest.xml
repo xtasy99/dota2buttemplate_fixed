@@ -1,5 +1,22 @@
 <root>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/util.js" />
+	</scripts>
 	<script>
+		// Credits: EarthSalamander #42
+		// Hide vanilla pick screen in loading screen
+		HidePickScreen()
+
+		function HidePickScreen() {
+			if (!Game.GameStateIs(3)) {
+				FindDotaHudElement("PreGame").style.opacity = "0";
+				$.Schedule(1.0, HidePickScreen)
+			}
+			else {
+				FindDotaHudElement("PreGame").style.opacity = "1";
+			}
+		}
+		
 		GameEvents.Subscribe('dota_hud_error_message_player', (data)=>{
 			GameEvents.SendEventClientSide("dota_hud_error_message", {
 				splitscreenplayer: 0,
