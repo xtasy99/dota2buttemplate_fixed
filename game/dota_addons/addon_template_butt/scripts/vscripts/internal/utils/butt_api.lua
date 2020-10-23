@@ -356,3 +356,7 @@ function Butt:CreateSideShop(location)
 	)
 	SpawnDOTAShopTriggerRadiusApproximate(location,600):SetShopType(DOTA_SHOP_SIDE)
 end
+
+function IsMonkeyKingClone(unit)
+	return unit:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
+end
