@@ -1,223 +1,223 @@
 <root>
-		<styles>
-				<include src="file://{resources}/styles/dotastyles.css"/>
-				<include src="file://{resources}/styles/custom_game/team_select_butt.css"/>
-		</styles>
-		<scripts>
-				<include src="file://{resources}/scripts/custom_game/team_select_butt.js"/>
-		</scripts>
-		<Panel hittest="false">
-				<Label id="GAME_TITLE" class="GameTitle" text="#addon_game_name"/>
-				<Panel id="CustomSettingsID" class="CustomSettings">
-						<Label class="SettingsTitle" text="GAME SETTINGS"/>
-						<Label class="SettingsSubtitle" text="HOST" id="Host"/>
-						<!-- <Panel class="SplitThree"> -->
-						<Panel id="SettingsBody" class="SettingsBody" enabled="false" hittest="false">
-								<Panel class="SettingsGroup w-31">
-										<Button id="RESET" class="SettingsItem ButtonBevel" onactivate="onPanelChange('RESET')">
-												<Label text="Reset"/>
-												<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
-										</Button>
-								</Panel>
-								<Panel class="SettingsGroup w-31">
-										<Label class="SettingsGroupTitle" text="Gamemode"/>
-										<!-- <Label class="SettingsItem" text="Ban"/>
-										<DropDown id="BanList" class="SettingsItem" oninputsubmit="OnDropDownChanged()">
-										<Label id="asd" text="asd"/>
-										<Label id="dfd" text="dfd"/>
-										</DropDown> -->
-										<DropDown class="SettingsItem" id="GAME_MODE" oninputsubmit="onPanelChange('GAME_MODE')">
-												<Label text="All Random" id="AR"/>
-												<Label text="All Pick" id="AP"/>
-												<!-- <Label text="Single Draft" id="SD"/> -->
-										</DropDown>
-										<ToggleButton id="ALLOW_SAME_HERO_SELECTION" class="SettingsItem" text="Allow Same Hero"
-																	onactivate="onPanelChange('ALLOW_SAME_HERO_SELECTION')"/>
-										<ToggleButton class="SettingsItem" id="HERO_BANNING" text="Banning"
-																	onactivate="onPanelChange('HERO_BANNING')"/>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('')" oninputsubmit="onPanelChange('MAX_LEVEL')"
-																	 onblur="onPanelChange('MAX_LEVEL')" id="MAX_LEVEL" class="SettingsItem" min="1"
-																	 max="999" maxchars="5"/>
-												<Label text="Max Level" class="TextEntryLabel"/>
-										</Panel>
-										<!-- <ToggleButton class="SettingsItem" id="USE_BOTS" text="Bots" onactivate="onPanelChange('USE_BOTS')" /> -->
-								</Panel>
-								<Panel class="SettingsGroup w-31">
-										<Label class="SettingsGroupTitle" text="Economy"/>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css"/>
+		<include src="file://{resources}/styles/custom_game/team_select_butt.css"/>
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/team_select_butt.js"/>
+	</scripts>
+	<Panel hittest="false">
+		<Label id="GAME_TITLE" class="GameTitle" text="#addon_game_name"/>
+		<Panel id="CustomSettingsID" class="CustomSettings">
+			<Label class="SettingsTitle" text="GAME SETTINGS"/>
+			<Label class="SettingsSubtitle" text="HOST" id="Host"/>
+			<!-- <Panel class="SplitThree"> -->
+			<Panel id="SettingsBody" class="SettingsBody" enabled="false" hittest="false">
+				<Panel class="SettingsGroup w-31">
+					<Button id="RESET" class="SettingsItem ButtonBevel" onactivate="onPanelChange('RESET')">
+						<Label text="Reset"/>
+						<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
+					</Button>
+				</Panel>
+				<Panel class="SettingsGroup w-31">
+					<Label class="SettingsGroupTitle" text="Gamemode"/>
+					<!-- <Label class="SettingsItem" text="Ban"/>
+					<DropDown id="BanList" class="SettingsItem" oninputsubmit="OnDropDownChanged()">
+					<Label id="asd" text="asd"/>
+					<Label id="dfd" text="dfd"/>
+					</DropDown> -->
+					<DropDown class="SettingsItem" id="GAME_MODE" oninputsubmit="onPanelChange('GAME_MODE')">
+						<Label text="All Random" id="AR"/>
+						<Label text="All Pick" id="AP"/>
+						<!-- <Label text="Single Draft" id="SD"/> -->
+					</DropDown>
+					<ToggleButton id="ALLOW_SAME_HERO_SELECTION" class="SettingsItem" text="Allow Same Hero"
+									onactivate="onPanelChange('ALLOW_SAME_HERO_SELECTION')"/>
+					<ToggleButton class="SettingsItem" id="HERO_BANNING" text="Banning"
+									onactivate="onPanelChange('HERO_BANNING')"/>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('')" oninputsubmit="onPanelChange('MAX_LEVEL')"
+									 onblur="onPanelChange('MAX_LEVEL')" id="MAX_LEVEL" class="SettingsItem" min="1"
+									 max="999" maxchars="5"/>
+						<Label text="Max Level" class="TextEntryLabel"/>
+					</Panel>
+					<!-- <ToggleButton class="SettingsItem" id="USE_BOTS" text="Bots" onactivate="onPanelChange('USE_BOTS')" /> -->
+				</Panel>
+				<Panel class="SettingsGroup w-31">
+					<Label class="SettingsGroupTitle" text="Economy"/>
 
-										<ToggleButton class="SettingsItem" id="UNIVERSAL_SHOP_MODE" text="Universal Shop"
-																	onactivate="onPanelChange('UNIVERSAL_SHOP_MODE')"/>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('XP_GAIN_PERCENTAGE')"
-																	 oninputsubmit="onPanelChange('XP_GAIN_PERCENTAGE')"
-																	 onblur="onPanelChange('XP_GAIN_PERCENTAGE')" id="XP_GAIN_PERCENTAGE"
-																	 class="SettingsItem" maxchars="5" unit="%"/>
-												<Label text="XP rate" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('GOLD_GAIN_PERCENTAGE')"
-																	 oninputsubmit="onPanelChange('GOLD_GAIN_PERCENTAGE')"
-																	 onblur="onPanelChange('GOLD_GAIN_PERCENTAGE')" id="GOLD_GAIN_PERCENTAGE"
-																	 class="SettingsItem" maxchars="5" unit="%"/>
-												<Label text="Gold rate" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('RESPAWN_TIME_PERCENTAGE')"
-																	 oninputsubmit="onPanelChange('RESPAWN_TIME_PERCENTAGE')"
-																	 onblur="onPanelChange('RESPAWN_TIME_PERCENTAGE')" id="RESPAWN_TIME_PERCENTAGE"
-																	 class="SettingsItem" maxchars="5" unit="%"/>
-												<Label text="Respawn Time" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('COOLDOWN_PERCENTAGE')"
-																	 oninputsubmit="onPanelChange('COOLDOWN_PERCENTAGE')"
-																	 onblur="onPanelChange('COOLDOWN_PERCENTAGE')" id="COOLDOWN_PERCENTAGE"
-																	 class="SettingsItem" maxchars="5" unit="%"/>
-												<Label text="CD rate" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('GOLD_PER_MINUTE')" oninputsubmit="onPanelChange('GOLD_PER_MINUTE')"
-																	 onblur="onPanelChange('GOLD_PER_MINUTE')" id="GOLD_PER_MINUTE" class="SettingsItem"
-																	 maxchars="5"/>
-												<Label text="Gold Per Minute" class="TextEntryLabel"/>
-										</Panel>
-								</Panel>
-								<Panel class="SettingsGroup w-31">
-										<Label class="SettingsGroupTitle" text="Butt Exclusive"/>
-										<ToggleButton class="SettingsItem" id="SIDE_SHOP" text="Side Shops at old positions"
-																	onactivate="onPanelChange('SIDE_SHOP')"/>
-										<ToggleButton class="SettingsItem" id="OUTPOST_SHOP" text="Side Shops at Outposts"
-																	onactivate="onPanelChange('OUTPOST_SHOP')"/>
-										<ToggleButton id="CLASSIC_ARMOR" class="SettingsItem" text="Classic Armor Formula"
-																	onactivate="onPanelChange('CLASSIC_ARMOR')"/>
-										<ToggleButton id="MAGIC_RES_CAP" class="SettingsItem" text="Cap Magic Resistance"
-																	onactivate="onPanelChange('MAGIC_RES_CAP')"/>
-										<ToggleButton id="NO_UPHILL_MISS" class="SettingsItem" text="No Uphill Miss"
-																	onactivate="onPanelChange('NO_UPHILL_MISS')"/>
-										<ToggleButton id="TOMBSTONE" class="SettingsItem" text="Revival Tombstone"
-																	onactivate="onPanelChange('TOMBSTONE')"/>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('XP_PER_MINUTE')" oninputsubmit="onPanelChange('XP_PER_MINUTE')"
-																	 onblur="onPanelChange('XP_PER_MINUTE')" id="XP_PER_MINUTE" class="SettingsItem"
-																	 maxchars="5"/>
-												<Label text="Passive XP Per Minute" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('COMEBACK_TIMER')" oninputsubmit="onPanelChange('COMEBACK_TIMER')"
-																	 onblur="onPanelChange('COMEBACK_TIMER')" id="COMEBACK_TIMER" class="SettingsItem"
-																	 maxchars="5" unit="min"/>
-												<Label text="Comeback Timer" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('COMEBACK_GPM')" oninputsubmit="onPanelChange('COMEBACK_GPM')"
-																	 onblur="onPanelChange('COMEBACK_GPM')" id="COMEBACK_GPM" class="SettingsItem"
-																	 maxchars="5"/>
-												<Label text="Comeback GPM" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('COMEBACK_XPPM')" oninputsubmit="onPanelChange('COMEBACK_XPPM')"
-																	 onblur="onPanelChange('COMEBACK_XPPM')" id="COMEBACK_XPPM" class="SettingsItem"
-																	 maxchars="5"/>
-												<Label text="Comeback ExpPM" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('SHARED_GOLD_PERCENTAGE')"
-																	 oninputsubmit="onPanelChange('SHARED_GOLD_PERCENTAGE')"
-																	 onblur="onPanelChange('SHARED_GOLD_PERCENTAGE')" id="SHARED_GOLD_PERCENTAGE"
-																	 class="SettingsItem" maxchars="5" unit="%"/>
-												<Label text="Shared Gold" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('SHARED_XP_PERCENTAGE')"
-																	 oninputsubmit="onPanelChange('SHARED_XP_PERCENTAGE')"
-																	 onblur="onPanelChange('SHARED_XP_PERCENTAGE')" id="SHARED_XP_PERCENTAGE"
-																	 class="SettingsItem" maxchars="5" unit="%"/>
-												<Label text="Shared XP" class="TextEntryLabel"/>
-										</Panel>
-								</Panel>
-								<Panel class="SettingsGroup w-31">
-										<ToggleButton id="ALT_WINNING" class="SettingsGroupTitle" text="Alternative Winning Conditions"
-																	onactivate="onPanelChange('ALT_WINNING')"/>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('ALT_KILL_LIMIT')" oninputsubmit="onPanelChange('ALT_KILL_LIMIT')"
-																	 onblur="onPanelChange('ALT_KILL_LIMIT')" id="ALT_KILL_LIMIT" class="SettingsItem"
-																	 maxchars="5"/>
-												<Label text="Kills" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('ALT_TIME_LIMIT')" oninputsubmit="onPanelChange('ALT_TIME_LIMIT')"
-																	 onblur="onPanelChange('ALT_TIME_LIMIT')" id="ALT_TIME_LIMIT" class="SettingsItem"
-																	 maxchars="5" unit="min"/>
-												<Label text="Minutes" class="TextEntryLabel"/>
-										</Panel>
-								</Panel>
-								<Panel class="SettingsGroup w-31">
-										<ToggleButton id="BUYBACK_RULES" class="SettingsGroupTitle" text="Alternative Buyback Rules"
-																	onactivate="onPanelChange('BUYBACK_RULES')"/>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('BUYBACK_LIMIT')" oninputsubmit="onPanelChange('BUYBACK_LIMIT')"
-																	 onblur="onPanelChange('BUYBACK_LIMIT')" id="BUYBACK_LIMIT" class="SettingsItem"
-																	 maxchars="5"/>
-												<Label text="Buybacks limit" class="TextEntryLabel"/>
-										</Panel>
-										<Panel class="SettingsItem TextEntryFrame">
-												<TextEntry onfocus="onfocus('BUYBACK_COOLDOWN')" oninputsubmit="onPanelChange('BUYBACK_COOLDOWN')"
-																	 onblur="onPanelChange('BUYBACK_COOLDOWN')" id="BUYBACK_COOLDOWN" class="SettingsItem"
-																	 maxchars="5" unit="s"/>
-												<Label text="Cooldown" class="TextEntryLabel"/>
-										</Panel>
-								</Panel>
-								<Panel id="toolsModeGroup" class="SettingsGroup w-31 v-coll">
-										<Label class="SettingsGroupTitle" text="Tools Mode"/>
-										<Button id="NEUTRALITEMEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('neutralItems')">
-												<Label text="Neutrals Item Editor"/>
-												<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
-										</Button>
-										<Button id="ITEMEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('items')">
-												<Label text="Item Editor"/>
-												<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
-										</Button>
-										<Button id="ABILITYEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('abilities')">
-												<Label text="Ability Editor"/>
-												<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
-										</Button>
-										<Button id="HEROEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('heroes')">
-												<Label text="Hero Editor"/>
-												<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
-										</Button>
-										<Button id="UNITEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('units')">
-												<Label text="Unit Editor"/>
-												<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
-										</Button>
-										<Button id="CHEAT_QUICK" class="InToolsMode SettingsItem ButtonBevel" onactivate="onPanelChange('CHEAT_QUICK')"><Label text="Quick Start" /></Button>
-								</Panel>
-								<!-- <Panel class="SettingsElement"> -->
-								<!-- <Label class="SettingsElementTitle" text="Bots?"/> -->
-								<!-- <ToggleButton class="SettingsElementBody" text="Deine Mudda is so fett die hat anziehiehiehungskraft"/> -->
-								<!-- <ToggleButton class="SettingsElementBody" text="Deine Mudda is so fett die hat anziehungskraft"/> -->
-								<!-- </Panel> -->
-								<!-- <Panel class="SettingsElement"> -->
-								<!-- <Label class="SettingsElementTitle" text="some10"/> -->
-								<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
-								<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
-								<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
-								<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
-								<!-- </Panel> -->
-						</Panel>
-				</Panel>
-				<Panel id="ItemEditor" class="CustomSettings v-coll">
-					<Panel class="ReturnButton">
-						<Button class="ButtonBevel" onactivate="closeItemEditor()">
-							<Label text="X"/>
-						</Button>
+					<ToggleButton class="SettingsItem" id="UNIVERSAL_SHOP_MODE" text="Universal Shop"
+									onactivate="onPanelChange('UNIVERSAL_SHOP_MODE')"/>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('XP_GAIN_PERCENTAGE')"
+									 oninputsubmit="onPanelChange('XP_GAIN_PERCENTAGE')"
+									 onblur="onPanelChange('XP_GAIN_PERCENTAGE')" id="XP_GAIN_PERCENTAGE"
+									 class="SettingsItem" maxchars="5" unit="%"/>
+						<Label text="XP rate" class="TextEntryLabel"/>
 					</Panel>
-					<Label text="Search Items" class="mt-70"/>
-					<TextEntry id="itemssearch" ontextentrychange="findKV()" oninputsubmit="findKV()"/>
-					<Panel id="itemlist" class="ItemsBody">
-						<!-- </Panel> -->
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('GOLD_GAIN_PERCENTAGE')"
+									 oninputsubmit="onPanelChange('GOLD_GAIN_PERCENTAGE')"
+									 onblur="onPanelChange('GOLD_GAIN_PERCENTAGE')" id="GOLD_GAIN_PERCENTAGE"
+									 class="SettingsItem" maxchars="5" unit="%"/>
+						<Label text="Gold rate" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('RESPAWN_TIME_PERCENTAGE')"
+									 oninputsubmit="onPanelChange('RESPAWN_TIME_PERCENTAGE')"
+									 onblur="onPanelChange('RESPAWN_TIME_PERCENTAGE')" id="RESPAWN_TIME_PERCENTAGE"
+									 class="SettingsItem" maxchars="5" unit="%"/>
+						<Label text="Respawn Time" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('COOLDOWN_PERCENTAGE')"
+									 oninputsubmit="onPanelChange('COOLDOWN_PERCENTAGE')"
+									 onblur="onPanelChange('COOLDOWN_PERCENTAGE')" id="COOLDOWN_PERCENTAGE"
+									 class="SettingsItem" maxchars="5" unit="%"/>
+						<Label text="CD rate" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('GOLD_PER_MINUTE')" oninputsubmit="onPanelChange('GOLD_PER_MINUTE')"
+									 onblur="onPanelChange('GOLD_PER_MINUTE')" id="GOLD_PER_MINUTE" class="SettingsItem"
+									 maxchars="5"/>
+						<Label text="Gold Per Minute" class="TextEntryLabel"/>
 					</Panel>
 				</Panel>
+				<Panel class="SettingsGroup w-31">
+					<Label class="SettingsGroupTitle" text="Butt Exclusive"/>
+					<ToggleButton class="SettingsItem" id="SIDE_SHOP" text="Side Shops at old positions"
+									onactivate="onPanelChange('SIDE_SHOP')"/>
+					<ToggleButton class="SettingsItem" id="OUTPOST_SHOP" text="Side Shops at Outposts"
+									onactivate="onPanelChange('OUTPOST_SHOP')"/>
+					<ToggleButton id="CLASSIC_ARMOR" class="SettingsItem" text="Classic Armor Formula"
+									onactivate="onPanelChange('CLASSIC_ARMOR')"/>
+					<ToggleButton id="MAGIC_RES_CAP" class="SettingsItem" text="Cap Magic Resistance"
+									onactivate="onPanelChange('MAGIC_RES_CAP')"/>
+					<ToggleButton id="NO_UPHILL_MISS" class="SettingsItem" text="No Uphill Miss"
+									onactivate="onPanelChange('NO_UPHILL_MISS')"/>
+					<ToggleButton id="TOMBSTONE" class="SettingsItem" text="Revival Tombstone"
+									onactivate="onPanelChange('TOMBSTONE')"/>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('XP_PER_MINUTE')" oninputsubmit="onPanelChange('XP_PER_MINUTE')"
+									 onblur="onPanelChange('XP_PER_MINUTE')" id="XP_PER_MINUTE" class="SettingsItem"
+									 maxchars="5"/>
+						<Label text="Passive XP Per Minute" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('COMEBACK_TIMER')" oninputsubmit="onPanelChange('COMEBACK_TIMER')"
+									 onblur="onPanelChange('COMEBACK_TIMER')" id="COMEBACK_TIMER" class="SettingsItem"
+									 maxchars="5" unit="min"/>
+						<Label text="Comeback Timer" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('COMEBACK_GPM')" oninputsubmit="onPanelChange('COMEBACK_GPM')"
+									 onblur="onPanelChange('COMEBACK_GPM')" id="COMEBACK_GPM" class="SettingsItem"
+									 maxchars="5"/>
+						<Label text="Comeback GPM" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('COMEBACK_XPPM')" oninputsubmit="onPanelChange('COMEBACK_XPPM')"
+									 onblur="onPanelChange('COMEBACK_XPPM')" id="COMEBACK_XPPM" class="SettingsItem"
+									 maxchars="5"/>
+						<Label text="Comeback ExpPM" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('SHARED_GOLD_PERCENTAGE')"
+									 oninputsubmit="onPanelChange('SHARED_GOLD_PERCENTAGE')"
+									 onblur="onPanelChange('SHARED_GOLD_PERCENTAGE')" id="SHARED_GOLD_PERCENTAGE"
+									 class="SettingsItem" maxchars="5" unit="%"/>
+						<Label text="Shared Gold" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('SHARED_XP_PERCENTAGE')"
+									 oninputsubmit="onPanelChange('SHARED_XP_PERCENTAGE')"
+									 onblur="onPanelChange('SHARED_XP_PERCENTAGE')" id="SHARED_XP_PERCENTAGE"
+									 class="SettingsItem" maxchars="5" unit="%"/>
+						<Label text="Shared XP" class="TextEntryLabel"/>
+					</Panel>
+				</Panel>
+				<Panel class="SettingsGroup w-31">
+					<ToggleButton id="ALT_WINNING" class="SettingsGroupTitle" text="Alternative Winning Conditions"
+									onactivate="onPanelChange('ALT_WINNING')"/>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('ALT_KILL_LIMIT')" oninputsubmit="onPanelChange('ALT_KILL_LIMIT')"
+									 onblur="onPanelChange('ALT_KILL_LIMIT')" id="ALT_KILL_LIMIT" class="SettingsItem"
+									 maxchars="5"/>
+						<Label text="Kills" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('ALT_TIME_LIMIT')" oninputsubmit="onPanelChange('ALT_TIME_LIMIT')"
+									 onblur="onPanelChange('ALT_TIME_LIMIT')" id="ALT_TIME_LIMIT" class="SettingsItem"
+									 maxchars="5" unit="min"/>
+						<Label text="Minutes" class="TextEntryLabel"/>
+					</Panel>
+				</Panel>
+				<Panel class="SettingsGroup w-31">
+					<ToggleButton id="BUYBACK_RULES" class="SettingsGroupTitle" text="Alternative Buyback Rules"
+									onactivate="onPanelChange('BUYBACK_RULES')"/>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('BUYBACK_LIMIT')" oninputsubmit="onPanelChange('BUYBACK_LIMIT')"
+									 onblur="onPanelChange('BUYBACK_LIMIT')" id="BUYBACK_LIMIT" class="SettingsItem"
+									 maxchars="5"/>
+						<Label text="Buybacks limit" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('BUYBACK_COOLDOWN')" oninputsubmit="onPanelChange('BUYBACK_COOLDOWN')"
+									 onblur="onPanelChange('BUYBACK_COOLDOWN')" id="BUYBACK_COOLDOWN" class="SettingsItem"
+									 maxchars="5" unit="s"/>
+						<Label text="Cooldown" class="TextEntryLabel"/>
+					</Panel>
+				</Panel>
+				<Panel id="toolsModeGroup" class="SettingsGroup w-31 v-coll">
+					<Label class="SettingsGroupTitle" text="Tools Mode"/>
+					<Button id="NEUTRALITEMEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('neutralItems')">
+						<Label text="Neutrals Item Editor"/>
+						<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
+					</Button>
+					<Button id="ITEMEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('items')">
+						<Label text="Item Editor"/>
+						<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
+					</Button>
+					<Button id="ABILITYEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('abilities')">
+						<Label text="Ability Editor"/>
+						<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
+					</Button>
+					<Button id="HEROEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('heroes')">
+						<Label text="Hero Editor"/>
+						<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
+					</Button>
+					<Button id="UNITEDITOR" class="InToolsMode SettingsItem ButtonBevel" onactivate="openItemEditor('units')">
+						<Label text="Unit Editor"/>
+						<!-- <Image src="file://{images}/control_icons/shuffle.psd" /> -->
+					</Button>
+					<Button id="CHEAT_QUICK" class="InToolsMode SettingsItem ButtonBevel" onactivate="onPanelChange('CHEAT_QUICK')"><Label text="Quick Start" /></Button>
+				</Panel>
+				<!-- <Panel class="SettingsElement"> -->
+				<!-- <Label class="SettingsElementTitle" text="Bots?"/> -->
+				<!-- <ToggleButton class="SettingsElementBody" text="Deine Mudda is so fett die hat anziehiehiehungskraft"/> -->
+				<!-- <ToggleButton class="SettingsElementBody" text="Deine Mudda is so fett die hat anziehungskraft"/> -->
 				<!-- </Panel> -->
+				<!-- <Panel class="SettingsElement"> -->
+				<!-- <Label class="SettingsElementTitle" text="some10"/> -->
+				<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
+				<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
+				<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
+				<!-- <RadioButton class="SettingsElementBody" text="asd"/> -->
+				<!-- </Panel> -->
+			</Panel>
 		</Panel>
+		<Panel id="ItemEditor" class="CustomSettings v-coll">
+			<Panel class="ReturnButton">
+			<Button class="ButtonBevel" onactivate="closeItemEditor()">
+				<Label text="X"/>
+			</Button>
+			</Panel>
+			<Label text="Search Items" class="mt-70"/>
+			<TextEntry id="itemssearch" ontextentrychange="findKV()" oninputsubmit="findKV()"/>
+			<Panel id="itemlist" class="ItemsBody">
+			<!-- </Panel> -->
+			</Panel>
+		</Panel>
+		<!-- </Panel> -->
+	</Panel>
 </root>
