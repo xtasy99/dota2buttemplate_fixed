@@ -11,6 +11,7 @@ You might notice that at your first build, the minimap is just grey or blank. Th
 
 
 # Contributors
+- Raiquia#0007
 - RoboBro#8924
 - Snoresville#2486
 - SwordBacon#2301
