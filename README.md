@@ -17,5 +17,5 @@ You might notice that at your first build, the minimap is just grey or blank. Th
 - Darkonius#7327
 - oneplusone#9502
 
-Feel free to contribute as well! Just dm me in discord. Raiquia#1111
+Feel free to contribute as well! Just dm Snoresville#2486.
 
