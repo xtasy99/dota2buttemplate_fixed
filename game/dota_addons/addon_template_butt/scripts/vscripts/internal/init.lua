@@ -11,8 +11,10 @@ if IsInToolsMode() then
 				return
 			end
 			local agmStr = fileToString(ADDON_FOLDER .. "scripts/vscripts/addon_game_mode.lua")
-			local repl = " -- generated from Template\n" .. agmStr:gsub("require%(\"internal/init\"%)","-- require%(\"internal/init\"%)")
-			strToFile(repl, ADDON_FOLDER .. "scripts/vscripts/addon_game_mode.lua")
+			if agmStr then
+				local repl = " -- generated from Template\n" .. agmStr:gsub("require%(\"internal/init\"%)","-- require%(\"internal/init\"%)")
+				strToFile(repl, ADDON_FOLDER .. "scripts/vscripts/addon_game_mode.lua")
+			end
 		end, 1)
 	end, GameRules.GameMode)
 

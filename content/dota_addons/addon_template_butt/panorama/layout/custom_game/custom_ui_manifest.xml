@@ -23,6 +23,12 @@
 				reason: 80,
 				message: data.message});
 		});
+		
+		// Fixes the top bar scores
+		GameEvents.Subscribe('scoreboard_fix', (data)=>{
+			FindDotaHudElement("TopBarRadiantScore").text = data.radiantKills;
+			FindDotaHudElement("TopBarDireScore").text = data.direKills;
+		});
 	</script>
 	<Panel>
 		<CustomUIElement type="Hud"			layoutfile="file://{resources}/layout/custom_game/courier_fix.xml" />

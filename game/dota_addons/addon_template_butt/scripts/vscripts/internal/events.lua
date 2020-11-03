@@ -44,6 +44,7 @@ ListenToGameEvent("game_rules_state_change", function()
 		GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 		
 	end
+	CustomGameEventManager:Send_ServerToAllClients("scoreboard_fix", {radiantKills = GetTeamHeroKills(DOTA_TEAM_GOODGUYS), direKills = GetTeamHeroKills(DOTA_TEAM_BADGUYS)})
 end, nil)
 
 ListenToGameEvent("dota_player_pick_hero", function(keys)
@@ -76,4 +77,7 @@ ListenToGameEvent("entity_killed", function(keys)
 		end
 
 	end
+	
+	-- Scoreboard Fix
+	CustomGameEventManager:Send_ServerToAllClients("scoreboard_fix", {radiantKills = GetTeamHeroKills(DOTA_TEAM_GOODGUYS), direKills = GetTeamHeroKills(DOTA_TEAM_BADGUYS)})
 end, nil)
