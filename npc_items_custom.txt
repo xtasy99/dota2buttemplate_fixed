@@ -1,0 +1,83 @@
+"DOTAAbilities"
+{
+	"item_tombstone"
+	{
+		"AbilityChannelTime"			"10.0"
+
+		// copied from "item_mutation_tombstone"
+
+		"AbilityName"					"item_tombstone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"Model"							"models/props_gameplay/tombstoneb01.vmdl"
+		"PingOverrideText"				"DOTA_Chat_Tombstone_Pinged"
+		"precache"
+		{
+			"particle_folder" "particles/units/heroes/hero_morphling"
+		}
+
+
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+
+		"ItemCost"						"0"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
+		"ItemKillable"					"0"
+	}
+    "item_patreon_7"
+    {
+        "BaseClass"	"item_datadriven"
+        "AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
+		"AbilityCastAnimation"			"ACT_INVALID"
+        "Model"	"models/props_gameplay/red_box.vmdl"
+        "Effect"	"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"	"custom/seasonal_decorate_tree"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+        "ItemPurchasable"	"0"
+        "AbilityCastRange"	"16500"
+        "AbilityCastPoint"	"0"
+        "AbilityCooldown"	"500"
+        "AbilityManaCost"	"0"
+        "ItemCost"	"0"
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"internal/utils/item_patreon.lua"
+                "Function"	    "OnSpellStart"
+                "Ability"       "seasonal_decorate_tree"
+            }
+        }
+    }
+	"item_aghanims_shard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"609"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1400"
+		"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"ags;shard;aghanim's shard;aghs"
+		"InvalidHeroes"					"npc_dota_hero_hoodwink"
+		//"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"		// heroes for whom this is a problem solve it in their code - ogre magi, meepo
+
+		
+		"ItemPermanent"					"0"
+		"ItemStockTime"					"1"			  
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"645.0"
+		"ItemInitialStockTimeTurbo"		"645.0"
+	}
+}
