@@ -34,6 +34,9 @@ BUTTINGS = {
 	SHARED_GOLD_PERCENTAGE = 0,         -- all gold (except passive) is shared with teammates
 	SHARED_XP_PERCENTAGE = 0,           -- all experience (except passive) is shared with teammates
 
+	TIME_UNTIL_AGH_SHARD = 20, 			-- Time until aghanim shard in minutes
+	FREE_AGH_SHARD = 0, 				-- Whether the shard is free or not
+
 	ALT_WINNING = 0,                    -- 0 = normal, 1 = use these alternative winning conditions
 	ALT_KILL_LIMIT = 100,               -- Kills for alternative winnning
 	ALT_TIME_LIMIT = 60,                -- Timer for alternative winning
