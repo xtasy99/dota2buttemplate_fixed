@@ -97,6 +97,8 @@
 									onactivate="onPanelChange('NO_UPHILL_MISS')"/>
 					<ToggleButton id="TOMBSTONE" class="SettingsItem" text="Revival Tombstone"
 									onactivate="onPanelChange('TOMBSTONE')"/>
+					<ToggleButton id="FREE_AGH_SHARD" class="SettingsItem" text="Free Aghanim Shard"
+									onactivate="onPanelChange('FREE_AGH_SHARD')"/>
 					<Panel class="SettingsItem TextEntryFrame">
 						<TextEntry onfocus="onfocus('XP_PER_MINUTE')" oninputsubmit="onPanelChange('XP_PER_MINUTE')"
 									 onblur="onPanelChange('XP_PER_MINUTE')" id="XP_PER_MINUTE" class="SettingsItem"
@@ -134,6 +136,13 @@
 									 onblur="onPanelChange('SHARED_XP_PERCENTAGE')" id="SHARED_XP_PERCENTAGE"
 									 class="SettingsItem" maxchars="5" unit="%"/>
 						<Label text="Shared XP" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('TIME_UNTIL_AGH_SHARD')"
+									 oninputsubmit="onPanelChange('TIME_UNTIL_AGH_SHARD')"
+									 onblur="onPanelChange('TIME_UNTIL_AGH_SHARD')" id="TIME_UNTIL_AGH_SHARD"
+									 class="SettingsItem" maxchars="5" unit="min" />
+						<Label text="Time until Aghanim Shard" class="TextEntryLabel"/>
 					</Panel>
 				</Panel>
 				<Panel class="SettingsGroup w-31">
