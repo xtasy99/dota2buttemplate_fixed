@@ -17,6 +17,7 @@ You might notice that at your first build, the minimap is just grey or blank. Th
 - SwordBacon#2301
 - Darkonius#7327
 - oneplusone#9502
+- Onii-Sama#8513 (Cykada)
 
 Feel free to contribute as well! Just dm Snoresville#2486.
 
