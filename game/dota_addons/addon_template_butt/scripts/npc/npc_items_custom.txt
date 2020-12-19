@@ -74,10 +74,10 @@
 
 		
 		"ItemPermanent"					"0"
-		"ItemStockTime"					"1"			  
-		"ItemStockInitial"				"0"
-		"ItemStockMax"					"1"
-		"ItemInitialStockTime"			"645.0"
-		"ItemInitialStockTimeTurbo"		"645.0"
+		"ItemStockTime"					"-1"			  
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"69"
+		"ItemInitialStockTime"			"0"
+		"ItemInitialStockTimeTurbo"		"0"
 	}
 }
