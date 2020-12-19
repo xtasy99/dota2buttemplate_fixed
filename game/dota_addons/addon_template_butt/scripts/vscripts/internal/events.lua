@@ -40,10 +40,48 @@ ListenToGameEvent("game_rules_state_change", function()
 			end
 		end
 
-		
 		GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
-		
 	end
+
+	-- Remove the shard from the shop so I can re-add it with the timer later
+	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_PRE_GAME) then
+		Timers:CreateTimer({
+			endTime = FrameTime(),
+			callback = function()
+				for _,p in pairs(PlayerList:GetFirstPlayers()) do
+					local pID = p:GetPlayerID()
+					GameRules:SetItemStockCount( 0, PlayerResource:GetTeam( pID ), "item_aghanims_shard", pID )
+				end
+			end
+		})
+	end
+
+	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_GAME_IN_PROGRESS) then
+		Timers:CreateTimer({
+			endTime = BUTTINGS.TIME_UNTIL_AGH_SHARD*60,
+			callback = function()
+				if (0 == BUTTINGS.FREE_AGH_SHARD) then
+					for _,p in pairs(PlayerList:GetFirstPlayers()) do
+						local pID = p:GetPlayerID()
+
+						GameRules:SetItemStockCount( 
+							PlayerResource:GetPlayerCountForTeam(PlayerResource:GetTeam( pID )), 
+							PlayerResource:GetTeam( pID ), 
+							"item_aghanims_shard", 
+							pID 
+						)
+					end
+				else
+					for _,p in pairs(PlayerList:GetValidTeamPlayers()) do
+						local hero = PlayerResource:GetSelectedHeroEntity(p:GetPlayerID())
+						hero:AddNewModifier(hero, nil, "modifier_item_aghanims_shard", {})
+					end
+				end
+			end
+
+		})
+	end
+
 	CustomGameEventManager:Send_ServerToAllClients("scoreboard_fix", {radiantKills = GetTeamHeroKills(DOTA_TEAM_GOODGUYS), direKills = GetTeamHeroKills(DOTA_TEAM_BADGUYS)})
 end, nil)
 
