@@ -23,14 +23,9 @@ ListenToGameEvent("npc_spawned", function(keys)
 	-- for k,v in pairs(keys) do print("npc_spawned",k,v) end
 	local spawnedUnit = keys.entindex and EntIndexToHScript(keys.entindex)
 
-	if spawnedUnit and spawnedUnit:GetClassname() == "npc_dota_watch_tower" then       --- BugFix by RoboBro
-		Timers:CreateTimer(1, function()		    --- you could remove this if you want.
-		spawnedUnit:RemoveModifierByName("modifier_invulnerable")
-		end
-	  )	
+	if spawnedUnit ~= nil then
+		--- put your stuff here 
 	end
-
-	--- put your stuff here 
 
 end, nil)
 
