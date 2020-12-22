@@ -93,35 +93,17 @@
 									onactivate="onPanelChange('CLASSIC_ARMOR')"/>
 					<ToggleButton id="MAGIC_RES_CAP" class="SettingsItem" text="Cap Magic Resistance"
 									onactivate="onPanelChange('MAGIC_RES_CAP')"/>
-					<ToggleButton id="NO_UPHILL_MISS" class="SettingsItem" text="No Uphill Miss"
-									onactivate="onPanelChange('NO_UPHILL_MISS')"/>
 					<ToggleButton id="TOMBSTONE" class="SettingsItem" text="Revival Tombstone"
 									onactivate="onPanelChange('TOMBSTONE')"/>
 					<ToggleButton id="FREE_AGH_SHARD" class="SettingsItem" text="Free Aghanim Shard"
 									onactivate="onPanelChange('FREE_AGH_SHARD')"/>
+					<ToggleButton id="COURIER_INVULNERABLE" class="SettingsItem" text="Courier Invulnerable"
+									onactivate="onPanelChange('COURIER_INVULNERABLE')"/>
 					<Panel class="SettingsItem TextEntryFrame">
 						<TextEntry onfocus="onfocus('XP_PER_MINUTE')" oninputsubmit="onPanelChange('XP_PER_MINUTE')"
 									 onblur="onPanelChange('XP_PER_MINUTE')" id="XP_PER_MINUTE" class="SettingsItem"
 									 maxchars="5"/>
 						<Label text="Passive XP Per Minute" class="TextEntryLabel"/>
-					</Panel>
-					<Panel class="SettingsItem TextEntryFrame">
-						<TextEntry onfocus="onfocus('COMEBACK_TIMER')" oninputsubmit="onPanelChange('COMEBACK_TIMER')"
-									 onblur="onPanelChange('COMEBACK_TIMER')" id="COMEBACK_TIMER" class="SettingsItem"
-									 maxchars="5" unit="min"/>
-						<Label text="Comeback Timer" class="TextEntryLabel"/>
-					</Panel>
-					<Panel class="SettingsItem TextEntryFrame">
-						<TextEntry onfocus="onfocus('COMEBACK_GPM')" oninputsubmit="onPanelChange('COMEBACK_GPM')"
-									 onblur="onPanelChange('COMEBACK_GPM')" id="COMEBACK_GPM" class="SettingsItem"
-									 maxchars="5"/>
-						<Label text="Comeback GPM" class="TextEntryLabel"/>
-					</Panel>
-					<Panel class="SettingsItem TextEntryFrame">
-						<TextEntry onfocus="onfocus('COMEBACK_XPPM')" oninputsubmit="onPanelChange('COMEBACK_XPPM')"
-									 onblur="onPanelChange('COMEBACK_XPPM')" id="COMEBACK_XPPM" class="SettingsItem"
-									 maxchars="5"/>
-						<Label text="Comeback ExpPM" class="TextEntryLabel"/>
 					</Panel>
 					<Panel class="SettingsItem TextEntryFrame">
 						<TextEntry onfocus="onfocus('SHARED_GOLD_PERCENTAGE')"
@@ -136,6 +118,13 @@
 									 onblur="onPanelChange('SHARED_XP_PERCENTAGE')" id="SHARED_XP_PERCENTAGE"
 									 class="SettingsItem" maxchars="5" unit="%"/>
 						<Label text="Shared XP" class="TextEntryLabel"/>
+					</Panel>
+					<Panel class="SettingsItem TextEntryFrame">
+						<TextEntry onfocus="onfocus('BONUS_COURIER_SPEED')"
+									 oninputsubmit="onPanelChange('BONUS_COURIER_SPEED')"
+									 onblur="onPanelChange('BONUS_COURIER_SPEED')" id="BONUS_COURIER_SPEED"
+									 class="SettingsItem" maxchars="4" unit="%" />
+						<Label text="Courier Bonus Movespeed" class="TextEntryLabel"/>
 					</Panel>
 					<Panel class="SettingsItem TextEntryFrame">
 						<TextEntry onfocus="onfocus('TIME_UNTIL_AGH_SHARD')"
