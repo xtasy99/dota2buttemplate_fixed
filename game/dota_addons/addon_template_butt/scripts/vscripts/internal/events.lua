@@ -1,6 +1,7 @@
 BUTTINGS = BUTTINGS or {MAX_LEVEL = MAX_LEVEL}
 
 require("internal/utils/butt_api")
+LinkLuaModifier("modifier_courier_speed", "internal/modifier_courier_speed.lua", LUA_MODIFIER_MOTION_NONE)
 
 ListenToGameEvent("game_rules_state_change", function()
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_HERO_SELECTION) then
@@ -83,6 +84,23 @@ ListenToGameEvent("game_rules_state_change", function()
 	end
 
 	CustomGameEventManager:Send_ServerToAllClients("scoreboard_fix", {radiantKills = GetTeamHeroKills(DOTA_TEAM_GOODGUYS), direKills = GetTeamHeroKills(DOTA_TEAM_BADGUYS)})
+end, nil)
+
+ListenToGameEvent("npc_spawned", function(keys)
+	local unit = keys.entindex and EntIndexToHScript(keys.entindex)
+
+	if unit then
+		if unit:GetClassname() == "npc_dota_watch_tower" then       --- BugFix by RoboBro
+			Timers:CreateTimer(
+				1, 
+				function() unit:RemoveModifierByName("modifier_invulnerable") end
+			)
+		
+		elseif unit:IsCourier() then 
+			unit:AddNewModifier(unit, nil, "modifier_courier_speed", {})
+		end
+	end
+
 end, nil)
 
 ListenToGameEvent("dota_player_pick_hero", function(keys)
