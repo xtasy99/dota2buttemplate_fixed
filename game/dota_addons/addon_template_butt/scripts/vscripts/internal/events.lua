@@ -44,6 +44,40 @@ ListenToGameEvent("game_rules_state_change", function()
 		GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 	end
 
+	-- Bot Usage Logic - Courtesy of DrTeaSpoon
+	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_STRATEGY_TIME) then
+        local num = 0
+        local used_hero_name = "npc_dota_hero_luna"
+        local heroes_used = {}
+
+        for i=0, DOTA_MAX_TEAM_PLAYERS do
+            if PlayerResource:IsValidPlayer(i) then
+                local player = PlayerResource:GetPlayer(i)
+                if PlayerResource:HasSelectedHero(i) == false then
+                    player:MakeRandomHeroSelection()
+                end
+                used_hero_name = PlayerResource:GetSelectedHeroName(i)
+                num = num + 1
+            end
+        end
+        if BUTTINGS.USE_BOTS then
+            if IsServer() == true and 10 - num > 0 then
+                for i=1, 5 do
+                    Tutorial:AddBot(used_hero_name, "", "", true)
+                    Tutorial:AddBot(used_hero_name, "", "", false)
+                end
+                GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
+                SendToServerConsole("dota_bot_set_difficulty 4")
+                SendToConsole("dota_bot_set_difficulty 4")
+                SendToServerConsole("dota_bot_populate")
+                SendToServerConsole("dota_bot_mode 1")
+                SendToServerConsole("dota_bot_takeover_disconnected 1")
+                SendToServerConsole("dota_bot_match_difficulty 4")
+                SendToServerConsole("dota_bot_use_machine_learned_weights 1")
+            end
+        end
+    end
+
 	-- Remove the shard from the shop so I can re-add it with the timer later
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_PRE_GAME) then
 		Timers:CreateTimer({
