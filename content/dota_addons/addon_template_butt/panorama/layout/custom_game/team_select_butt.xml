@@ -35,13 +35,13 @@
 									onactivate="onPanelChange('ALLOW_SAME_HERO_SELECTION')"/>
 					<ToggleButton class="SettingsItem" id="HERO_BANNING" text="Banning"
 									onactivate="onPanelChange('HERO_BANNING')"/>
+					<ToggleButton class="SettingsItem" id="USE_BOTS" text="Use Bots" onactivate="onPanelChange('USE_BOTS')" />
 					<Panel class="SettingsItem TextEntryFrame">
 						<TextEntry onfocus="onfocus('')" oninputsubmit="onPanelChange('MAX_LEVEL')"
 									 onblur="onPanelChange('MAX_LEVEL')" id="MAX_LEVEL" class="SettingsItem" min="1"
 									 max="999" maxchars="5"/>
 						<Label text="Max Level" class="TextEntryLabel"/>
 					</Panel>
-					<ToggleButton class="SettingsItem" id="USE_BOTS" text="Bots" onactivate="onPanelChange('USE_BOTS')" />
 				</Panel>
 				<Panel class="SettingsGroup w-31">
 					<Label class="SettingsGroupTitle" text="Economy"/>
