@@ -1,0 +1,9 @@
+
+game/dota_addons/addon_template_butt/maps/dota_fixed.vpk
+*.vcss_c
+*.vjs_c
+*.vxml_c
+*.vtex_c
+game/dota_addons/addon_template_butt/tools_asset_info.bin
+game/dota_addons/addon_template_butt/tools_thumbnail_cache.bin
+*.vsndevts_c
