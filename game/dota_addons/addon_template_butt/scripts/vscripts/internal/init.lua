@@ -1,3 +1,4 @@
+--[[ Legacy Code
 if IsInToolsMode() then
 	function IsSchokokeks()
 		return tostring(PlayerResource:GetSteamID(0))=="76561198007073158"
@@ -30,3 +31,4 @@ if IsInToolsMode() then
 	-- print(fileToString("http://github.com/SteamDatabase/GameTracking-Dota2/blob/master/game/dota/pak01_dir/scripts/npc/items.txt"))
 
 end
+]]
