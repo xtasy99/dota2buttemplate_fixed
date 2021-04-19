@@ -60,7 +60,7 @@ ListenToGameEvent("game_rules_state_change", function()
                 num = num + 1
             end
         end
-        if BUTTINGS.USE_BOTS then
+        if BUTTINGS.USE_BOTS == 1 then
             if IsServer() == true and 10 - num > 0 then
 				local radiant_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
 				local dire_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS)
