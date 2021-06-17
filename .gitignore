@@ -7,3 +7,8 @@ game/dota_addons/addon_template_butt/maps/dota_fixed.vpk
 game/dota_addons/addon_template_butt/tools_asset_info.bin
 game/dota_addons/addon_template_butt/tools_thumbnail_cache.bin
 *.vsndevts_c
+*.vmat_c
+*.tga
+*.vmat
+game/dota_addons/addon_template_butt/resource/overviews/dota_fixed.txt
+content/dota_addons/addon_template_butt/materials/overviews/dota_fixed.txt
