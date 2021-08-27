@@ -5,7 +5,7 @@
 	<script>
 		// Credits: EarthSalamander #42
 		// Hide vanilla pick screen in loading screen
-		HidePickScreen()
+		HidePickScreen();
 
 		function HidePickScreen() {
 			if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP)) {
@@ -16,6 +16,17 @@
 				FindDotaHudElement("PreGame").style.opacity = "1";
 			}
 		}
+
+		function FixShopToolsUI(){
+			if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_STRATEGY_TIME)) {
+				$.Schedule(1.0, FixShopToolsUI)
+			}
+			else {
+				FindDotaHudElement("GridNewShopTab").style.width = "0px";
+				FindDotaHudElement("NewPlayerShopConsumables").style.height = "0px";
+			}
+		}
+		FixShopToolsUI();
 		
 		GameEvents.Subscribe('dota_hud_error_message_player', (data)=>{
 			GameEvents.SendEventClientSide("dota_hud_error_message", {
