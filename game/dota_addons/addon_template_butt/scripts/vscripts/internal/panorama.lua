@@ -133,7 +133,7 @@ CustomGameEventManager:RegisterListener("endscreen_butt", function(_,request)
 			playerInfo[pID].GPM = math.floor(PlayerResource:GetGoldPerMin(pID)+0.5)
 			playerInfo[pID].EPM = math.floor(PlayerResource:GetXPPerMin(pID)+0.5)
 			playerInfo[pID].TotalXP = PlayerResource:GetTotalEarnedXP(pID)
-			playerInfo[pID].DamageTaken = PlayerResource:GetCreepDamageTaken(pID) + PlayerResource:GetHeroDamageTaken(pID) + PlayerResource:GetTowerDamageTaken(pID)
+			playerInfo[pID].DamageTaken = PlayerResource:GetCreepDamageTaken(pID, true) + PlayerResource:GetHeroDamageTaken(pID, true) + PlayerResource:GetTowerDamageTaken(pID, true)
 			playerInfo[pID].GetGoldSpentOnItems = PlayerResource:GetGoldSpentOnItems(pID)
 			playerInfo[pID].RunePickups = PlayerResource:GetRunePickups(pID)
 		end
