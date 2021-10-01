@@ -94,6 +94,7 @@ ListenToGameEvent("game_rules_state_change", function()
 	end
 
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_GAME_IN_PROGRESS) then
+		GameRules:SetTimeOfDay( 0.251 )
 		Timers:CreateTimer({
 			endTime = BUTTINGS.TIME_UNTIL_AGH_SHARD*60,
 			callback = function()
