@@ -184,6 +184,16 @@ function table.length(t)
 	return len
 end
 
+function table.contains(t, v)
+	if ("table"~=type(t)) then error("1st argument of table.contains() is not a table",2) end
+	for _,v2 in pairs(t) do
+		if v==v2 then
+			return true
+		end
+	end
+	return false
+end
+
 -------------------------- FILE COPY FUNCTIONS -------------------------
 
 function copyFile(fromFile, toFile)
