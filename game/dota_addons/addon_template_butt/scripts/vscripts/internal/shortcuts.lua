@@ -2,22 +2,15 @@ if (not IsInToolsMode()) then return end
 
 require("internal/utils/butt_api")
 
-local vUserIds = {}
 local cheatStart
-
-ListenToGameEvent("player_connect_full", function(keys)
-	local entIndex = keys.index + 1
-	local ply = EntIndexToHScript(keys.index + 1)
-	local userID = keys.userid
-	vUserIds[userID] = EntIndexToHScript(keys.index + 1)
-end, nil)
 
 ListenToGameEvent("player_chat", function(keys)
 	local teamonly = keys.teamonly
 	local userID = keys.userid
-	local playerID = vUserIds[userID] and vUserIds[userID]:GetPlayerID() -- attempt to index a nil value
+	local playerID = keys.playerid -- attempt to index a nil value
 	local hero = playerID and PlayerResource:GetSelectedHeroEntity(playerID)
 	local text = keys.text
+	
 	if ("-mods"==text) and (playerID) then
 		if (hero) then
 			for m,mod in pairs(hero:FindAllModifiers()) do
