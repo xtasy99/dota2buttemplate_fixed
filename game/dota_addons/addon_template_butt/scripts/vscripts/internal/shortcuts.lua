@@ -2,12 +2,20 @@ if (not IsInToolsMode()) then return end
 
 require("internal/utils/butt_api")
 
+local vUserIds = {}
 local cheatStart
+
+ListenToGameEvent("player_connect_full", function(keys)
+	for k,v in pairs(keys) do print(k,v) end
+
+	local ply = EntIndexToHScript(keys.index)
+	vUserIds[keys.userid] = ply
+end, nil)
 
 ListenToGameEvent("player_chat", function(keys)
 	local teamonly = keys.teamonly
 	local userID = keys.userid
-	local playerID = keys.playerid -- attempt to index a nil value
+	local playerID = vUserIds[userID] and vUserIds[userID]:GetPlayerID() -- attempt to index a nil value
 	local hero = playerID and PlayerResource:GetSelectedHeroEntity(playerID)
 	local text = keys.text
 	
