@@ -20,7 +20,7 @@ ListenToGameEvent("created_game_mode_entity",function()
 	gameModeEnt:SetBotsMaxPushTier( -1 )						-- Set the max tier of tower that bots want to push. (-1 to disable) 
 	gameModeEnt:SetBotThinkingEnabled( false )					-- Enables/Disables bot thinking. Requires a very Dota PvP-like map with 3 lanes, a shop, etc. 
 	gameModeEnt:SetBuybackEnabled( true )						-- Enables or disables buyback completely 
-	gameModeEnt:SetCameraDistanceOverride( 1134 )				-- Set a different camera distance; dota default is 1134. 
+	gameModeEnt:SetCameraDistanceOverride( 1354 )				-- Set a different camera distance; dota default is 1134. 
 	gameModeEnt:SetCustomBuybackCooldownEnabled( false )		-- Turns on capability to define custom buyback cooldowns. 
 	gameModeEnt:SetCustomBuybackCostEnabled( false )			-- Turns on capability to define custom buyback costs. 
 	gameModeEnt:SetFixedRespawnTime( -1 ) 						-- Sets the dota respawn time. -1 for default behavior 
