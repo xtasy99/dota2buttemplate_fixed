@@ -11,7 +11,7 @@ files = [
     ["npc\\herolist.txt", "https://raw.githubusercontent.com/SteamDatabase/GameTracking-Dota2/master/game/dota/pak01_dir/scripts/npc/activelist.txt"],
     ["npc\\npc_neutral_items_custom.txt", "https://raw.githubusercontent.com/SteamDatabase/GameTracking-Dota2/master/game/dota/pak01_dir/scripts/npc/neutral_items.txt"],
 
-    ["shops\\dota_fixed_shops.txt", "https://raw.githubusercontent.com/SteamDatabase/GameTracking-Dota2/83ab42f2988545cc3ae00eeedfcd0d00ff35c3b9/game/dota/pak01_dir/scripts/shops.txt"],
+    ["shops\\dota_fixed_shops.txt", "https://raw.githubusercontent.com/SteamDatabase/GameTracking-Dota2/master/game/dota/pak01_dir/scripts/shops.txt"],
 ]
 
 for filetype in files:

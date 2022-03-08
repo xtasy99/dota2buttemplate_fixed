@@ -2372,7 +2372,6 @@
 			"true_sight_range"		"900"
 			"health"				"200"
 			"duration_minutes_tooltip"				"7"
-			"activation_delay"		"0"
 		}
 	}
 	
@@ -2448,8 +2447,6 @@
 				"observer_duration_minutes_tooltip"		"6"
 				"true_sight_range"		"900"
 				"sentry_duration_minutes_tooltip"		"8"
-				"activation_delay"		"0"
-
 		}
 	}
 	
@@ -5022,7 +5019,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"300"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -5059,7 +5056,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		"ItemCost"						"3175"
+		"ItemCost"						"3475"
 		"ItemShopTags"					"attack_speed;damage;regen_mana;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"orchid malevolence;silence"
@@ -5130,7 +5127,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		"ItemCost"						"6500"
+		"ItemCost"						"6800"
 		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"orchid malevolence"
@@ -11589,7 +11586,7 @@
 			"bonus_movement_speed"	"65"
 			"bonus_health_regen"	"15"
 			"recharge_time"			"180"
-			"bonus_ms_duration"		"2"
+			"bonus_ms_duration"		"1.5"
 		}
 	}
 
