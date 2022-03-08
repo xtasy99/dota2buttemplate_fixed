@@ -133,6 +133,13 @@
 									 class="SettingsItem" maxchars="5" unit="min" />
 						<Label text="Time until Aghanim Shard" class="TextEntryLabel"/>
 					</Panel>
+					<Label class="SettingsGroupTitle" text="Backdoor Protection"/>
+					<DropDown class="SettingsItem" id="BACKDOOR_PROTECTION" oninputsubmit="onPanelChange('BACKDOOR_PROTECTION')">
+						<Label text="Normal" id="NORM"/>
+						<Label text="None" id="NONE"/>
+						<Label text="Enhanced" id="IMBA"/>
+						<!-- <Label text="Single Draft" id="SD"/> -->
+					</DropDown>
 				</Panel>
 				<Panel class="SettingsGroup w-31">
 					<ToggleButton id="ALT_WINNING" class="SettingsGroupTitle" text="Alternative Winning Conditions"

@@ -27,6 +27,7 @@ BUTTINGS = {
 	OUTPOST_SHOP = 0,                   -- 0 = normal, 1 = jungle shops
 	SIDE_SHOP = 0,                      -- 0 = normal, 1 = bring back sideshops
 	--FREE_COURIER = 0,                 -- 0 = vanilla couriers, 1 = custom couriers (Currently has no use)
+	BACKDOOR_PROTECTION = "NORM",		-- "NONE" = no backdoor, "NORM" = regular backdoor, "IMBA" = enhanced backdoor
 	XP_PER_MINUTE = 0,                  -- (normal dota = 0) everyone gets passive experience (like the passive gold)
 	COMEBACK_TIMER = 30,                -- timer (minutes) to start comeback XP / gold 
 	COMEBACK_GPM = 60,                  -- passive gold for the poorest team

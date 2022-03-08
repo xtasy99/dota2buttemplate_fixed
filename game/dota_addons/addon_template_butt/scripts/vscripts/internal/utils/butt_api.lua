@@ -360,3 +360,24 @@ end
 function IsMonkeyKingClone(unit)
 	return unit:HasModifier("modifier_monkey_king_fur_army_soldier_hidden")
 end
+
+local buildings = {
+	"npc_dota_tower",
+	"ent_dota_fountain",
+	"npc_dota_barracks",
+	"npc_dota_fort",
+	"npc_dota_filler",
+	"npc_dota_roshan",
+}
+
+function Butt:AllBuildings()
+	local towers = {}
+	for _,towerName in ipairs(buildings) do
+		local tTowers = Entities:FindAllByClassname(towerName)
+		for __, building in pairs(tTowers) do
+			table.insert(towers, building)
+		end
+	end
+
+	return towers
+end

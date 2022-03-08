@@ -2,6 +2,7 @@ BUTTINGS = BUTTINGS or {MAX_LEVEL = MAX_LEVEL}
 
 require("internal/utils/butt_api")
 LinkLuaModifier("modifier_courier_speed", "internal/modifier_courier_speed.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("backdoor_protection_imba", "internal/backdoor_protection_imba.lua", LUA_MODIFIER_MOTION_NONE)
 
 ListenToGameEvent("game_rules_state_change", function()
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_HERO_SELECTION) then
@@ -38,6 +39,19 @@ ListenToGameEvent("game_rules_state_change", function()
 		if ( 1 == BUTTINGS.OUTPOST_SHOP ) then
 			for o,outpost in pairs(Butt:AllOutposts()) do
 				Butt:CreateSideShop(outpost:GetAbsOrigin())
+			end
+		end
+
+		if ( "NORM" ~= BUTTINGS.BACKDOOR_PROTECTION ) then
+			for _, building in pairs(Butt:AllBuildings()) do
+				if ( "NONE" == BUTTINGS.BACKDOOR_PROTECTION ) then
+					building:RemoveAbility("backdoor_protection")
+					building:RemoveAbility("backdoor_protection_in_base")
+				end
+
+				if ( "IMBA" == BUTTINGS.BACKDOOR_PROTECTION ) then
+					building:AddNewModifier(building, nil, "backdoor_protection_imba", {})
+				end
 			end
 		end
 
