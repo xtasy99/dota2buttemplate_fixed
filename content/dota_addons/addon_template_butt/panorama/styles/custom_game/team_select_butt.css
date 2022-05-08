@@ -1,26 +1,25 @@
 .GameTitle {
-	margin-left: 5px;
-	font-weight: normal;
-	letter-spacing: 2px;
-	margin-right: 4px;
-	color: rgb(255, 255, 255);
-	font-size: 15px;
-	text-shadow: 2px 2px 1px rgb(0, 0, 0);
-	vertical-align: center;
-	text-align: center;
-	text-transform: uppercase;
+    margin-left: 5px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-right: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    vertical-align: center;
+    text-align: center;
+    text-transform: uppercase;
 }
 .SettingsMain {
-	margin-top: 40px;
-	flow-children: down;
+    margin-top: 40px;
+    flow-children: down;
 }
 
 #ButtingsSplit {
-	flow-children: right;
-
+    flow-children: right;
 }
 #BCategories {
-	visibility: collapse;
+    visibility: collapse;
     width: 0px;
     height: 0px;
 }
@@ -33,114 +32,135 @@
 
 } */
 #BSettings {
-	flow-children: right;
-	overflow: squish scroll;
-	max-height: 700px;
-	padding-right: 10px;
+    flow-children: right;
+    overflow: squish scroll;
+    max-height: 700px;
+    padding-right: 10px;
 }
 
 #BSettingsColumn1 {
-	flow-children: down;
-	overflow: squish clip;
+    flow-children: down;
+    overflow: squish clip;
 }
 #BSettingsColumn2 {
-	flow-children: down;
-	overflow: squish clip;
+    flow-children: down;
+    overflow: squish clip;
 }
 
 .SettingCategoryBlock {
-	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #535353 ), to( #555555 ) );
-	padding: 10px;
-	border-radius: 5px;
-	margin-top: 3px;
-	margin-left: 3px;
+    flow-children: down;
+    background-color: gradient(
+        linear,
+        100% 0%,
+        100% 100%,
+        from(#272b30),
+        color-stop(0.6, #181a1e),
+        to(#181a1e)
+    );
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-left: 3px;
 }
 #SettingCategoryBlock_Tittle {
-	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000 ), to( #505050 ) );
-	border-radius: 5px;
-	width: 400px;
+    flow-children: down;
+    background-color: gradient(
+        linear,
+        0% 0%,
+        0% 100%,
+        from(#000000),
+        to(#505050)
+    );
+    border-radius: 5px;
+    width: 400px;
 }
 #SettingCategoryBlock_TittleText {
-	margin-left: 5px;
-	font-weight: normal;
-	letter-spacing: 2px;
-	margin-right: 4px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	color: rgb(255, 255, 255);
-	font-size: 15px;
-	text-shadow: 2px 2px 1px rgb(0, 0, 0);
-	vertical-align: center;
-	text-align: center;
-	text-transform: uppercase;
-	
+    margin-left: 5px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    vertical-align: center;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .SettingNumber {
-	flow-children: right;
-
+    flow-children: right;
 }
 
 .SettingBoolean {
-	flow-children: right;
+    flow-children: right;
 }
 
 .SettingOption {
-	flow-children: right;
+    flow-children: right;
 }
 .SettingCategory {
-	border-radius: 10px;
-	padding: 2px;
-	margin-top: 2px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #929292 ), to( #777777 ) );
-	width: fit-children;
-	horizontal-align: right;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 2px;
+    background-color: gradient(
+        linear,
+        0% 0%,
+        0% 100%,
+        from(#929292),
+        to(#777777)
+    );
+    width: fit-children;
+    horizontal-align: right;
 }
 .SettingShared {
-
 }
 #SettingCategoryText {
-	margin-left: 5px;
-	margin-right: 4px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	font-weight: normal;
-	color: rgb(255, 255, 255);
-	font-size: 15px;
-	letter-spacing: 2px;
-	text-shadow: 2px 2px 1px rgb(0, 0, 0);
-	vertical-align: center;
-	text-align: center;
-	text-transform: uppercase;
-	
+    margin-left: 5px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    vertical-align: center;
+    text-align: center;
+    text-transform: uppercase;
 }
 .SettingGroupEnable {
-	border-radius: 5px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #19332a ), to( #187e29 ) );
+    border-radius: 5px;
+    background-color: gradient(
+        linear,
+        0% 0%,
+        0% 100%,
+        from(#19332a),
+        to(#187e29)
+    );
 }
 .SettingNumberBox {
-	width: 100px;
-	height: 20px;
-	font-weight: normal;
-	color: rgb(255, 255, 255);
-	font-size: 15px;
-	letter-spacing: 2px;
-	margin-top: 0px;
-	padding-top: 1px;
-	vertical-align: center;
+    width: 100px;
+    height: 20px;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-top: 0px;
+    padding-top: 1px;
+    vertical-align: center;
 }
 #SettingNumberText {
-	margin-left: 5px;
-	font-weight: normal;
-	letter-spacing: 2px;
-	margin-right: 4px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	color: rgb(255, 255, 255);
-	font-size: 14px;
-	text-shadow: 2px 2px 1px rgb(0, 0, 0);
-	vertical-align: center;
-	text-align: center;
+    margin-left: 5px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    vertical-align: center;
+    text-align: center;
 }
