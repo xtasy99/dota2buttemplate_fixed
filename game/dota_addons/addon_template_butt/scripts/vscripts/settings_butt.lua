@@ -48,6 +48,10 @@ function Buttings:GetQuick(key)
 end
 
 function Buttings:GetValue(category,key)
+	if key == nil then
+        return Buttings:GetQuick(category)
+    end
+
 	if key == "ENABLED" then
 		if (BUTTINGS[category] ~= nil and BUTTINGS[category].ENABLED ~= nil) then
 			return BUTTINGS[category].ENABLED
