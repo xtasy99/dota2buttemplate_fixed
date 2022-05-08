@@ -37,21 +37,36 @@ ListenToGameEvent("game_rules_state_change", function()
 
 		if ("SD"==Buttings:GetQuick("GAME_MODE") ) then
 			GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 0 )
-			local all_heroes = {}
-			local file = LoadKeyValues('scripts/npc/_herolist.txt')
+			local attribute_heroes = {
+				{},		-- strength_heroes
+				{},		-- agility_heroes
+				{}		-- intelligence_heroes
+			}
+			local file = LoadKeyValues('scripts/npc/herolist.txt')
+			local hero_definitions = LoadKeyValues('scripts/npc/npc_heroes.txt')
 			if file == nil or not next(file) then
 				print("empty whitelist")
 			else
-				all_heroes = file
+				for hero_name, _ in pairs(file) do
+					local hero_attribute = hero_definitions[hero_name]["AttributePrimary"]
+					if hero_attribute == "DOTA_ATTRIBUTE_STRENGTH" then
+						table.insert(attribute_heroes[1], hero_name)
+					elseif hero_attribute == "DOTA_ATTRIBUTE_AGILITY" then
+						table.insert(attribute_heroes[2], hero_name)
+					else
+						table.insert(attribute_heroes[3], hero_name)
+					end
+				end
+
 				GameRules:SetHideBlacklistedHeroes(true)
 				GameRules:GetGameModeEntity():SetPlayerHeroAvailabilityFiltered( true )
 				for p=0,DOTA_MAX_PLAYERS do
 					if PlayerResource:IsValidPlayer(p) then
 						for i=1,3 do
-							local hero_name = get_random_key(all_heroes)
-							local nHeroID = DOTAGameManager:GetHeroIDByName( hero_name )
+							local hero_index = get_random_key(attribute_heroes[i])
+							local nHeroID = DOTAGameManager:GetHeroIDByName( attribute_heroes[i][hero_index] )
 							GameRules:AddHeroToPlayerAvailability( p, nHeroID )
-							all_heroes[hero_name] = nil
+							attribute_heroes[i][hero_index] = nil
 						end
 					end
 				end
