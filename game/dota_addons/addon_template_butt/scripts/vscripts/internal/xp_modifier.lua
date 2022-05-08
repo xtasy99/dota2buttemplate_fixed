@@ -26,7 +26,6 @@ function XPModifier:DeclareFunctions() --we want to use these functions in this 
 	local funcs = {
 		-- MODIFIER_PROPERTY_EXP_RATE_BOOST, -- deprecated
 		MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE,
-		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING,
 		MODIFIER_EVENT_ON_ATTACK_FAIL,
 		-- MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_EVENT_ON_TAKEDAMAGE, -- OnTakeDamage 
@@ -62,7 +61,7 @@ end
 
 
 function XPModifier:GetModifierPercentageRespawnTime()
-	return 1 - BUTTINGS.RESPAWN_TIME_PERCENTAGE * 0.01
+	return 1 - Buttings:GetQuick("RESPAWN_TIME_PERCENTAGE")  * 0.01
 end
 
 
@@ -75,13 +74,9 @@ function XPModifier:IsPurgable()
 end
 
 
-function XPModifier:GetModifierPercentageCooldownStacking()
-	return 100 - BUTTINGS.COOLDOWN_PERCENTAGE
-end
-
 function XPModifier:OnAttackFail( event )
 	if event.attacker ~= self:GetParent() then return end
-	if (1==event.fail_type) and (1==BUTTINGS.NO_UPHILL_MISS) then
+	if (1==event.fail_type) and (1==Buttings:GetQuick("NO_UPHILL_MISS") ) then
 		event.attacker:PerformAttack(event.target, false, event.process_procs, true, event.ignore_invis, false, false, false)
 		event.fail_type = 0
 	end
@@ -118,7 +113,7 @@ function XPModifier:OnTakeDamage(event)
 	local inflictor = event.inflictor
 	local damageFlags = event.damage_flags
 
-	if (1==BUTTINGS.MAGIC_RES_CAP) and (damageType == DAMAGE_TYPE_MAGICAL) and (0 == bit.band(DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR, damageFlags)) then
+	if (1==Buttings:GetQuick("MAGIC_RES_CAP") ) and (damageType == DAMAGE_TYPE_MAGICAL) and (0 == bit.band(DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR, damageFlags)) then
 		local armor = victim:GetMagicalArmorValue() -- 0 .. 1 .. infinity
 		local betterDamageMultiplier = 1 - math.exp( -armor )
 		local extraDamage = originalDamage * betterDamageMultiplier - damage
@@ -133,7 +128,7 @@ function XPModifier:OnTakeDamage(event)
 					}) -- deal damage
 	end
 
-	if (1==BUTTINGS.CLASSIC_ARMOR) and (damageType == DAMAGE_TYPE_PHYSICAL) and (0 == bit.band(DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR, damageFlags)) then
+	if (1==Buttings:GetQuick("CLASSIC_ARMOR") ) and (damageType == DAMAGE_TYPE_PHYSICAL) and (0 == bit.band(DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR, damageFlags)) then
 		local armor = victim:GetPhysicalArmorValue(false)
 		local betterDamageMultiplier = 1 - ( 0.05 * armor ) / ( 1 + 0.05 * armor )
 		local extraDamage = originalDamage * betterDamageMultiplier - damage

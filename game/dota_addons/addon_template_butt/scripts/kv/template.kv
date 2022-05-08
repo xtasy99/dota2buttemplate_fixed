@@ -1,0 +1,237 @@
+"BUTTSettings" {
+    "DOTA_SETUP_OPTIONS" {
+        "ORDER" "1"
+        "ALLOW_SAME_HERO_SELECTION" {
+            "ORDER" "2"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "HERO_BANNING" {
+            "ORDER" "3"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "USE_BOTS" {
+            "ORDER" "4"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "GAME_MODE" {
+            "ORDER" "1"
+            "TYPE" "OPTIONS"
+            "VALUE" "AP"
+            "OPTIONS" {
+                "ALL_PICK" "AP"
+                "ALL_RANDOM" "AR"
+                "SINGLE_DRAFT" "SD"
+            }
+        }
+    }
+    
+	"DOTA_MECHANIC_OPTIONS" {
+        "ORDER" "2"
+        "NO_UPHILL_MISS" {
+            "ORDER" "4"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "CLASSIC_ARMOR" {
+            "ORDER" "2"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "MAGIC_RES_CAP" {
+            "ORDER" "3"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "TOMBSTONE" {
+            "ORDER" "5"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "MAX_LEVEL" {
+            "ORDER" "1"
+            "MIN" "1"
+            "MAX" "9999"
+            "VALUE" "30"
+        }
+        "BACKDOOR_PROTECTION" {
+            "ORDER" "6"
+            "TYPE" "OPTIONS"
+            "VALUE" "NORM"
+            "OPTIONS" {
+                "NONE" "NONE"
+                "NORM" "NORM"
+                "IMBA" "IMBA"
+            }
+        }
+    }
+
+	"SHOP_OPTIONS" {
+        "ORDER" "4"
+        "SIDE_SHOP" {
+            "ORDER" "3"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "OUTPOST_SHOP" {
+            "ORDER" "2"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+        "UNIVERSAL_SHOP_MODE" {
+            "ORDER" "1"
+            "TYPE" "BOOLEAN"
+            "VALUE" "1"
+        }
+    }
+
+	"GAMESPEED_OPTIONS" {
+        "ORDER" "3"
+        "GOLD_GAIN_PERCENTAGE" {
+            "ORDER" "2"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "100"
+            "UNIT" "%"
+        }
+        "XP_GAIN_PERCENTAGE" {
+            "ORDER" "3"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "100"
+            "UNIT" "%"
+        }
+        "GOLD_PER_MINUTE" {
+            "ORDER" "4"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "0"
+        }
+        "XP_PER_MINUTE" {
+            "ORDER" "5"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "0"
+        }
+        "RESPAWN_TIME_PERCENTAGE" {
+            "ORDER" "1"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "100"
+            "UNIT" "%"
+        }
+    }
+
+	"COMEBACK_OPTIONS" {
+        "ORDER" "5"
+        "COMEBACK_TIMER" {
+            "ORDER" "1"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "30"
+            "UNIT" "min"
+        }
+        "COMEBACK_GPM" {
+            "ORDER" "2"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "20"
+        }
+        "COMEBACK_XPPM" {
+            "ORDER" "3"
+            "MIN" "0"
+            "MAX" "9999"
+            "VALUE" "20"
+        }
+    }
+
+	"SHARE_OPTIONS" {
+        "ORDER" "6"
+        "SHARED_GOLD_PERCENTAGE" {
+            "ORDER" "1"
+            "MIN" "0"
+            "MAX" "100"
+            "VALUE" "0"
+            "UNIT" "%"
+        }
+        "SHARED_XP_PERCENTAGE" {
+            "ORDER" "2"
+            "MIN" "0"
+            "MAX" "100"
+            "VALUE" "0"
+            "UNIT" "%"
+        }
+    }
+
+	"AGH_SHARD_OPTIONS" {
+        "ORDER" "7"
+        "TIME_UNTIL_AGH_SHARD" {
+            "ORDER" "1"
+            "MIN" "1"
+            "MAX" "999"
+            "VALUE" "5"
+            "UNIT" "min"
+        }
+        "FREE_AGH_SHARD" {
+            "ORDER" "2"
+            "TYPE" "BOOLEAN"
+            "VALUE" "1"
+        }
+    }
+
+	"COURIER_OPTIONS" {
+        "ORDER" "17"
+        "BONUS_COURIER_SPEED" {
+            "ORDER" "1"
+            "MIN" "10"
+            "MAX" "9999"
+            "VALUE" "100"
+            "UNIT" "%"
+        }
+        "COURIER_INVULNERABLE" {
+            "ORDER" "2"
+            "TYPE" "BOOLEAN"
+            "VALUE" "0"
+        }
+    }
+
+	"ALT_WINNING" {
+        "ORDER" "19"
+        "TYPE" "OPTIONAL"
+        "ENABLED" "0"
+        "ALT_KILL_LIMIT" {
+            "ORDER" "1"
+            "MIN" "1"
+            "MAX" "999"
+            "VALUE" "100"
+        }
+        "ALT_TIME_LIMIT" {
+            "ORDER" "2"
+            "MIN" "1"
+            "MAX" "999"
+            "VALUE" "60"
+            "UNIT" "min"
+        }
+    }
+
+	"BUYBACK_RULES" {
+        "ORDER" "18"
+        "TYPE" "OPTIONAL"
+        "ENABLED" "0"
+        "BUYBACK_LIMIT" {
+            "ORDER" "1"
+            "MIN" "1"
+            "MAX" "999"
+            "VALUE" "1"
+        }
+        "BUYBACK_COOLDOWN" {
+            "ORDER" "2"
+            "MIN" "1"
+            "MAX" "9999"
+            "VALUE" "600"
+            "UNIT" "s"
+        }
+    }
+}

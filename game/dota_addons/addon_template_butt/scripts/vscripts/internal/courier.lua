@@ -17,7 +17,7 @@ ListenToGameEvent("npc_first_spawn",function(event)
 	-- don't give passive gold to monkey king clones
 	Timers:CreateTimer(0, function()
 		if not IsMonkeyKingClone(hero) then
-			hero:AddNewModifier(hero,nil,"modifier_passive_gold",{ gold_per_tick = 1, gold_tick_time = (60/BUTTINGS.GOLD_PER_MINUTE) })
+			hero:AddNewModifier(hero,nil,"modifier_passive_gold",{ gold_per_tick = 1, gold_tick_time = (60/Buttings:GetValue("GAMESPEED_OPTIONS","GOLD_PER_MINUTE")) })
 		end
 	end)
 end, self)
@@ -38,58 +38,6 @@ function CreatePrivateCourier(playerId, owner, pointToSpawn)
 	return cr
 end
 
-function EditFilterToCourier(filterTable)
-	if 1~=BUTTINGS.FREE_COURIER then return end
-	local unit
-	local orderType = filterTable.order_type
-	local target = filterTable.entindex_target ~= 0 and EntIndexToHScript(filterTable.entindex_target) or nil
-	local ability = filterTable.entindex_ability ~= 0 and EntIndexToHScript(filterTable.entindex_ability) or nil
-	local playerId = filterTable.issuer_player_id_const
-
-	if playerId < 0 then return filterTable end
-	if not PlayerResource:GetPlayer(playerId):GetAssignedHero() then return filterTable end
-
-	local hasCourierInUnitsTable = false
-	for _, unitEntityIndex in pairs(filterTable.units) do
-		unit = EntIndexToHScript(unitEntityIndex)
-		if unit:IsCourier() then hasCourierInUnitsTable = true end
-	end
-	if not hasCourierInUnitsTable then return filterTable end
-
-	local currentCourier = SearchCorrectCourier(playerId, PlayerResource:GetPlayer(playerId):GetAssignedHero():GetTeamNumber())
-
-	if orderType == DOTA_UNIT_ORDER_GIVE_ITEM and target and target:IsCourier() and target ~= currentCourier and currentCourier:IsAlive() and (not currentCourier:IsStunned()) then
-		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "display_custom_error", { message = "#cannotgiveiteminthiscourier" })
-		return false
-	end
-
-	for _, unitEntityIndex in pairs(filterTable.units) do
-		unit = EntIndexToHScript(unitEntityIndex)
-
-		if unit:IsCourier() then
-			for i, x in pairs(filterTable.units) do
-				if filterTable.units[i] == unitEntityIndex then
-					if currentCourier then
-						filterTable.units[i] = currentCourier:GetEntityIndex()
-					end
-				end
-			end
-
-			if  currentCourier and unit ~= currentCourier and currentCourier:IsAlive() and (not currentCourier:IsStunned()) then
-				for i = 0, 20 do
-					if filterTable.entindex_ability and currentCourier:GetAbilityByIndex(i) and ability and currentCourier:GetAbilityByIndex(i):GetName() == ability:GetName() then
-						filterTable.entindex_ability = currentCourier:GetAbilityByIndex(i):GetEntityIndex()
-					end
-				end
-
-				local newFocus = { currentCourier:GetEntityIndex() }
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "selection_courier_update", { newCourier = newFocus, removeCourier = { unitEntityIndex } })
-			end
-		end
-	end
-
-	return filterTable
-end
 
 function BlockToBuyCourier(playerId, hItem)
 	if _G.personalCouriers[playerId] then

@@ -1,0 +1,49 @@
+// This file is how you add more settings to your gamemode.
+
+// You can create a new category by creating a named string followed by the brackets {}
+// Inside each category, you can add different types of variables of the following - booleans, options, and numerics
+
+// Set your values as desired; the properties of the different types can be sampled down below.
+// Obtain these values in your code with Buttings:GetValue(category, variable)
+
+// Categories can also be set as optional; the functionality of a group of settings can be toggled on or off.
+// YOU MUST CHECK IF THE CATEGORY IS ENABLED! Use Buttings:GetValue(category) to do so.
+
+// All of the variables can only be accessed server-side within code. 
+// If for some reason client-side is needed, you'll need to do some hacky stuff to allow that.
+
+// Don't forget to name all of your categories and variables in resource/addon_english.txt
+
+#base "template.kv"
+"BUTTSettings" {
+    // "sample_category" {
+    //     "sample_boolean" {
+    //         "TYPE"  "BOOLEAN"
+    //         "VALUE" "1"
+    //     }
+    //     "sample_options" {
+    //         "TYPE"  "OPTIONS"
+    //         "VALUE" "OP1"
+    //         "OPTIONS" {
+    //             "OPTION1"   "OP1"
+    //             "OPTION2"   "OP2"
+    //             "OPTION3"   "OP3"
+    //         }
+    //     }
+    //     "sample_numeric" {
+    //         "VALUE" "25"
+    //         "MIN"   "0"
+    //         "MAX"   "100"
+    //         "UNIT"  "%"
+    //     }
+    // }
+
+    // "optional_category" {
+    //     "TYPE"  "OPTIONAL"
+    //     "ENABLED"   "0"
+    //     "become_overpowered" {
+    //         "TYPE"  "BOOLEAN"
+    //         "VALUE" "1"
+    //     }
+    // }
+}

@@ -4,52 +4,101 @@ require("internal/utils/butt_api")
 LinkLuaModifier("modifier_courier_speed", "internal/modifier_courier_speed.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("backdoor_protection_imba", "internal/backdoor_protection_imba.lua", LUA_MODIFIER_MOTION_NONE)
 
+function get_random_key(t)
+    local ti = {}
+    for k,v in pairs(t) do
+		if v ~= nil then
+        	table.insert(ti,k)
+		end
+    end
+    return ti[RandomInt(1, #ti)]
+end
 ListenToGameEvent("game_rules_state_change", function()
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_HERO_SELECTION) then
 		
-		GameRules:SetSameHeroSelectionEnabled( 1 == BUTTINGS.ALLOW_SAME_HERO_SELECTION )
-		GameRules:SetUseUniversalShopMode( 1 == BUTTINGS.UNIVERSAL_SHOP_MODE )
-		GameRules:SetGoldTickTime( 60/BUTTINGS.GOLD_PER_MINUTE )
+		GameRules:SetSameHeroSelectionEnabled( 1 == Buttings:GetQuick("ALLOW_SAME_HERO_SELECTION"))
+		GameRules:SetUseUniversalShopMode( 1 == Buttings:GetQuick("UNIVERSAL_SHOP_MODE") )
+		GameRules:SetGoldTickTime( 60/Buttings:GetQuick("GOLD_PER_MINUTE")  )
 
 		GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( BUTTINGS.ALTERNATIVE_XP_TABLE() )
-		GameRules:GetGameModeEntity():SetUseCustomHeroLevels(BUTTINGS.MAX_LEVEL~=25)
-		GameRules:SetUseCustomHeroXPValues(BUTTINGS.MAX_LEVEL~=25)
-		GameRules:GetGameModeEntity():SetCustomHeroMaxLevel(BUTTINGS.MAX_LEVEL)
+		GameRules:GetGameModeEntity():SetUseCustomHeroLevels(Buttings:GetQuick("MAX_LEVEL") ~=30)
+		GameRules:SetUseCustomHeroXPValues(Buttings:GetQuick("MAX_LEVEL") ~=30)
+		GameRules:GetGameModeEntity():SetCustomHeroMaxLevel(Buttings:GetQuick("MAX_LEVEL") )
 
-		if ("AR"==BUTTINGS.GAME_MODE) then
-			local time = ( 1 == BUTTINGS.HERO_BANNING ) and 16 or 0
+		if ("AR"==Buttings:GetQuick("GAME_MODE") ) then
+			local time = ( 1 == Buttings:GetQuick("HERO_BANNING")  ) and 16 or 0
 			GameRules:GetGameModeEntity():SetThink( function()
 				for p,player in pairs(PlayerList:GetValidTeamPlayers()) do
 					player:MakeRandomHeroSelection()
 				end
 			end, time)
 		end
-		
-		if ( 0 == BUTTINGS.HERO_BANNING ) then
+
+
+		if ("SD"==Buttings:GetQuick("GAME_MODE") ) then
 			GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 0 )
+			local attribute_heroes = {
+				{},		-- strength_heroes
+				{},		-- agility_heroes
+				{}		-- intelligence_heroes
+			}
+			local file = LoadKeyValues('scripts/npc/herolist.txt')
+			local hero_definitions = LoadKeyValues('scripts/npc/npc_heroes.txt')
+			if file == nil or not next(file) then
+				print("empty whitelist")
+			else
+				for hero_name, _ in pairs(file) do
+					local hero_attribute = hero_definitions[hero_name]["AttributePrimary"]
+					if hero_attribute == "DOTA_ATTRIBUTE_STRENGTH" then
+						table.insert(attribute_heroes[1], hero_name)
+					elseif hero_attribute == "DOTA_ATTRIBUTE_AGILITY" then
+						table.insert(attribute_heroes[2], hero_name)
+					else
+						table.insert(attribute_heroes[3], hero_name)
+					end
+				end
+
+				GameRules:SetHideBlacklistedHeroes(true)
+				GameRules:GetGameModeEntity():SetPlayerHeroAvailabilityFiltered( true )
+				for p=0,DOTA_MAX_PLAYERS do
+					if PlayerResource:IsValidPlayer(p) then
+						for i=1,3 do
+							local hero_index = get_random_key(attribute_heroes[i])
+							local nHeroID = DOTAGameManager:GetHeroIDByName( attribute_heroes[i][hero_index] )
+							GameRules:AddHeroToPlayerAvailability( p, nHeroID )
+							attribute_heroes[i][hero_index] = nil
+						end
+					end
+				end
+			end
+
 		else
-			GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 16 )
+			if ( 0 == Buttings:GetQuick("HERO_BANNING") ) then
+				GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 0 )
+			else
+				GameRules:GetGameModeEntity():SetDraftingBanningTimeOverride( 16 )
+			end
 		end
 
-		if ( 1 == BUTTINGS.SIDE_SHOP ) then
+		if ( 1 == Buttings:GetQuick("SIDE_SHOP")  ) then
 			for _,pos in pairs(Butt:OldSideshopLocations()) do
 				Butt:CreateSideShop(pos)
 			end
 		end
-		if ( 1 == BUTTINGS.OUTPOST_SHOP ) then
+		if ( 1 == Buttings:GetQuick("OUTPOST_SHOP")  ) then
 			for o,outpost in pairs(Butt:AllOutposts()) do
 				Butt:CreateSideShop(outpost:GetAbsOrigin())
 			end
 		end
 
-		if ( "NORM" ~= BUTTINGS.BACKDOOR_PROTECTION ) then
+		if ( "NORM" ~= Buttings:GetQuick("BACKDOOR_PROTECTION")  ) then
 			for _, building in pairs(Butt:AllBuildings()) do
-				if ( "NONE" == BUTTINGS.BACKDOOR_PROTECTION ) then
+				if ( "NONE" == Buttings:GetQuick("BACKDOOR_PROTECTION")  ) then
 					building:RemoveAbility("backdoor_protection")
 					building:RemoveAbility("backdoor_protection_in_base")
 				end
 
-				if ( "IMBA" == BUTTINGS.BACKDOOR_PROTECTION ) then
+				if ( "IMBA" == Buttings:GetQuick("BACKDOOR_PROTECTION")  ) then
 					building:AddNewModifier(building, nil, "backdoor_protection_imba", {})
 				end
 			end
@@ -74,7 +123,7 @@ ListenToGameEvent("game_rules_state_change", function()
                 num = num + 1
             end
         end
-        if BUTTINGS.USE_BOTS == 1 then
+        if Buttings:GetQuick("USE_BOTS")  == 1 then
             if IsServer() == true and 10 - num > 0 then
                 for i=1, 5 - PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) do
                     Tutorial:AddBot(used_hero_name, "", "", true)
@@ -110,9 +159,9 @@ ListenToGameEvent("game_rules_state_change", function()
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_GAME_IN_PROGRESS) then
 		GameRules:SetTimeOfDay( 0.251 )
 		Timers:CreateTimer({
-			endTime = BUTTINGS.TIME_UNTIL_AGH_SHARD*60,
+			endTime = Buttings:GetQuick("TIME_UNTIL_AGH_SHARD") *60,
 			callback = function()
-				if (0 == BUTTINGS.FREE_AGH_SHARD) then
+				if (0 == Buttings:GetQuick("FREE_AGH_SHARD") ) then
 					for _,p in pairs(PlayerList:GetFirstPlayers()) do
 						local pID = p:GetPlayerID()
 
@@ -158,10 +207,10 @@ ListenToGameEvent("dota_player_pick_hero", function(keys)
 end, self)
 
 ListenToGameEvent("dota_player_killed",function(kv)
-	if (1==BUTTINGS.ALT_WINNING) then
+	if (1==Buttings:GetQuick("ALT_WINNING") ) then
 		-- local unit = PlayerResource:GetSelectedHeroEntity(kv.PlayerID)
 		for _,t in ipairs(TeamList:GetPlayableTeams()) do
-			if (PlayerResource:GetTeamKills(t)>=BUTTINGS.ALT_KILL_LIMIT) then
+			if (PlayerResource:GetTeamKills(t)>=Buttings:GetQuick("ALT_KILL_LIMIT") ) then
 				GameRules:SetGameWinner(t)
 			end
 		end
@@ -173,7 +222,7 @@ ListenToGameEvent("entity_killed", function(keys)
 	if killedUnit:IsRealHero() and not killedUnit:IsTempestDouble() and not killedUnit:IsReincarnating() then
 
 		-- tombstone
-		if (1==BUTTINGS.TOMBSTONE) then
+		if (1==Buttings:GetQuick("TOMBSTONE") ) then
 			local tombstoneItem = CreateItem("item_tombstone", killedUnit, killedUnit)
 			if (tombstoneItem) then
 				local tombstone = SpawnEntityFromTableSynchronous("dota_item_tombstone_drop", {})
