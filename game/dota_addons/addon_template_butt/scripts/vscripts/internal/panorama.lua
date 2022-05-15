@@ -29,9 +29,28 @@ ListenToGameEvent("addon_game_mode_spawn", function()
 	CustomNetTables:SetTableValue("butt_settings", "default", BUTTINGS)
 end, nil)
 
+function split (inputstr, sep)
+	if sep == nil then
+			sep = "%s"
+	end
+	local t={}
+	for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+			table.insert(t, str)
+	end
+	return t
+end
+
 local l0 = CustomGameEventManager:RegisterListener("butt_setting_changed", function(_,kv)
-	BUTTINGS[kv.setting] = kv.value
-	print(kv.setting,":",kv.value)
+	local t = split(kv.setting,"&")
+	local pointer = BUTTINGS;
+
+	for i = 1, #t - 1 do
+		pointer = pointer[t[i]]
+	end
+	local pre = pointer[t[#t]]
+	pointer[t[#t]] = kv.value
+
+	print(kv.setting,": from ",pre," to ",kv.value)
 end)
 
 local l1 =ListenToGameEvent("game_rules_state_change", function()
