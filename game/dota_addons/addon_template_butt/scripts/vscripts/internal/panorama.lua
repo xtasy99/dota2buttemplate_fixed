@@ -42,26 +42,13 @@ end
 
 local l0 = CustomGameEventManager:RegisterListener("butt_setting_changed", function(_,kv)
 	local t = split(kv.setting,"&")
-	local pre = -999;
-	if #t == 1 then
-		pre = BUTTINGS[t[1]]
-		BUTTINGS[t[1]] = kv.value
-	elseif #t == 2 then
-		pre = BUTTINGS[t[1]][t[2]]
-		BUTTINGS[t[1]][t[2]] = kv.value
-	elseif #t == 3 then
-		pre = BUTTINGS[t[1]][t[2]][t[3]]
-		BUTTINGS[t[1]][t[2]][t[3]] = kv.value
-	elseif #t == 4 then
-		pre = BUTTINGS[t[1]][t[2]][t[3]][t[4]]
-		BUTTINGS[t[1]][t[2]][t[3]][t[4]] = kv.value
-	elseif #t == 5 then
-		pre = BUTTINGS[t[1]][t[2]][t[3]][t[4]][t[5]]
-		BUTTINGS[t[1]][t[2]][t[3]][t[4]][t[5]] = kv.value
-	elseif #t == 6 then
-		pre = BUTTINGS[t[1]][t[2]][t[3]][t[4]][t[5]][t[6]]
-		BUTTINGS[t[1]][t[2]][t[3]][t[4]][t[5]][t[6]] = kv.value
+	local pointer = BUTTINGS;
+
+	for i = 1, #t - 1 do
+		pointer = pointer[t[i]]
 	end
+	local pre = pointer[t[#t]]
+	pointer[t[#t]] = kv.value
 
 	print(kv.setting,": from ",pre," to ",kv.value)
 end)
