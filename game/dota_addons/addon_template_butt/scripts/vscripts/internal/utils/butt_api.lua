@@ -284,7 +284,7 @@ function CDOTA_BaseNPC:RemoveItemByName( itemName )
 	end
 end
 
-function CDOTA_BaseNPC:FullySetTeam( player, hero, int_newTeam, b_includeSummons )
+function CDOTA_BaseNPC:FullySetTeam( playerID, hero, int_newTeam, b_includeSummons )
 
 	local oldTeam = hero:GetTeam()
 	local oldTeamMaxPlayers = GameRules:GetCustomGameTeamMaxPlayers(oldTeam)
@@ -293,12 +293,10 @@ function CDOTA_BaseNPC:FullySetTeam( player, hero, int_newTeam, b_includeSummons
 	GameRules:SetCustomGameTeamMaxPlayers( oldTeam, oldTeamMaxPlayers - 1 )
 	GameRules:SetCustomGameTeamMaxPlayers( int_newTeam, newTeamMaxPlayers + 1 )
 
-	player:SetTeam( int_newTeam )
-	PlayerResource:SetCustomTeamAssignment( player:GetPlayerID(), int_newTeam )
+	PlayerResource:SetCustomTeamAssignment( playerID, int_newTeam )
 	hero:SetTeam( int_newTeam )
-	hero:SetPlayerID( player:GetPlayerID() )
-	hero:SetOwner( player )
-	PlayerResource:UpdateTeamSlot( player:GetPlayerID(), int_newTeam, PlayerResource:GetPlayerCountForTeam( int_newTeam ) ) -- update top bar
+	hero:SetPlayerID( playerID )
+	PlayerResource:UpdateTeamSlot( playerID, int_newTeam, PlayerResource:GetPlayerCountForTeam( int_newTeam ) ) -- update top bar
 
 	if b_includeSummons then
 		local summons = hero:GetAdditionalOwnedUnits()
