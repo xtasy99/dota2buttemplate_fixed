@@ -40,4 +40,12 @@
 	"addon_game_mode_activate"
 	{
 	}
+	"slot_load"
+	{
+		"slot" "short"
+	}
+	"slot_save"
+	{
+		"slot" "short"
+	}
 }

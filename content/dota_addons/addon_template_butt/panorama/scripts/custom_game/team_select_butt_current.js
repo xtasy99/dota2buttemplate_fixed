@@ -1,7 +1,6 @@
 "use strict";
 
-let IsHost = Game.GetLocalPlayerInfo().player_has_host_privileges;
-let IsTools = Game.IsInToolsMode();
+let IsHost = false; //Game.GetLocalPlayerInfo().player_has_host_privileges;
 let hostLocked = false;
 let banning = false;
 let allPick = false;
@@ -13,48 +12,6 @@ var clean = false;
 var current_block = undefined;
 var lcol = 0;
 var setting_slots = {};
-var standard_mode = false;
-
-(function() {
-	standard_mode = ("standard" == Game.GetMapInfo().map_display_name);
-	if (standard_mode) {
-		$.GetContextPanel().FindChildInLayoutFile("BSaves").SetHasClass("hidden",true);
-
-	} else {
-		CustomNetTables.SubscribeNetTableListener("butt_settings", function(t,k,kv) {
-			if("slot_0"===k) {
-				if (kv.data!=undefined) {
-					setting_slots[0] = kv.data;
-					EnableSlotLoad(0);
-				} else {
-					var BSaves = $.GetContextPanel().FindChildInLayoutFile("BSaves");
-					var load_button = BSaves.FindChildTraverse("BSave"+ 0 +"_load");
-					load_button.enabled = false;
-				}
-			}
-			if("slot_1"===k) {
-				if (kv.data!=undefined) {
-					setting_slots[1] = kv.data;
-					EnableSlotLoad(1);
-				} else {
-					var BSaves = $.GetContextPanel().FindChildInLayoutFile("BSaves");
-					var load_button = BSaves.FindChildTraverse("BSave"+ 1 +"_load");
-					load_button.enabled = false;
-				}
-			}
-			if("slot_2"===k) {
-				if (kv.data!=undefined) {
-					setting_slots[2] = kv.data;
-					EnableSlotLoad(2);
-				} else {
-					var BSaves = $.GetContextPanel().FindChildInLayoutFile("BSaves");
-					var load_button = BSaves.FindChildTraverse("BSave"+ 2 +"_load");
-					load_button.enabled = false;
-				}
-			}
-		});
-	}
-})();
 
 function loadSettings(kv,secondTime) {
 	if (!clean) {
@@ -135,13 +92,6 @@ function generateCategory(odata,category_id) {
 		category_block.SetAttributeInt("order",data.ORDER);
 		category.SetAttributeInt("order",data.ORDER);
 	}
-	if (data.STANDARD == undefined || data.STANDARD != "1") {
-		if (standard_mode) {
-			category_block.SetHasClass("standard_disabled",true);
-			category_block.enabled=false;
-		}
-	}
-
 	/*
 	category_block.visible = false;
 	category.SetPanelEvent( 'onactivate', function () {
@@ -181,8 +131,6 @@ function generateSetting(data,category_block,category_id,setting_id) {
 			generateSetting_options(data,category_block,category_id,setting_id);
 		} else if (data.TYPE == "NUMBER") {
 			generateSetting_number(data,category_block,category_id,setting_id);
-		} else if (data.TYPE == "TEXT") {
-			generateSetting_text(data,category_block,category_id,setting_id);
 		}
 	} else {
 		generateSetting_number(data,category_block,category_id,setting_id);
@@ -253,7 +201,6 @@ function generateSetting_number(data,category_block,category_id,setting_id) {
 	setting.FindChildTraverse( "SettingValue" ).SetAttributeInt("decimal",data.DECIMAL);
 	if (undefined!==data.UNIT) {
 		setting.FindChildTraverse( "SettingValue" ).SetAttributeString("unit",data.UNIT);
-		setting.FindChildTraverse( "SettingValue" ).SetAttributeString("ttype","num");
 		setting.FindChildTraverse( "SettingValue" ).text = data.VALUE.toFixed(data.DECIMAL) + data.UNIT;
 	} else {
 		setting.FindChildTraverse( "SettingValue" ).text = data.VALUE.toFixed(data.DECIMAL);
@@ -270,8 +217,8 @@ function generateSetting_number(data,category_block,category_id,setting_id) {
 	setting.FindChildTraverse( "SettingValue" ).SetAttributeInt("min",data.MIN);
 	var path = [category_id,setting_id,"VALUE"];
 	linkPanel(path,setting,2);
+	
 }
-
 function generateSetting_boolean(data,category_block,category_id,setting_id) {
     var setting = $.CreatePanel('Panel', category_block, '');
 	if (undefined==data.ORDER)
@@ -295,39 +242,6 @@ function generateSetting_boolean(data,category_block,category_id,setting_id) {
 	setting.FindChildTraverse( "SettingValue" ).checked = data.VALUE;
 	var path = [category_id,setting_id,"VALUE"];
 	linkPanel(path,setting,1);
-}
-
-function generateSetting_text(data,category_block,category_id,setting_id) {
-    var setting = $.CreatePanel('Panel', category_block, '');
-	if (undefined==data.ORDER)
-		setting.SetAttributeInt("order",1000);
-	else
-		setting.SetAttributeInt("order",data.ORDER);
-    setting.BLoadLayoutSnippet("SettingNumber");
-	if ($.Localize("#Butting_" + category_id + "_Option_" + setting_id + "_Description") != "#Butting_" + category_id + "_Option_" + setting_id + "_Description") {
-		setting.SetPanelEvent( 'onmouseover', function () {
-			$.DispatchEvent("DOTAShowTextTooltip", setting, $.Localize("#Butting_" + category_id + "_Option_" + setting_id + "_Description"));
-		} ); 
-		setting.SetPanelEvent( 'onmouseout', function () {
-			$.DispatchEvent("DOTAHideTextTooltip", setting);
-		} );
-	}
-	if (undefined==data.NAME) {
-		setting.FindChildTraverse( "SettingNumberText" ).text = $.Localize("#Butting_" + category_id + "_Option_" + setting_id);
-	} else {
-		setting.FindChildTraverse( "SettingNumberText" ).text = data.NAME;
-	}
-	setting.FindChildTraverse( "SettingValue" ).SetAttributeString("ttype","text");
-	setting.FindChildTraverse( "SettingValue" ).text = data.VALUE
-	setting.FindChildTraverse( "SettingValue" ).SetPanelEvent( 'onfocus', function () {
-		if (!IsHost) {
-			return;
-		}
-		let panel = setting.FindChildTraverse( "SettingValue" );
-		panel.SetAcceptsFocus(true);
-	});
-	var path = [category_id,setting_id,"VALUE"];
-	linkPanel(path,setting,3);
 }
 
 function linkPanel(path,panel,optype) {
@@ -364,7 +278,6 @@ function linkPanel(path,panel,optype) {
 			if (isNaN(val)){
 				val = 0;
 			}
-			let ttype = panel.FindChildTraverse( "SettingValue" ).GetAttributeString("ttype","num");
 			let unit = panel.FindChildTraverse( "SettingValue" ).GetAttributeString("unit","");
 			let min = panel.FindChildTraverse( "SettingValue" ).GetAttributeInt("min",-99999);
 			let max = panel.FindChildTraverse( "SettingValue" ).GetAttributeInt("max",99999);
@@ -387,7 +300,6 @@ function linkPanel(path,panel,optype) {
 			if (isNaN(val)){
 				val = 0;
 			}
-			let ttype = panel.FindChildTraverse( "SettingValue" ).GetAttributeString("ttype","text");
 			let unit = panel.FindChildTraverse( "SettingValue" ).GetAttributeString("unit","");
 			let min = panel.FindChildTraverse( "SettingValue" ).GetAttributeInt("min",-99999);
 			let max = panel.FindChildTraverse( "SettingValue" ).GetAttributeInt("max",99999);
@@ -402,29 +314,6 @@ function linkPanel(path,panel,optype) {
 				GameEvents.SendCustomGameEventToServer( "butt_setting_changed", {setting: path_str , value: val });
 			}
 			panel.FindChildTraverse( "SettingValue" ).text = val.toFixed(panel.FindChildTraverse( "SettingValue" ).GetAttributeInt("decinal",0)) + unit;
-		} );
-	} else if (optype == 3) {
-		panel.FindChildTraverse( "SettingValue" ).SetPanelEvent( 'oninputsubmit', function () {
-			if (!IsHost) return;
-			let val = undefined;
-			val = panel.FindChildTraverse( "SettingValue" ).text;
-			if (undefined!==val) {
-				GameEvents.SendCustomGameEventToAllClients( "butt_setting_changed", {setting: path_str , value: val });
-				GameEvents.SendCustomGameEventToServer( "butt_setting_changed", {setting: path_str , value: val });
-			}
-			$.Msg(val);
-			panel.FindChildTraverse( "SettingValue" ).text = val;
-		} );
-		panel.FindChildTraverse( "SettingValue" ).SetPanelEvent( 'onblur', function () {
-			if (!IsHost) return;
-			let val = undefined;
-			val = panel.FindChildTraverse( "SettingValue" ).text;
-			if (undefined!==val) {
-				GameEvents.SendCustomGameEventToAllClients( "butt_setting_changed", {setting: path_str , value: val });
-				GameEvents.SendCustomGameEventToServer( "butt_setting_changed", {setting: path_str , value: val });
-			}
-			$.Msg(val);
-			panel.FindChildTraverse( "SettingValue" ).text = val;
 		} );
 	}
 }
@@ -483,11 +372,7 @@ function updatePanel(kv) {
 					valuePanel.checked = (val=="1");
 					break;
 				case ("TextEntry"===panelType):
-					if (valuePanel.GetAttributeString("ttype","num") == "text") {
-						valuePanel.text = val;
-					} else {
-						valuePanel.text = Number(val).toFixed(valuePanel.GetAttributeInt("decimal",0)) + valuePanel.GetAttributeString("unit","");
-					}
+					valuePanel.text = Number(val).toFixed(valuePanel.GetAttributeInt("decimal",0)) + valuePanel.GetAttributeString("unit","");
 					break;
 				default:
 					$.Msg("Well... something is f**ked.",panelType);
@@ -527,14 +412,6 @@ function sort_array(okv) {
 
 GameEvents.Subscribe( "butt_setting_changed", updatePanel );
 
-function EnableSlotLoad(slot) {
-	var BSaves = $.GetContextPanel().FindChildInLayoutFile("BSaves");
-	var load_button = BSaves.FindChildTraverse("BSave"+ slot +"_load");
-	load_button.enabled=true;
-	var load_box = BSaves.FindChildTraverse("BSave"+ slot);
-	load_box.SetHasClass("b_enabled",true)
-}
-
 function LoadSlot(slot) {
 	if (!IsHost) {
 		return;
@@ -551,4 +428,43 @@ function SaveSlot(slot) {
 	}
 	$.Msg("saveslot",slot);
 	GameEvents.SendCustomGameEventToServer( "slot_save", {slot: slot });
+}
+
+
+function CreateToggleButton() {
+    var button_bar = FindDotaHudElement("ButtonBar");
+    var existing_button = button_bar.FindChildTraverse("SettingsOpenButton");
+    if (existing_button) {
+        existing_button.DeleteAsync(0);
+    }
+	if (button_bar == undefined) {
+		$.Msg("ButtonBar not found")
+		return;
+	}
+    var panel = $.CreatePanel('Button', $.GetContextPanel(), "SettingsOpenButton" );
+    panel.BLoadLayoutSnippet("SettingsOpenButton");
+    panel.SetPanelEvent( 'onactivate', function () {
+		$.GetContextPanel().ToggleClass("hidden");
+    });
+	panel.SetParent(button_bar);
+}
+
+(function init() {
+    CreateToggleButton();
+})();
+
+
+function GetDotaHud() {
+    var panel = $.GetContextPanel();
+    while (panel && panel.id !== 'Hud') {
+        panel = panel.GetParent();
+	}
+
+    if (!panel) {
+        throw new Error('Could not find Hud root from panel with id: ' + $.GetContextPanel().id);
+	}
+	return panel;
+}
+function FindDotaHudElement(id) {
+	return GetDotaHud().FindChildTraverse(id);
 }

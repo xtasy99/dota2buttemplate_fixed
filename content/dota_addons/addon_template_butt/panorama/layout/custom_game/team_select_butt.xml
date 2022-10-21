@@ -1,52 +1,67 @@
+
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/dotastyles.vcss_c"/>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/custom_game/team_select_butt.css" />
 	</styles>
-    <scripts>
-        <include src="file://{resources}/scripts/custom_game/team_select_butt.js" />
-    </scripts>
-
-
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/team_select_butt.js" />
+	</scripts>
 	<snippets>
 		<snippet name="SettingCategory">
-			<Panel class="SettingCategory"> 
-				<Label id="SettingCategoryText" text="category_name" />
+			<Panel class="SettingCategory">
+				<Label id="SettingCategoryText" text="category_name" hittest="true" />
 			</Panel>
 		</snippet>
 		<snippet name="SettingCategoryBlock">
 			<Panel class="SettingCategoryBlock">
-			<Panel id="SettingCategoryBlock_Tittle"><Label id="SettingCategoryBlock_TittleText" text="category_name" /></Panel>
+				<Panel id="SettingCategoryBlock_Tittle">
+					<Label id="SettingCategoryBlock_TittleText" text="category_name" />
+				</Panel>
 			</Panel>
 		</snippet>
 		<snippet name="SettingNumber">
-			<Panel class="SettingNumber SettingShared"> 
-				<TextEntry class="SettingNumberBox" id="SettingValue"/>
-				<Label text="input_label" id="SettingNumberText"/>
+			<Panel class="SettingNumber SettingShared">
+				<TextEntry class="SettingNumberBox" id="SettingValue" />
+				<Label text="input_label" id="SettingNumberText" />
 			</Panel>
 		</snippet>
 		<snippet name="SettingBoolean">
 			<Panel class="SettingBoolean SettingShared">
-				<ToggleButton id="SettingValue" text="input_label"/>
+				<ToggleButton id="SettingValue" text="input_label" />
 			</Panel>
 		</snippet>
 		<snippet name="SettingOptions">
 			<Panel class="SettingOption SettingShared">
-				<DropDown id="SettingValue">
-				</DropDown>
+				<DropDown id="SettingValue" />
 			</Panel>
 		</snippet>
 	</snippets>
-
 	<Panel hittest="false" class="SettingsMain">
-		<Label id="GAME_TITLE" class="GameTitle" text="#addon_game_name"/>
+		<Label id="GAME_TITLE" class="GameTitle" text="#addon_game_name" />
 		<Panel id="ButtingsSplit">
-			<Panel id="BCategories">
-			</Panel>
+			<Panel id="BCategories" />
 			<Panel id="BSettings">
-				<Panel id="BSettingsColumn1">
+				<Panel id="BSettingsColumn1" />
+				<Panel id="BSettingsColumn2" />
+			</Panel>
+			<Panel id="BSaves">
+				<Panel id="BSave0" class="BSave">
+					<Button id="BSave0_load" class="BSave_load" onactivate="LoadSlot(0)" enabled="false">
+						<Label class="slot_text" text="Last Game" />
+					</Button>
 				</Panel>
-				<Panel id="BSettingsColumn2">
+				<Panel id="BSave1" class="BSave">
+					<Button id="BSave1_load" class="BSave_load" onactivate="LoadSlot(1)" enabled="false">
+						<Label class="slot_text" text="Slot 1" />
+					</Button>
+					<Button id="BSave1_save" class="BSave_save" onactivate="SaveSlot(1)" />
+				</Panel>
+				<Panel id="BSave2" class="BSave">
+					<Button id="BSave2_load" class="BSave_load" onactivate="LoadSlot(2)" enabled="false">
+						<Label class="slot_text" text="Slot 2" />
+					</Button>
+					<Button id="BSave2_save" class="BSave_save" onactivate="SaveSlot(2)" />
 				</Panel>
 			</Panel>
 		</Panel>

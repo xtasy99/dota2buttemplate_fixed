@@ -26,7 +26,7 @@ local TABLE_NAMES = {
 
 
 ListenToGameEvent("addon_game_mode_spawn", function()
-	CustomNetTables:SetTableValue("butt_settings", "default", BUTTINGS)
+	CustomNetTables:SetTableValue("butt_settings", "updated", BUTTINGS)
 end, nil)
 
 function split (inputstr, sep)
@@ -40,6 +40,7 @@ function split (inputstr, sep)
 	return t
 end
 
+
 local l0 = CustomGameEventManager:RegisterListener("butt_setting_changed", function(_,kv)
 	local t = split(kv.setting,"&")
 	local pointer = BUTTINGS;
@@ -50,24 +51,15 @@ local l0 = CustomGameEventManager:RegisterListener("butt_setting_changed", funct
 	local pre = pointer[t[#t]]
 	pointer[t[#t]] = kv.value
 
+	CustomNetTables:SetTableValue("butt_settings", "updated", BUTTINGS)
 	print(kv.setting,": from ",pre," to ",kv.value)
 end)
 
 local l1 =ListenToGameEvent("game_rules_state_change", function()
 	if (GameRules:State_Get()==DOTA_GAMERULES_STATE_HERO_SELECTION) then
-		CustomNetTables:SetTableValue("butt_settings", "locked", BUTTINGS)
+		CustomNetTables:SetTableValue("butt_settings", "updated", BUTTINGS)
 	end
 end, nil)
-
-local l2 = CustomGameEventManager:RegisterListener("butt_on_clicked", function(_,kv)
-	local name = kv.button
-	if ("RESET"==name) then
-		-- BUTTINGS = table.copy(BUTTINGS_DEFAULT)
-		for k,v in pairs(BUTTINGS_DEFAULT) do
-			CustomGameEventManager:Send_ServerToAllClients("butt_setting_changed", {setting = k, value = v})
-		end
-	end
-end)
 
 if IsInToolsMode() then -- Item Editor
 	local kvs = {}
