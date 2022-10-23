@@ -165,11 +165,16 @@
     text-align: center;
 }
 
+.SettingsOpenButton{
+    background-image: url("file://{resources}/images/custom_game/settings_button.png");
+       background-size: 26px;
+   }
 .hidden{
-    visibility: collapse;
-       width: 0px;
-       height: 0px;
+visibility: collapse;
+    width: 0px;
+    height: 0px;
 }
+
 
 #BSaves{
 flow-children: down;
@@ -182,7 +187,7 @@ background-color: gradient(
     0% 0%,
     0% 100%,
     from(#000000),
-    to(#222222)
+    to(#505050)
 );
 padding: 3px;
 border-radius: 4px;
@@ -196,40 +201,18 @@ padding: 3px;
         linear,
         0% 0%,
         0% 100%,
-        from(#979797),
-        to(#616161)
+        from(#000000),
+        to(#505050)
     );
-}
-.b_enabled:hover{
-    background-color: gradient(
-        linear,
-        0% 0%,
-        0% 100%,
-        from(#b6b6b6),
-        to(#757575)
-    );
-}
-
-.slot_text {
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 1px rgb(0, 0, 0);
 }
 
 
 .BSave_save{
 background-image: url("file://{resources}/images/custom_game/save_icon.png");
-    background-size: 22px;
-	background-position: center;
-	background-repeat: no-repeat;
+    background-size: 26px;
 width: 26px;
 height: 26px;
 background-color: gradient( linear, 0% 0%, 0% 100%, from( #296317 ), to( #2a5c1e ) );
 margin: 3px;
-padding: 2px;
 border-radius: 4px;
-}
-
-.BSave_save:hover{
-background-color: gradient( linear, 0% 0%, 0% 100%, from( #296317 ), to( #578d4a ) );
-background-size: 24px;
 }

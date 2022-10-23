@@ -1,0 +1,52 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/team_select_butt_current.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/team_select_butt_current.js" />
+	</scripts>
+	<snippets>
+		<snippet name="SettingsOpenButton">
+			<Button class="SettingsOpenButton" />
+		</snippet>
+		<snippet name="SettingCategory">
+			<Panel class="SettingCategory">
+				<Label id="SettingCategoryText" text="category_name" hittest="true" />
+			</Panel>
+		</snippet>
+		<snippet name="SettingCategoryBlock">
+			<Panel class="SettingCategoryBlock">
+				<Panel id="SettingCategoryBlock_Tittle">
+					<Label id="SettingCategoryBlock_TittleText" text="category_name" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="SettingNumber">
+			<Panel class="SettingNumber SettingShared">
+				<TextEntry class="SettingNumberBox" id="SettingValue" />
+				<Label text="input_label" id="SettingNumberText" />
+			</Panel>
+		</snippet>
+		<snippet name="SettingBoolean">
+			<Panel class="SettingBoolean SettingShared">
+				<ToggleButton id="SettingValue" text="input_label" />
+			</Panel>
+		</snippet>
+		<snippet name="SettingOptions">
+			<Panel class="SettingOption SettingShared">
+				<DropDown id="SettingValue" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="SettingsMain hidden">
+		<Panel id="ButtingsSplit">
+			<Panel id="BCategories" />
+			<Panel id="BSettings">
+				<Panel id="BSettingsColumn1" />
+				<Panel id="BSettingsColumn2" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>
