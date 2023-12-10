@@ -150,6 +150,11 @@
 		"ModelScale"				"1"
 		"MovementSpeed"				"325"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_companion.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_companion.vpcf"
 	}
 
 	
@@ -3843,9 +3848,6 @@
 		}
 	}	
 
-//=================================================================================
-// Creeps: Watch Tower
-//=================================================================================
 	"npc_dota_mango_tree"
 	{
 		// General
@@ -3932,9 +3934,7 @@
 
 		
 	}	
-//=================================================================================
-// Creeps: Watch Tower
-//=================================================================================
+
 	"npc_dota_teleporters"
 	{
 		// General
@@ -6936,6 +6936,12 @@
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"ImmuneToOmnislash"			"1"
+
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_elder_titan.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_elder_titan.vpcf"
 	}
 
 
@@ -10912,11 +10918,11 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"0"			// Damage range min.
 		"AttackDamageMax"			"0"			// Damage range max.
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageType"			"DAMAGE_TYPE_Pure"
 		"AttackRate"				"0.22"		// Speed of attack.
 		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
-		"AttackRange"				"700"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
@@ -11030,6 +11036,12 @@
 
 		//Inventory
 		"HasInventory"				"0"
+
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_shadow_shaman.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_shadow_shaman.vpcf"
 	}
 
 	"npc_dota_shadow_shaman_ward_2"
@@ -11128,6 +11140,12 @@
 
 		//Inventory
 		"HasInventory"				"0"
+
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
 	}
 	
 	"npc_dota_venomancer_plague_ward_2"
@@ -11203,6 +11221,11 @@
 		"SelectionGroup"			"Eidolons"
 		"UnitLabel"			"eidolons"
 		"wearable"				"8638"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_enigma_eidolon.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_enigma_eidolon.vpcf"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -11237,8 +11260,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"10"		// Experience earn.
-		"BountyGoldMin"				"18"		// Gold earned min.
-		"BountyGoldMax"				"24"		// Gold earned max.
+		"BountyGoldMin"				"14"		// Gold earned min.
+		"BountyGoldMax"				"20"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -11405,6 +11428,12 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"500"		// Range of vision during day light.
 		"VisionNighttimeRange"		"500"		// Range of vision at night time.
+	
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_furion_treant.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_furion_treant.vpcf"
 	}
 
 	"npc_dota_furion_treant_large"
@@ -11482,6 +11511,12 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"500"		// Range of vision during day light.
 		"VisionNighttimeRange"		"500"		// Range of vision at night time.
+		
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_furion_treant.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_furion_treant.vpcf"
 	}
 
 	"npc_dota_furion_hedgerow"
@@ -11626,6 +11661,12 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_invoker_forge_spirit.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_invoker_forge_spirit.vpcf"
 	}
 
 	"npc_dota_broodmother_spiderling"
@@ -11667,7 +11708,7 @@
 		"AttackDamageMin"			"13"		// Damage range min.
 		"AttackDamageMax"			"15"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -11707,6 +11748,12 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"400"		// Range of vision at night time.
+		
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_broodmother_spiderling.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_broodmother_spiderling.vpcf"
 	}
 
 	"npc_dota_broodmother_spiderite"
@@ -11748,7 +11795,7 @@
 		"AttackDamageMin"			"9"		// Damage range min.
 		"AttackDamageMax"			"10"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -11891,14 +11938,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"3"			// Physical protection.
 		"MagicalResistance"				"50"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"32"		// Damage range min.
-		"AttackDamageMax"			"37"		// Damage range max.
+		"AttackDamageMin"			"29"		// Damage range min.
+		"AttackDamageMax"			"34"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.56"		// Normalized time in animation cycle to attack.
@@ -11940,6 +11987,12 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"800"		// Range of vision during day light.
 		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_skeleton_king.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_skeleton_king.vpcf"
 	}
 	
 
@@ -11953,6 +12006,11 @@
 		"Level"						"1"
 		"ModelScale"				"1.1"
 		"wearable"				"669"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_clinkz_skeleton_archer.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_clinkz_skeleton_archer.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -12245,7 +12303,14 @@
 		"Level"						"30"
 		"IsAncient"					"1"
 		"CanBeDominated"			"0"
-		
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/neutral_fx/miniboss_10th_anniversary_loadout.vpcf"		"loadout"
+			}
+		}
+
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"miniboss_unyielding_shield"	// Ability 1.
@@ -12544,8 +12609,13 @@
 		"SoundSet"					"n_creep_Melee"
 		"Level"						"2"
 		"ModelScale" 					".60"
-		"IsNeutralUnitType"			"1"
+		"IsSummoned"				"1"
 		"ScaleSet"					"ScaleSet_imp"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -12617,8 +12687,13 @@
 		"SoundSet"					"n_creep_Melee"
 		"Level"						"1"
 		"ModelScale" 					".40"
-		"IsNeutralUnitType"			"1"
+		"IsSummoned"				"1"
 		"ScaleSet"					"ScaleSet_imp"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -12634,13 +12709,13 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"17"		// Damage range min.
-		"AttackDamageMax"			"18"		// Damage range max.	
+		"AttackDamageMin"			"10"		// Damage range min.
+		"AttackDamageMax"			"11"		// Damage range max.	
 		"AttackRate"				"2"		// Speed of attack.
 		"BaseAttackSpeed"			"200"
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
+		"AttackRange"				"80"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
 
@@ -12648,6 +12723,7 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"40"
 		"HealthBarOffset"			"150"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -12658,12 +12734,12 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"350"		// Speed.
+		"MovementSpeed"				"300"		// Speed.
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"300"		// Base health.
+		"StatusHealth"				"30"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -12697,6 +12773,11 @@
 		"ConsideredHero"			"1"
 		"UnitLabel"					"golem"
 		"wearable"					"8362"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_warlock_golem.vpcf"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -12761,131 +12842,7 @@
 
 	//=================================================================================
 	// Beastmaster Units
-	//=================================================================================
-	
-	// Legacy
-	"npc_dota_scout_hawk"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/beastmaster/beastmaster_bird.vmdl"	// Model.
-		"BaseClass"					"npc_dota_beastmaster_hawk"
-		"SoundSet"					"0"			// Name of sound set.
-		"Level"						"2"
-		"ModelScale"				"1.1"
-		"IsSummoned"				"1"
-		"UnitLabel"					"hawk"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"			// Physical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"165"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"20"		// Experience earn.
-		"BountyGoldMin"				"30"		// Gold earned min.
-		"BountyGoldMax"				"30"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"270"		// Speed.
-		"MovementTurnRate"			"0.6"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"50"		// Base health.
-		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"500"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"WakesNeutrals"				"0"
-	}	
-
-	// Legacy
-	"npc_dota_greater_hawk"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/beastmaster/beastmaster_bird.vmdl"	// Model.
-		"BaseClass"					"npc_dota_beastmaster_hawk"
-		"SoundSet"					"0"			// Name of sound set.
-		"Level"						"6"
-		"ModelScale"				"1.2"
-		"IsSummoned"				"1"
-		"UnitLabel"					"hawk"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"beastmaster_hawk_invisibility"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"165"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"77"		// Experience earn.
-		"BountyGoldMin"				"65"		// Gold earned min.
-		"BountyGoldMax"				"65"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"400"		// Speed.
-		"MovementTurnRate"			"0.6"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"100"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1600"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"WakesNeutrals"				"0"
-	}	
+	//=================================================================================	
 	"npc_dota_beastmaster_hawk"
 	{										
 		// General
@@ -12926,7 +12883,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"300"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
 
@@ -12943,195 +12900,15 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		
 		"WakesNeutrals"				"0"
-	}	
 
-	"npc_dota_beastmaster_hawk_2"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/beastmaster/beastmaster_bird.vmdl"	// Model.
-		"BaseClass"					"npc_dota_beastmaster_hawk"
-		"SoundSet"					"0"			// Name of sound set.
-		"Level"						"1"
-		"ModelScale"				"1.2"
-		"IsSummoned"				"1"
-		"UnitLabel"					"hawk"
-		"IgnoreAddSummonedToSelection" "0"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"beastmaster_hawk_dive"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"165"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"77"		// Experience earn.
-		"BountyGoldMin"				"40"		// Gold earned min.
-		"BountyGoldMax"				"40"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"340"		// Speed.
-		"MovementTurnRate"			"0.6"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"WakesNeutrals"				"0"
-	}	
-
-	"npc_dota_beastmaster_hawk_3"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/beastmaster/beastmaster_bird.vmdl"	// Model.
-		"BaseClass"					"npc_dota_beastmaster_hawk"
-		"SoundSet"					"0"			// Name of sound set.
-		"Level"						"1"
-		"ModelScale"				"1.2"
-		"IsSummoned"				"1"
-		"UnitLabel"					"hawk"
-		"IgnoreAddSummonedToSelection" "0"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"beastmaster_hawk_dive"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"165"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"77"		// Experience earn.
-		"BountyGoldMin"				"50"		// Gold earned min.
-		"BountyGoldMax"				"50"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"380"		// Speed.
-		"MovementTurnRate"			"0.6"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"250"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"850"		// Range of vision during day light.
-		"VisionNighttimeRange"		"850"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"WakesNeutrals"				"0"
-	}	
-
-	"npc_dota_beastmaster_hawk_4"
-	{										
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models/heroes/beastmaster/beastmaster_bird.vmdl"	// Model.
-		"BaseClass"					"npc_dota_beastmaster_hawk"
-		"SoundSet"					"0"			// Name of sound set.
-		"Level"						"1"
-		"ModelScale"				"1.2"
-		"IsSummoned"				"1"
-		"UnitLabel"					"hawk"
-		"IgnoreAddSummonedToSelection" "0"
-
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"beastmaster_hawk_dive"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"HealthBarOffset"			"165"
-
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"77"		// Experience earn.
-		"BountyGoldMin"				"60"		// Gold earned min.
-		"BountyGoldMax"				"60"		// Gold earned max.
-
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"420"		// Speed.
-		"MovementTurnRate"			"0.6"		// Turning rate.
-
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"300"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"900"		// Range of vision during day light.
-		"VisionNighttimeRange"		"900"		// Range of vision at night time.
-
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		"WakesNeutrals"				"0"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_axe.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_axe.vpcf"
 	}	
 
 	"npc_dota_beastmaster_boar"
@@ -13199,6 +12976,12 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_axe.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_axe.vpcf"
 	}	
 
 	//=================================================================================
@@ -13220,6 +13003,11 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_earth"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -13352,6 +13140,11 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_storm"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -13484,6 +13277,11 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_fire"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -13610,6 +13408,11 @@
 		"ConsideredHero"			"1"
 		"IgnoreAddSummonedToSelection" "1"
 		"UnitLabel"					"brewmaster_void"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_brewmaster.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -13740,6 +13543,11 @@
 		"IsAncient"					"1"
 		"IsOther"					"1"
 		"wearable"				"8630"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_tombstone.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_tombstone.vpcf"
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -13793,8 +13601,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	"npc_dota_unit_tombstone2"
@@ -13863,8 +13671,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	"npc_dota_unit_tombstone3"
@@ -13933,8 +13741,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 	"npc_dota_unit_tombstone4"
@@ -14003,8 +13811,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1200"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1200"		// Range of vision at night time.
 	}
 
 
@@ -14019,6 +13827,11 @@
 		"Level"						"1"
 		"CanBeDominated"			"0"
 		"wearable"				"8630"
+		"precache"
+		{
+		"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -14096,6 +13909,12 @@
 		"Level"						"1"
 		"CanBeDominated"			"0"
 		"wearable"				"8630"
+		"precache"
+		{
+		"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_undying_zombie.vpcf"
+
 				
 		// Abilities
 		//----------------------------------------------------------------
@@ -15222,6 +15041,11 @@
 		"ModelScale" 					"0.9"
 		"UnitLabel"			"lycan_wolf"
   		"UseNeutralCreepBehavior"	"0"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lycan_wolf.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lycan_wolf.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -15420,6 +15244,11 @@
 		"ModelScale" 				".65"
 		"ConsideredHero"			"1"
 		"UnitLabel"			"spirit_bear"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lone_druid_bear.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lone_druid_bear.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -15427,10 +15256,11 @@
 		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
 		"Ability3"					"lone_druid_savage_roar_bear"			// Ability 3
 		"Ability4"					"lone_druid_spirit_bear_entangle"			// Ability 4
+		"Ability5"					"lone_druid_spirit_bear_fetch"
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"3"			// Physical protection.
+		"ArmorPhysical"				"0"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -15443,6 +15273,7 @@
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -15480,14 +15311,12 @@
 
 		//Inventory
 		"HasInventory"				"1"
-		
 	}	
 	"npc_dota_lone_druid_bear2"
 	{		
 		"include_keys_from" "npc_dota_lone_druid_bear1"
 
 		"ModelScale" 					".72"
-		"ArmorPhysical"				"4"			// Physical protection.
 		"AttackRate"				"1.65"		// Speed of attack.
 
 		"MovementSpeed"				"360"		// Speed.
@@ -15506,7 +15335,6 @@
 		"include_keys_from" "npc_dota_lone_druid_bear1"
 		
 		"ModelScale" 					".78"
-		"ArmorPhysical"				"5"			// Physical protection.
 		"AttackRate"				"1.55"		// Speed of attack.
 		"MovementSpeed"				"380"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
@@ -15523,7 +15351,6 @@
 		"include_keys_from" "npc_dota_lone_druid_bear1"
 						
 		"ModelScale" 					".85"
-		"ArmorPhysical"				"6"			// Physical protection.
 		"AttackRate"				"1.45"		// Speed of attack.
 		"MovementSpeed"				"400"		// Speed.
 		"MovementTurnRate"			"0.6"		// Turning rate.
@@ -15551,6 +15378,11 @@
 		"AutoAttacksByDefault"		"0"
 		"ConsideredHero"			"1"
  		"wearable"					"600"
+		"precache"
+		{
+		"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_visage_familiar.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_visage_familiar.vpcf"
 
 				
 		// Abilities
@@ -17903,6 +17735,11 @@
 		"Level"						"0"
 		"ModelScale"				"1"
 		"wearable"					"630"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_phoenix_sun.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_phoenix_sun.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -18202,6 +18039,11 @@
 		"SelectionGroup"			"Techies_LandMines"
 		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
  		"wearable"				"8644"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_techies_land_mine.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_techies_land_mine.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -18476,6 +18318,11 @@
 		"ModelScale" 				"1.0"
 		"SelectionGroup"			"Techies_minefield_sign"
   		"wearable"				"8646"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_techies_land_mine.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_techies_land_mine.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -19316,6 +19163,11 @@
 		"SoundSet"					"0"
 		"Level"						"2"
 		"ModelScale"				"1.3"
+		"precache"
+		{
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_grimstroke_ink_creature.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_grimstroke_ink_creature.vpcf"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -21286,5 +21138,73 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+	"npc_dota_unit_tidehunter_anchor"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_unit_tidehunter_anchor"
+		"Model"						"particles/models/heroes/tidehunter/tidehunter_chain_model.vmdl"	// Model.
+		"SoundSet"					"Undying_Tombstone"					// Name of sound set.
+		"ModelScale"				"1"
+		"Level"						"4"
+		"IsSummoned"				"1"
+		"IsAncient"					"1"
+		"IsOther"					"1"
+				
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
+		"Ability2"					""			// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"				"33"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"50"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"250"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"		// Speed
+		"MovementTurnRate"			"1.0"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"32"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"0"		// Range of vision during day light.
+		"VisionNighttimeRange"		"0"		// Range of vision at night time.
 	}
 }
