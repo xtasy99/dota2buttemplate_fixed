@@ -58,3 +58,42 @@ function GetDotaHud() {
 function FindDotaHudElement(id) {
 	return GetDotaHud().FindChildTraverse(id);
 }
+
+
+// Credits: EarthSalamander #42
+// Hide vanilla pick screen in loading screen
+HidePickScreen();
+
+function HidePickScreen() {
+	if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP)) {
+		FindDotaHudElement("PreGame").style.opacity = "0";
+		$.Schedule(1.0, HidePickScreen)
+	}
+	else {
+		FindDotaHudElement("PreGame").style.opacity = "1";
+	}
+}
+
+function FixShopToolsUI(){
+	if (!Game.GameStateIsAfter(DOTA_GameState.DOTA_GAMERULES_STATE_STRATEGY_TIME)) {
+		$.Schedule(1.0, FixShopToolsUI)
+	}
+	else {
+		FindDotaHudElement("GridNewShopTab").style.width = "0px";
+		FindDotaHudElement("NewPlayerShopConsumables").style.height = "0px";
+	}
+}
+FixShopToolsUI();
+
+GameEvents.Subscribe('dota_hud_error_message_player', (data)=>{
+	GameEvents.SendEventClientSide("dota_hud_error_message", {
+		splitscreenplayer: 0,
+		reason: 80,
+		message: data.message});
+});
+
+// Fixes the top bar scores
+GameEvents.Subscribe('scoreboard_fix', (data)=>{
+	FindDotaHudElement("TopBarRadiantScore").text = data.radiantKills;
+	FindDotaHudElement("TopBarDireScore").text = data.direKills;
+});
