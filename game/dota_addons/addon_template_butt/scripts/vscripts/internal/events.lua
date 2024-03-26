@@ -40,9 +40,10 @@ ListenToGameEvent("game_rules_state_change", function()
 			local attribute_heroes = {
 				{},		-- strength_heroes
 				{},		-- agility_heroes
-				{}		-- intelligence_heroes
+				{},		-- intelligence_heroes
+				{}		-- universal_heroes
 			}
-			local file = LoadKeyValues('scripts/npc/herolist.txt')
+			local file = LoadKeyValues('scripts/npc/activelist.txt')
 			local hero_definitions = LoadKeyValues('scripts/npc/npc_heroes.txt')
 			if file == nil or not next(file) then
 				print("empty whitelist")
@@ -53,8 +54,10 @@ ListenToGameEvent("game_rules_state_change", function()
 						table.insert(attribute_heroes[1], hero_name)
 					elseif hero_attribute == "DOTA_ATTRIBUTE_AGILITY" then
 						table.insert(attribute_heroes[2], hero_name)
-					else
+					elseif hero_attribute == "DOTA_ATTRIBUTE_INTELLECT" then
 						table.insert(attribute_heroes[3], hero_name)
+					else
+						table.insert(attribute_heroes[4], hero_name)
 					end
 				end
 
@@ -62,7 +65,7 @@ ListenToGameEvent("game_rules_state_change", function()
 				GameRules:GetGameModeEntity():SetPlayerHeroAvailabilityFiltered( true )
 				for p=0,DOTA_MAX_PLAYERS do
 					if PlayerResource:IsValidPlayer(p) then
-						for i=1,3 do
+						for i=1,4 do
 							local hero_index = get_random_key(attribute_heroes[i])
 							local nHeroID = DOTAGameManager:GetHeroIDByName( attribute_heroes[i][hero_index] )
 							GameRules:AddHeroToPlayerAvailability( p, nHeroID )
