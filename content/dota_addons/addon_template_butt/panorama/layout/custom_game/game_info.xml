@@ -2,12 +2,6 @@
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 	</styles>
-	<script>
-		$.GetContextPanel().GetParent().GetParent().GetParent().GetParent().FindChildTraverse("GameInfoButton").visible=false;
-	//	$.GetContextPanel().GetParent().SetAttributeString("style","width: 100px;");
-	//	$.Msg($.GetContextPanel().GetParent().style);
-	//	$.GetContextPanel().GetParent().ApplyStyles(true);
-	</script>
 	<Panel hittest="false" style="width: 300%;">
 		<Panel id="InfoButtonLalala" style="width: 300%;" hittest="false"/>
 	</Panel>
