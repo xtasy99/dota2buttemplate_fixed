@@ -1,5 +1,8 @@
 "AddonInfo"
 {
-	"EnablePickRules"                 "1"
-	"maps"                            "dota_fixed"
+	"EnablePickRules"		"1"
+	"IsPlayable"			"1"
+	"HeroGuidesSupported"		"1"
+	"ForceDefaultGuide"		"0"
+	"maps"				"dota_fixed"
 }
