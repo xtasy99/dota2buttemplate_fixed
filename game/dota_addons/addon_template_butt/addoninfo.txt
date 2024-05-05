@@ -4,5 +4,5 @@
 	"IsPlayable"			"1"
 	"HeroGuidesSupported"		"1"
 	"ForceDefaultGuide"		"0"
-	"maps"				"dota_fixed"
+	"maps"				"dota"
 }
