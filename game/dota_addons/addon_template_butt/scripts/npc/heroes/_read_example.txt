@@ -1,0 +1,2 @@
+You can find the hero abilities KVs file on the folder "_base". 
+Make a copy of any KV file and paste in the folder "heroes" to customize the KVs.
