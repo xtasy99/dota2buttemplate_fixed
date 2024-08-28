@@ -1,4 +1,3 @@
-// Abilities for tinker
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -26,11 +25,11 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"20"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"
+		"AbilityManaCost"				"80 95 110 125"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,17 +37,26 @@
 		{
 			"damage_absorb"
 			{
-				"value"							"100 180 240 320"
+				"value"							"80 160 240 320"
 				"special_bonus_unique_tinker_7"	"+125"
 			}
-			"status_resistance"		"10 20 30 40"
+			"status_resistance"
+			{
+				"value"															"10 20 30 40"
+				"special_bonus_unique_tinker_defense_matrix_status_resistance"	"+10"
+			}
 			"barrier_duration"		"15"
 			"cooldown_reduction"
 			{
 				"value"						"0"
-				"special_bonus_unique_tinker_defense_matrix_cdr"		"+25"
 			}
 
+			"flicker_range"
+			{
+				"value"											"0"
+				"special_bonus_facet_tinker_translocator"	"+350"
+			}
+			"flicker_angle"							"90"
 		}
 	}
 
@@ -59,20 +67,22 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+
+		// NOTE: AbilityBehavior is defined in code
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"LinkedAbility"					"tinker_rearm"
-		"AbilityDraftPreAbility"		"tinker_rearm"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"						"3"
+		"DependentOnAbility"			"tinker_rearm"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCooldown"				"80.0"
-		"AbilityChannelTime"			"4.5 4.0 3.5"
 		"AbilityCastPoint"				"0.0"
 		
 		// Item Info
@@ -90,14 +100,91 @@
 				"value"						"200"
 				"affected_by_aoe_increase"	"1"
 			}
+			"AbilityChannelTime"
+			{
+				"value"							"3.0"
+				"special_bonus_unique_tinker_5" "-0.5"
+			}
 			"channel_time_tooltip"
 			{
-				"value"							"4.5 4.0 3.5"
-				"LinkedSpecialBonus"			"special_bonus_unique_tinker_5"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+				"value"							"3.0"
+				"special_bonus_unique_tinker_5" "-0.5"
+			}
+			"additional_starting_cooldown"		"20.0"	// set this to the same value as the additional CD in GrantFreeTPScrolls
+			"creep_teleport_level"				"2"
+			"hero_teleport_level"				"3"
+
+			"outpost_channel_time"			// TELEPORT_OUTPOST_CHANNEL_TIME
+			{
+				"value"							"6.0"
+				"special_bonus_unique_tinker_5" "-0.5"
+			}
+			"jungle_outpost_channel_time"		// TELEPORT_JUNGLE_OUTPOST_CHANNEL_TIME
+			{
+				"value"							"4.0"
+				"special_bonus_unique_tinker_5" "-0.5"
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Tinker Innate: Item CDR
+	//=================================================================================================================
+	"tinker_eureka"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"int_per_one_cdr"				"3"
+			"one_percent_tooltip"			"1"
+			"max_cdr"						"60"
+
+			"item_cooldown_tooltip"
+			{
+				"dynamic_value"				"true"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Tinker: Innate Keen Teleport - Gold on Death (instead of TP)
+	//=================================================================================================================
+	"tinker_innate_keen_teleport_gold_on_death"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"gold_on_death"			"50"
+		}
+	}
+
+	//=================================================================================================================
+	// Tinker: Innate Keen Teleport - XP on Death (instead of TP)
+	//=================================================================================================================
+	"tinker_innate_keen_teleport_xp_on_death"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"xp_on_death"			"50"
+		}
+	}	
 
 	//=================================================================================================================
 	// Tinker: Laser
@@ -118,17 +205,17 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22 20 18 16"
+		"AbilityCooldown"				"19 18 17 16"
 
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"95 110 125 140"
+		"AbilityManaCost"				"95 105 115 125"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -139,29 +226,25 @@
 		"AbilityValues"
 		{
 				"miss_rate"				"100"
-				"duration_hero"			
+				"duration"			
 				{	
-					"value"	"3 3.5 4 4.5"
-				}
-				"duration_creep"		
-				{
-					"value"			"6.0 6.0 6.0 6.0"
+					"value"			"3.0 3.5 4.0 4.5"
 				}
 				"laser_damage"			
 				{
 					"value" "75 150 225 300"
-					"LinkedSpecialBonus"	"special_bonus_unique_tinker"
+				"special_bonus_unique_tinker" "+40"
 				}	
 				"radius_explosion"
 				{
-					"value"			"250"
-					"special_bonus_unique_tinker_4"	"+50"
+					"value"			"0"
+					"special_bonus_unique_tinker_4"	"+250"
 					"affected_by_aoe_increase"	"1"
 				}
 				"splash_pct"		"100"
 				"scepter_bonus_cast_range"		
 				{
-					"value"		"200"
+					"value"		"0"
 					"RequiresScepter"				"1"
 				}
 				"scepter_reduction_pct"		
@@ -215,44 +298,35 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damageo
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scale_reduction"		"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_reduction"		"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"		"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
-			}	
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stacks"		"4"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius_explosion"				"250"
-			}
-			
-		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
+		{
+			"scale_reduction"
+			{
+				"value" "15"
+			}
+			"health_reduction"
+			{
+				"value" "15"
+			}
+			"slow"
+			{
+				"value" "20"
+			}
+			"duration"
+			{
+				"value" "6"
+			}
+			"max_stacks"
+			{
+				"value" "4"
+			}
+			"radius_explosion"
+			{
+				"value" "250"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
 	}
 	
 	//=================================================================================================================
@@ -296,7 +370,6 @@
 				"targets"			
 				{
 					"value"	"2 2 2 2"
-					"LinkedSpecialBonus"	"special_bonus_unique_tinker_6"
 				}
 				"speed"				"700"
 				"radius_explosion"				"0"
@@ -316,8 +389,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Tinker.March_of_the_Machines"
-		"MaxLevel"						"1"
-		"IsGrantedByShard"				"1"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"300"
@@ -325,7 +397,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35.0"
+		"AbilityCooldown"				"35.0 33.0 31.0 29.0"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -333,64 +405,44 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"190"
+		"AbilityManaCost"				"100 120 140 160"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"900"
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
 			}
-			"02"
+			"collision_radius"		"50"
+			"splash_radius"			"150"
+			"duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"collision_radius"		"50"
+				"value"											"6.0"
+				"special_bonus_unique_tinker_march_duration"	"+1.0"
 			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_radius"			"150"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"6.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_tinker_5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"machines_per_sec"		"24"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"1800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance_scepter"		"1800"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"30"
-				"LinkedSpecialBonus"	"special_bonus_unique_tinker_2"
-			}
+			"speed"					"400"
+			"machines_per_sec"		"24"
+			"distance"				"1800"
+			"damage"				"17 26 35 44"
 			
+			"heal_per_second"
+			{
+				"value"									"0"
+				"special_bonus_facet_tinker_repair_bots"	"+14 +21 +28 +35"
+			}
+
+			"heal_duration"
+			{
+				"value"									"0"
+				"special_bonus_facet_tinker_repair_bots"	"+4"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-	
+
 	//=================================================================================================================
 	// Tinker: Rearm
 	//=================================================================================================================
@@ -401,8 +453,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilitySound"					"Hero_Tinker.Rearm"
-		"LinkedAbility"					"tinker_keen_teleport"
-		"AbilityDraftPreAbility"		"tinker_keen_teleport"
 
 		"HasShardUpgrade"	"1"
 		"AbilityDraftUltShardAbility"		"tinker_warp_grenade"
@@ -410,22 +460,35 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"		
-		"AbilityChannelTime"				"3.25 2.25 1.25"		
+		"AbilityChannelTime"				"2.75 2.0 1.25"		
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8 7 6"
+		"AbilityCooldown"				"7 6 5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"140 195 250"
+		"AbilityManaCost"				"100 150 200"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"magic_resistance"		"15 20 25"
-			"armor_duration"	"4"
+			"magic_resistance"
+			{
+				"value"													"0"
+				"special_bonus_unique_tinker_rearm_magic_resistance"	"+50"
+			}
+			"armor_duration"
+			{
+				"value"													"0"
+				"special_bonus_unique_tinker_rearm_magic_resistance"	"+4"
+			}
+			"affects_items"
+			{
+				"value"									"0"
+			}
 		}
 	}
 	
@@ -459,20 +522,17 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"80"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"					"50"
-				"knockback_distance"
-				{
-					"value"		"600"
-					"affected_by_aoe_increase"	"1"
-				}
+				"damage"					"150"
+				"bonus_distance"			"100"
+				"max_distance"				"2000"
 				"range_reduction"		"40"
-				"debuff_duration"		"3"
+				"debuff_duration"		"2"
 		}
 	}
 	//=================================================================================================================
@@ -484,64 +544,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"80"
-				"ad_linked_abilities"			"tinker_laser"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_tinker_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"8"
-				"ad_linked_abilities"			"tinker_march_of_the_machines"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_tinker_3"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"0.2"
-				"ad_linked_abilities"			"tinker_heat_seeking_missile"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -566,41 +569,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"0.5"
-				"ad_linked_abilities"			"tinker_keen_teleport"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_tinker_6"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"1"
-				"ad_linked_abilities"			"tinker_heat_seeking_missile"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -612,23 +581,44 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"125"
-				"ad_linked_abilities"			"tinker_defense_matrix"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "125"
+				"ad_linked_abilities" "tinker_defense_matrix"
 			}
 		}
 	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
-	"special_bonus_unique_tinker_defense_matrix_cdr"
+	"special_bonus_unique_tinker_rearm_magic_resistance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_tinker_march_duration"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_tinker_defense_matrix_status_resistance"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------

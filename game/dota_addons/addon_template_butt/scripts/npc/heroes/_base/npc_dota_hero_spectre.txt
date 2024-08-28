@@ -1,4 +1,3 @@
-// Abilities for spectre
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -29,7 +28,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"130 140 150 160"
+		"AbilityManaCost"				"120 130 140 150"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -42,12 +41,12 @@
 				"damage"				
 				{
 					"value"			"70 120 170 220"
-					"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
+				"special_bonus_unique_spectre_6" "+80"
 				}
 				"bonus_movespeed"		
 				{
 					"value"			"10 14 18 22"
-					"LinkedSpecialBonus"		"special_bonus_unique_spectre_3"
+				"special_bonus_unique_spectre_3" "+12"
 				}
 				"dagger_path_duration"	"12.0 12.0 12.0 12.0"
 				"hero_path_duration"	"7.0 7.0 7.0 7.0"
@@ -69,6 +68,10 @@
 				}
 				"speed"					"800"
 				"dagger_grace_period"	"1.0"
+				"applies_desolate"
+				{
+					"special_bonus_facet_spectre_forsaken"	"=1"					
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -84,6 +87,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Spectre.Desolate"
+		"IsBreakable"					"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -91,13 +95,18 @@
 		{
 			"bonus_damage"
 			{
-				"value"									"21 34 47 60"
-				"special_bonus_unique_spectre_2"		"+12"
+				"value"									"25 40 55 70"
+				"special_bonus_unique_spectre_2"		"+15"
 			}
 			"radius"
 			{
 				"value"				"400"
 				"special_bonus_unique_spectre_desolate_radius"			"-100"
+			}
+			"only_creep_allies_damage_pct"
+			{
+				"value"						"0"
+				"special_bonus_facet_spectre_forsaken"	"+60"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -113,6 +122,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
         "HasShardUpgrade"               "1"
+		"IsBreakable"					"1"
 
 
 		// Special
@@ -121,11 +131,19 @@
 		{
 			"damage_reflection_pct"
 			{
-				"value"		"8 12 16 20"
+				"value"		"11 14 17 20"
 				"special_bonus_unique_spectre_5"		"+5"
 			}
-			"min_radius"			"300"
-			"max_radius"			"800"
+			"min_radius"			
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"max_radius"			
+			{
+				"value"		"800"
+				"affected_by_aoe_increase"	"1"
+			}
 			"activation_cooldown"
 			{
 				"value"				"0"
@@ -139,7 +157,7 @@
 			"activation_bonus_pct"
 			{
 				"value"				"0"
-				"special_bonus_shard"				"+100"
+				"special_bonus_shard"				"+50"
 			}
 			"activation_duration"
 			{
@@ -189,6 +207,11 @@
 				"illusion_damage_incoming"	"100"
 				"tooltip_illusion_total_damage_incoming"	"200"
 				"attack_delay"				"0"
+				"destroy_if_target_is_dead"
+				{
+					"value"										"1"
+					"special_bonus_facet_spectre_twist_the_knife"	"=0"
+				}
 		}
 	}
 
@@ -236,6 +259,11 @@
 				"illusion_damage_incoming"	"100 100 100"
 				"tooltip_illusion_total_damage_incoming"	"200 200 200"
 				"attack_delay"				"0"
+				"destroy_if_target_is_dead"
+				{
+					"value"										"1"
+					"special_bonus_facet_spectre_twist_the_knife"	"=0"
+				}
 		}
 	}
 
@@ -257,7 +285,31 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3"
+
+		"AbilityValues"
+		{
+			"cast_dagger_on_target"
+			{
+				"value"						"0"
+				"special_bonus_facet_spectre_twist_the_knife"	"+1"
+			}
+			"AbilityCooldown"
+			{
+				"value"										"3.0"
+				"special_bonus_facet_spectre_twist_the_knife"	"=1.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spectre: Innate No Collision
+	//=================================================================================================================
+	"spectre_spectral"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
 	}
 
 	//=================================================================================================================
@@ -269,16 +321,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4"
-				"ad_linked_abilities"			"spectre_spectral_dagger"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "4"
+				"ad_linked_abilities" "spectre_spectral_dagger"
 			}
 		}
 	}
@@ -304,18 +352,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-				"ad_linked_abilities"			"spectre_spectral_dagger"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -327,16 +364,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-				"ad_linked_abilities"			"spectre_haunt"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "30"
+				"ad_linked_abilities" "spectre_haunt"
 			}
 		}
 	}
@@ -350,16 +383,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
-				"ad_linked_abilities"			"spectre_dispersion"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "5"
+				"ad_linked_abilities" "spectre_dispersion"
 			}
 		}
 	}
@@ -373,18 +402,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"80"
-				"ad_linked_abilities"			"spectre_spectral_dagger"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 	//=================================================================================================================
 	// Ability: Special Bonus

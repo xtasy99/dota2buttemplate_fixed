@@ -1,4 +1,3 @@
-// Abilities for pugna
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -23,7 +22,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5"
 
 
 		// Cost
@@ -34,18 +32,24 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"structure_damage_mod"		"65"
-				"delay"						"0.8"
-				"radius"					
-				{
-					"value"			"400"
-					"affected_by_aoe_increase"	"1"
-				}
-				"blast_damage"
-				{
-					"value"	"100 180 260 340"
-					"LinkedSpecialBonus"		"special_bonus_unique_pugna_2"
-				}
+			"AbilityCooldown"				
+			{
+				"value"					"5"
+				"special_bonus_unique_pugna_4"			"-1"
+			}
+
+			"structure_damage_mod"		"65"
+			"delay"						"0.8"
+			"radius"					
+			{
+				"value"			"400"
+				"affected_by_aoe_increase"	"1"
+			}
+			"blast_damage"
+			{
+				"value"	"95 170 245 320"
+				"special_bonus_unique_pugna_2" "+160"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -57,7 +61,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK |  DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -85,18 +89,18 @@
 			"bonus_movement_speed_allies"		
 			{
 				"value"						"0"
-				"special_bonus_unique_pugna_decrepify_ally_movespeed"		"+10"
+				"special_bonus_unique_pugna_decrepify_ally_movespeed"		"+30"
 			}
 			"bonus_spell_damage_pct"	
 			{
-				"value"		"-30 -40 -50 -60"
+				"value"		"-20 -30 -40 -50"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_MAGICAL"
 			}
 			"bonus_movement_speed"		"-45 -50 -55 -60"
 			"AbilityDuration"				
 			{
 				"value"				"3.5"
-				"special_bonus_unique_pugna_5" "+1.0"
+				"special_bonus_unique_pugna_5" "+1.5"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -112,8 +116,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT "		
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"AbilitySound"					"Hero_Pugna.NetherWard"
+		"AbilitySound"					"Hero_Pugna.NetherWard"		
+
 		"HasShardUpgrade"			"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -132,7 +136,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"					
+			"radius"
 			{
 				"value"		"1400"
 				"affected_by_aoe_increase"	"1"
@@ -146,10 +150,22 @@
 			}
 			"mana_regen"				"0"
 
+			"health_restore_pct"
+			{
+				"value"					"0"
+				"special_bonus_facet_pugna_siphoning_ward" "+30"				
+			}
+
+			"mana_restore_pct"
+			{
+				"value"					"0"
+				"special_bonus_facet_pugna_siphoning_ward" "+30"				
+			}
+
 			"attacks_to_destroy"
 			{
 				"value"				"4 4 4 4"
-				"special_bonus_unique_pugna_6"		"+3"
+				"special_bonus_unique_pugna_6"		"+2"
 			}
 			"spell_damage_reduction"
 			{
@@ -161,6 +177,12 @@
 				"value"									"150"
 				"special_bonus_shard"					"=350"
 			}			
+			"nether_ward_gold_bounty"					"20 40 60 80"
+			"self_restoration_range"					
+			{
+				"value"			"1200"
+				"affected_by_aoe_increase"	"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -214,6 +236,13 @@
 				"CalculateSpellDamageTooltip"	"1"
 				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
+
+			"health_drain_death_boost"
+			{
+				"value"					"0"
+				"special_bonus_facet_pugna_drain_souls"	"+20"
+			}
+
 			"ally_healing"
 			{
 				"value"					"120 210 300"
@@ -263,6 +292,26 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Cast While Channeling
+	//=================================================================================================================
+	"pugna_oblivion_savant"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"				"1"
+		"MaxLevel"				"1"
+
+		"AbilityValues"
+		{
+			"tower_scale"
+			{
+				"value"			"0"
+				"special_bonus_facet_pugna_rewards_of_ruin"		"1.25"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -272,16 +321,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"20"
-				"ad_linked_abilities"			"pugna_life_drain"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "20"
+				"ad_linked_abilities" "pugna_life_drain"
 			}
 		}
 	}
@@ -295,18 +340,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"160"
-				"ad_linked_abilities"			"pugna_nether_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass" "special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -330,18 +364,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1"
-				"ad_linked_abilities"			"pugna_nether_blast"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 
 	//=================================================================================================================
@@ -353,16 +377,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"1.5"
-				"ad_linked_abilities"			"pugna_decrepify"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "1.5"
+				"ad_linked_abilities" "pugna_decrepify"
 			}
 		}
 	}
@@ -390,6 +410,4 @@
 		"BaseClass"						"special_bonus_base"
 	}
 
-
-	
 }

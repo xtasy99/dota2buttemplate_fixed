@@ -138,7 +138,6 @@
 		"HealthBarOffset"		"200" 		
 		"IdleExpression"		"scenes/default_idle.vcd"
 		"IdleSoundLoop"				""
-		"AbilityDraftDisabled"		"0"
 		"ARDMDisabled"		"0"
 		"HUD"
 		{
@@ -220,15 +219,24 @@
 		"Ability1"		"antimage_mana_break"
 		"Ability2"		"antimage_blink"
 		"Ability3"		"antimage_counterspell"
-		"Ability4"		"antimage_mana_overload"
-		"Ability5"		"antimage_counterspell_ally"
+		"Ability4"		"antimage_counterspell_ally"
+		"Ability5"		"antimage_persectur"
 		"Ability6"		"antimage_mana_void"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"antimage_mana_break"
+			"Ability2"	"antimage_blink"
+			"Ability3"	"antimage_counterspell"
+			"Ability4"	"antimage_mana_void"
+		}
+
 		"Ability10"		"special_bonus_unique_antimage_4"
 		"Ability11"		"special_bonus_unique_antimage_manavoid_aoe"
 		"Ability12"		"special_bonus_unique_antimage_7"
 		"Ability13"		"special_bonus_unique_antimage_5"
 		"Ability14"		"special_bonus_unique_antimage_6"
-		"Ability15"		"special_bonus_unique_antimage"
+		"Ability15"		"special_bonus_unique_antimage_8"
 		"Ability16"		"special_bonus_unique_antimage_3"
 		"Ability17"		"special_bonus_unique_antimage_2"
 		"Facets"
@@ -276,7 +284,7 @@
 		"AttributeIntelligenceGain"		"1.800000"
 		"AttributeBaseAgility"		"24"
 		"AttributeAgilityGain"		"2.8"
-		"StatusHealthRegen"		"0.75"
+		"StatusHealthRegen"		"1.0"
 
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
@@ -470,13 +478,25 @@
 				"SlotText" "antimage_mana_void"
 				"DisplayInLoadout" "0"
 			}
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
 			"17"
 			{
 				"SlotIndex"		"17"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
-			}	
+			}
+			"18"
+			{
+				"SlotIndex"		"18"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"19"
+			{
+				"SlotIndex"		"19"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -553,12 +573,21 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"axe_culling_blade"
 		"Ability7"		"axe_coat_of_blood"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"axe_berserkers_call"
+			"Ability2"	"axe_battle_hunger"
+			"Ability3"	"axe_counter_helix"
+			"Ability4"	"axe_culling_blade"
+		}
+
 		"Ability10"		"special_bonus_unique_axe_culling_blade_speed_duration"
 		"Ability11"		"special_bonus_unique_axe_8"
 		"Ability12"		"special_bonus_unique_axe_6"
-		"Ability13"		"special_bonus_unique_axe_4"
+		"Ability13"		"special_bonus_unique_axe_7"
 		"Ability14"		"special_bonus_unique_axe_5"
-		"Ability15"		"special_bonus_unique_axe_7"
+		"Ability15"		"special_bonus_unique_axe_4"
 		"Ability16"		"special_bonus_unique_axe_2"
 		"Ability17"		"special_bonus_unique_axe"
 		
@@ -715,6 +744,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "axe_culling_blade"
 				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_axe"
@@ -873,6 +908,15 @@
 		"Ability6"		"bane_fiends_grip"
 		"Ability7"		"bane_nightmare_end"
 		"Ability8"		"bane_ichor_of_nyctasha"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"bane_enfeeble"
+			"Ability2"	"bane_brain_sap"
+			"Ability3"	"bane_nightmare"
+			"Ability4"	"bane_fiends_grip"
+		}
+
 		"Ability10"		"special_bonus_unique_bane_8"
 		"Ability11"		"special_bonus_unique_bane_11"
 		"Ability12"		"special_bonus_unique_bane_10"
@@ -1007,6 +1051,12 @@
 				"SlotText" "bane_fiends_grip"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -1128,6 +1178,15 @@
 		"Ability4"		"bloodseeker_blood_mist"
 		"Ability5"		"bloodseeker_sanguivore"
 		"Ability6"		"bloodseeker_rupture"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"bloodseeker_bloodrage"
+			"Ability2"	"bloodseeker_blood_bath"
+			"Ability3"	"bloodseeker_thirst"
+			"Ability4"	"bloodseeker_rupture"
+		}
+
 		"Ability10"		"special_bonus_unique_bloodseeker_5"
 		"Ability11"		"special_bonus_unique_bloodseeker_6"
 		"Ability12"		"special_bonus_unique_bloodseeker_7"
@@ -1277,6 +1336,12 @@
 				"SlotName" "ability_effects_1"
 				"SlotText" "bloodseeker_bloodrage"
 				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -1438,7 +1503,16 @@
 		"Ability5"		"crystal_maiden_blueheart_floe"
 		"Ability6"		"crystal_maiden_freezing_field"
 		"Ability7"		"crystal_maiden_freezing_field_stop"
-		"Ability10"		"special_bonus_hp_250"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"crystal_maiden_crystal_nova"
+			"Ability2"	"crystal_maiden_frostbite"
+			"Ability3"	"crystal_maiden_brilliance_aura"
+			"Ability4"	"crystal_maiden_freezing_field"
+		}
+
+		"Ability10"		"special_bonus_hp_200"
 		"Ability11"		"special_bonus_unique_crystal_maiden_6"
 		"Ability12"		"special_bonus_unique_crystal_maiden_frostbite_castrange"
 		"Ability13"		"special_bonus_unique_crystal_maiden_5"
@@ -1694,13 +1768,25 @@
 					"0" "npc_dota_companion"
 				}
 			}
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
 			"18"
 			{
 				"SlotIndex"		"18"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
-			}	
+			}
+			"19"
+			{
+				"SlotIndex"		"19"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"20"
+			{
+				"SlotIndex"		"20"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -1828,9 +1914,18 @@
 		"Ability4"		"drow_ranger_glacier"
 		"Ability5"		"drow_ranger_trueshot"
 		"Ability6"		"drow_ranger_marksmanship"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"drow_ranger_frost_arrows"
+			"Ability2"	"drow_ranger_wave_of_silence"
+			"Ability3"	"drow_ranger_multishot"
+			"Ability4"	"drow_ranger_marksmanship"
+		}
+
 		"Ability10"		"special_bonus_unique_drow_ranger_7"
 		"Ability11"		"special_bonus_unique_drow_ranger_2"
-		"Ability12"		"special_bonus_lifesteal_20"
+		"Ability12"		"special_bonus_attack_range_75"
 		"Ability13"		"special_bonus_unique_drow_ranger_6"
 		"Ability14"		"special_bonus_unique_drow_ranger_1"
 		"Ability15"		"special_bonus_unique_drow_ranger_gust_selfmovespeed"
@@ -2107,6 +2202,12 @@
 				"SlotText" "drow_ranger_frost_arrows"
 				"DisplayInLoadout" "0"
 			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"precache"
 		{
@@ -2160,6 +2261,15 @@
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"earthshaker_echo_slam"
+		"Ability7"		"earthshaker_spirit_cairn"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"earthshaker_fissure"
+			"Ability2"	"earthshaker_enchant_totem"
+			"Ability3"	"earthshaker_aftershock"
+			"Ability4"	"earthshaker_echo_slam"
+		}
+
 		"Ability10"		"special_bonus_attack_base_damage_30"
 		"Ability11"		"special_bonus_unique_earthshaker_4"
 		"Ability12"		"special_bonus_unique_earthshaker_3"
@@ -2301,6 +2411,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "earthshaker_echo_slam"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -2447,9 +2563,18 @@
 		"Ability4"		"juggernaut_swift_slash"
 		"Ability5"		"juggernaut_duelist"
 		"Ability6"		"juggernaut_omni_slash"
-		"Ability10"		"special_bonus_unique_juggernaut_4"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"juggernaut_blade_fury"
+			"Ability2"	"juggernaut_healing_ward"
+			"Ability3"	"juggernaut_blade_dance"
+			"Ability4"	"juggernaut_omni_slash"
+		}
+
+		"Ability10"		"special_bonus_unique_juggernaut_5"
 		"Ability11"		"special_bonus_unique_juggernaut_3"
-		"Ability12"		"special_bonus_unique_juggernaut_5"
+		"Ability12"		"special_bonus_unique_juggernaut_healing_ward_heal"
 		"Ability13"		"special_bonus_unique_juggernaut_blade_fury_movespeed"
 		"Ability14"		"special_bonus_unique_juggernaut_blade_dance_lifesteal"
 		"Ability15"		"special_bonus_unique_juggernaut_blade_fury_cooldown"
@@ -2482,8 +2607,8 @@
 		"Ability17"		"special_bonus_unique_juggernaut_2"
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"20"
-		"AttackDamageMax"		"22"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"24"
 		"AttackRate"		"1.400000"
 		"BaseAttackSpeed"		"110"
 		"AttackAnimationPoint"		"0.330000"
@@ -2498,7 +2623,7 @@
 		"ProjectileSpeed"		"0"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"20"
-		"AttributeStrengthGain"		"2.2000"
+		"AttributeStrengthGain"		"2.0000"
 		"AttributeBaseIntelligence"		"14"
 		"AttributeIntelligenceGain"		"1.400000"
 		"AttributeBaseAgility"		"34"
@@ -2612,10 +2737,22 @@
 			}
 			"10"
 			{ 
-				"SlotIndex" "11"
+				"SlotIndex" "10"
 				"SlotName" "ability_effects_4"
 				"SlotText" "juggernaut_omni_slash"
 				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_base"
+				"SlotText"		"#LoadoutSlot_Juggernaut_Base"
+			}		
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_juggernaut"
@@ -2767,6 +2904,15 @@
 		"Ability4"		"mirana_selemenes_faithful"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"mirana_starfall"
+			"Ability2"		"mirana_arrow"
+			"Ability3"		"mirana_leap"
+			"Ability6"		"mirana_invis"
+		}
+
 		"Ability10"		"special_bonus_unique_mirana_3"
 		"Ability11"		"special_bonus_unique_mirana_6"
 		"Ability12"		"special_bonus_unique_mirana_5"
@@ -2813,8 +2959,8 @@
 		}
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"-5"
-		"AttackDamageMax"		"-1"
+		"AttackDamageMin"		"-2"
+		"AttackDamageMax"		"2"
 		"AttackRate"		"1.700000"
 		"BaseAttackSpeed"		"100"
 		"AttackAnimationPoint"		"0.350000"
@@ -2823,11 +2969,11 @@
 		"ProjectileModel"		"particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
-		"AttributeBaseStrength"		"20"
-		"AttributeStrengthGain"		"1.7"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"1.9"
 		"AttributeBaseIntelligence"		"22"
 		"AttributeIntelligenceGain"		"1.4"
-		"AttributeBaseAgility"		"24"
+		"AttributeBaseAgility"		"26"
 		"AttributeAgilityGain"		"2.5"
 		"StatusManaRegen"	"0.4"
 		"MovementSpeed"		"285"
@@ -3013,15 +3159,26 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "mirana_invis"
 				"DisplayInLoadout" "0"
-			}	
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			}
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
 			"18"
 			{
 				"SlotIndex"		"18"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
 			}
-		}
+			"19"
+			{
+				"SlotIndex"		"19"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"20"
+			{
+				"SlotIndex"		"20"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}		}
 		"Bot"
 		{
 			"Loadout"
@@ -3161,7 +3318,6 @@
 		"NameAliases"		"sf,nevermore"
 		"workshop_guide_name"		"Shadow Fiend"
 		"LastHitChallengeRival"		"npc_dota_hero_lion"
-		"AbilityDraftDisabled"		"0"
 		"HeroSelectSoundEffect"		"Hero_Nevermore.Pick"
 		"GibType"		"ethereal"
 		"GibTintColor"	"78 27 27 255"
@@ -3317,6 +3473,12 @@
 				"SlotName"		"ambient_effects"
 				"SlotText"		"#LoadoutSlot_Ambient_Effects"
 				"DisplayInLoadout"		"0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -3512,8 +3674,8 @@
 		"StatusHealthRegen"		"0.5"
 		"StatusManaRegen"		"0.5"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"9"
-		"AttackDamageMax"		"18"
+		"AttackDamageMin"		"12"
+		"AttackDamageMax"		"21"
 		"AttackRate"		"1.5000"
 		"AttackAnimationPoint"		"0.500000"
 		"AttackAcquisitionRange"		"800"
@@ -3618,6 +3780,12 @@
 				"SlotText" "morphling_adaptive_strike_agi"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -3678,9 +3846,18 @@
 		"Ability1"		"phantom_lancer_spirit_lance"
 		"Ability2"		"phantom_lancer_doppelwalk"
 		"Ability3"		"phantom_lancer_phantom_edge"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"phantom_lancer_illusory_armaments"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"phantom_lancer_juxtapose"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"phantom_lancer_spirit_lance"
+			"Ability2"	"phantom_lancer_doppelwalk"
+			"Ability3"	"phantom_lancer_phantom_edge"
+			"Ability4"	"phantom_lancer_juxtapose"
+		}
+
 		"Ability10"		"special_bonus_unique_phantom_lancer_lance_damage"
 		"Ability11"		"special_bonus_unique_phantom_lancer_phantom_rush_agility"
 		"Ability12"		"special_bonus_unique_phantom_lancer_2"
@@ -3688,7 +3865,7 @@
 		"Ability14"		"special_bonus_unique_phantom_lancer"
 		"Ability15"		"special_bonus_unique_phantom_lancer_6"
 		"Ability16"		"special_bonus_unique_phantom_lancer_4"
-		"Ability17"		"special_bonus_20_crit_2"
+		"Ability17"		"special_bonus_unique_phantom_lancer_illusory_armaments_dmg"
 		"Facets"
 		{
 			"phantom_lancer_convergence" 
@@ -3827,7 +4004,13 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "phantom_lancer_juxtapose"
 				"DisplayInLoadout" "0"
-			}		
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -3929,7 +4112,6 @@
 			"Ability3"		"puck_phase_shift"
 			"Ability4"		"puck_dream_coil"
 		}		
-
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"22"
 		"BaseAttackSpeed"	"100"
@@ -4030,6 +4212,12 @@
 				"SlotText" "puck_dream_coil"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -4113,6 +4301,15 @@
 		"Ability4"		"pudge_eject"
 		"Ability5"		"pudge_innate_graft_flesh"
 		"Ability6"		"pudge_dismember"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"pudge_meat_hook"
+			"Ability2"	"pudge_rot"
+			"Ability3"	"pudge_flesh_heap"
+			"Ability4"	"pudge_dismember"
+		}
+
 		"Ability10"		"special_bonus_armor_5"
 		"Ability11"		"special_bonus_unique_pudge_4"
 		"Ability12"		"special_bonus_spell_lifesteal_8"
@@ -4361,13 +4558,31 @@
 				"SlotText" "pudge_dismember"
 				"DisplayInLoadout" "0"
 			}			
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
 			"21"
 			{
 				"SlotIndex"		"21"
+				"SlotName"		"hero_base"
+				"SlotText"		"#LoadoutSlot_Pudge_Base"
+			}
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
+			"22"
+			{
+				"SlotIndex"		"22"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
-			}	
+			}
+			"23"
+			{
+				"SlotIndex"		"23"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"24"
+			{
+				"SlotIndex"		"24"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -4517,10 +4732,19 @@
 		"Ability4"		"razor_unstable_current"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"razor_eye_of_the_storm"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"razor_plasma_field"
+			"Ability2"	"razor_static_link"
+			"Ability3"	"razor_storm_surge"
+			"Ability4"	"razor_eye_of_the_storm"
+		}
+
 		"Ability10"		"special_bonus_unique_razor_4"
 		"Ability11"		"special_bonus_spell_lifesteal_10"
 		"Ability12"		"special_bonus_unique_razor"
-		"Ability13"		"special_bonus_unique_razor_3"
+		"Ability13"		"special_bonus_strength_12"
 		"Ability14"		"special_bonus_unique_razor_storm_surge_damage_and_slow"
 		"Ability15"		"special_bonus_unique_razor_2"
 		"Ability16"		"special_bonus_unique_razor_plasmafield_second_ring"
@@ -4675,7 +4899,13 @@
 				"SlotName" "ability_effects_2"
 				"SlotText" "razor_static_link"
 				"DisplayInLoadout" "0"
-			}		
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -4840,10 +5070,19 @@
 		"Ability4"		"sandking_caustic_finale"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"sandking_epicenter"
-		"Ability10"		"special_bonus_unique_sand_king_2"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"sandking_burrowstrike"
+			"Ability2"	"sandking_sand_storm"
+			"Ability3"	"sandking_scorpion_strike"
+			"Ability4"	"sandking_epicenter"
+		}
+
+		"Ability10"		"special_bonus_unique_sand_king_3"
 		"Ability11"		"special_bonus_unique_sand_king_burrowstrike_stun"
-		"Ability12"		"special_bonus_unique_sand_king_3"
-		"Ability13"		"special_bonus_unique_sand_king_scorpion_strike_damage"
+		"Ability12"		"special_bonus_unique_sand_king_2"
+		"Ability13"		"special_bonus_unique_sand_king_8"
 		"Ability14"		"special_bonus_unique_sand_king_7"
 		"Ability15"		"special_bonus_unique_sand_king_5"
 		"Ability16"		"special_bonus_unique_sand_king"
@@ -4977,6 +5216,12 @@
 				"SlotText" "sandking_burrowstrike"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -5106,6 +5351,15 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"storm_spirit_ball_lightning"
 		"Ability7"		"storm_spirit_galvanized"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"storm_spirit_static_remnant"
+			"Ability2"	"storm_spirit_electric_vortex"
+			"Ability3"	"storm_spirit_overload"
+			"Ability4"	"storm_spirit_ball_lightning"
+		}
+
 		"Ability10"		"special_bonus_unique_storm_spirit_overload_aspd"
 		"Ability11"		"special_bonus_mp_regen_150"
 		"Ability12"		"special_bonus_hp_250"
@@ -5149,7 +5403,6 @@
 		"AttributeIntelligenceGain"		"3.900000"
 		"AttributeBaseAgility"		"22"
 		"AttributeAgilityGain"		"2.600000"
-		"StatusManaRegen"	"0.6"
 		"StatusHealthRegen"	"0.5"
 		"MovementSpeed"		"285"
 		"MovementTurnRate"		"0.800000"
@@ -5234,6 +5487,12 @@
 				"SlotText" "storm_spirit_ball_lightning"
 				"DisplayInLoadout" "0"
 			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -5300,8 +5559,17 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"sven_gods_strength"
 		"Ability7"		"sven_vanquisher"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"sven_storm_bolt"
+			"Ability2"	"sven_great_cleave"
+			"Ability3"	"sven_warcry"
+			"Ability4"	"sven_gods_strength"
+		}
+
 		"Ability10"		"special_bonus_unique_sven_5"
-		"Ability11"		"special_bonus_attack_speed_15"
+		"Ability11"		"special_bonus_attack_speed_20"
 		"Ability12"		"special_bonus_unique_sven_3"
 		"Ability13"		"special_bonus_unique_sven_8"
 		"Ability14"		"special_bonus_unique_sven_gods_strength_slow_resist"
@@ -5342,7 +5610,7 @@
 		"AttackRange"		"150"
 		"ProjectileSpeed"		"0"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"22"
+		"AttributeBaseStrength"		"25"
 		"AttributeStrengthGain"		"3.200000"
 		"AttributeBaseIntelligence"		"16"
 		"AttributeIntelligenceGain"		"1.500000"
@@ -5457,6 +5725,12 @@
 				"SlotName" "ability_effects_3"
 				"SlotText" "sven_warcry"
 				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_sven"
@@ -5595,8 +5869,17 @@
 		"Ability5"		"tiny_craggy_exterior"
 		"Ability6"		"tiny_grow"
 		"Ability7"		"tiny_toss_tree"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"tiny_avalanche"
+			"Ability2"	"tiny_toss"
+			"Ability3"	"tiny_tree_grab"
+			"Ability4"	"tiny_grow"
+		}
+
 		"Ability10"		"special_bonus_unique_tiny_4"
-		"Ability11"		"special_bonus_strength_10"
+		"Ability11"		"special_bonus_strength_8"
 		"Ability12"		"special_bonus_unique_tiny_6"
 		"Ability13"		"special_bonus_unique_tiny"
 		"Ability14"		"special_bonus_unique_tiny_7"
@@ -5646,7 +5929,7 @@
 		"AttributeBaseAgility"		"0"
 		"AttributeAgilityGain"		"0.00000"
 		"StatusHealthRegen"		"2"
-		"MovementSpeed"		"285"
+		"MovementSpeed"		"275"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"particle_folder"		"particles/units/heroes/hero_tiny"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
@@ -5758,6 +6041,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "tiny_grow"
 				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -5895,6 +6184,15 @@
 		"Ability4"		"vengefulspirit_retribution"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"vengefulspirit_nether_swap"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"vengefulspirit_magic_missile"
+			"Ability2"	"vengefulspirit_wave_of_terror"
+			"Ability3"	"vengefulspirit_command_aura"
+			"Ability4"	"vengefulspirit_nether_swap"
+		}
+
 		"Ability10"		"special_bonus_unique_vengeful_spirit_swap_damage"
 		"Ability11"		"special_bonus_unique_vengeful_spirit_missile_castrange"
 		"Ability12"		"special_bonus_unique_vengeful_spirit_4"
@@ -6047,6 +6345,12 @@
 				"SlotText" "vengefulspirit_wave_of_terror"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"RenderablePortrait"
 		{
@@ -6188,6 +6492,15 @@
 		"Ability5"		"windrunner_focusfire_cancel"
 		"Ability6"		"windrunner_focusfire"
 		"Ability7"		"windrunner_easy_breezy"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"windrunner_shackleshot"
+			"Ability2"	"windrunner_powershot"
+			"Ability3"	"windrunner_windrun"
+			"Ability4"	"windrunner_focusfire"
+		}
+
 		"Ability10"		"special_bonus_unique_windranger_powershot_slow"
 		"Ability11"		"special_bonus_unique_windranger_9"
 		"Ability12"		"special_bonus_unique_windranger_4"
@@ -6201,6 +6514,13 @@
 			"windrunner_tailwind" 
 			{
 				"Icon"				"speed"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+				"Deprecated"		"true"
+			}
+			"windrunner_focusfire" 
+			{
+				"Icon"				"focus_fire"
 				"Color"				"Yellow"
 				"GradientID"		"2"
 			}
@@ -6331,6 +6651,12 @@
 				"SlotName" "ability_effects_3"
 				"SlotText" "windrunner_windrun"
 				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -6477,14 +6803,14 @@
 		"Ability5"		"zuus_lightning_hands"
 		"Ability6"		"zuus_thundergods_wrath"
 		"Ability7"		"zuus_static_field"	
-		"Ability10"		"special_bonus_unique_zeus_jump_cooldown"
-		"Ability11"		"special_bonus_hp_250"
-		"Ability12"		"special_bonus_unique_zeus_jump_postjump_movespeed"
+		"Ability10"		"special_bonus_mp_regen_175"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_unique_zeus_4"
 		"Ability13"		"special_bonus_unique_zeus"
 		"Ability14"		"special_bonus_unique_zeus_2"
 		"Ability15"		"special_bonus_unique_zeus_3"
 		"Ability16"		"special_bonus_unique_zeus_5"
-		"Ability17"		"special_bonus_unique_zeus_4"
+		"Ability17"		"special_bonus_unique_zeus_static_field_dmg"
 		
 		"Facets"
 		{
@@ -6622,6 +6948,12 @@
 				"SlotText" "zuus_static_field"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -6756,10 +7088,26 @@
 		"Ability1"		"kunkka_torrent"
 		"Ability2"		"kunkka_tidebringer"
 		"Ability3"		"kunkka_x_marks_the_spot"
-		"Ability4"		"kunkka_torrent_storm"
+		"Ability4"		"kunkka_admirals_rum"
 		"Ability5"		"kunkka_tidal_wave"
 		"Ability6"		"kunkka_ghostship"
 		"Ability7"		"kunkka_return"
+
+		"Ability10"		"special_bonus_unique_kunkka_tidebringer_slow"
+		"Ability11"		"special_bonus_unique_kunkka_6"
+		"Ability12"		"special_bonus_unique_kunkka_7"
+		"Ability13"		"special_bonus_unique_kunkka_2"
+		"Ability14"		"special_bonus_unique_kunkka_torrent_cooldown"
+		"Ability15"		"special_bonus_unique_kunkka_rum"
+		"Ability16"		"special_bonus_spell_aoe_100"
+		"Ability17"		"special_bonus_unique_kunkka_4"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"kunkka_torrent"
+			"Ability2"	"kunkka_tidebringer"
+			"Ability3"	"kunkka_x_marks_the_spot"
+			"Ability4"	"kunkka_ghostship"
+		}
 		
 		"Facets"
 		{
@@ -6777,20 +7125,11 @@
 			}
 
 		}
-		
-		
-		"Ability10"		"special_bonus_unique_kunkka_tidebringer_slow"
-		"Ability11"		"special_bonus_unique_kunkka_6"
-		"Ability12"		"special_bonus_unique_kunkka_7"
-		"Ability13"		"special_bonus_unique_kunkka_2"
-		"Ability14"		"special_bonus_unique_kunkka_torrent_cooldown"
-		"Ability15"		"special_bonus_unique_kunkka_rum"
-		"Ability16"		"special_bonus_unique_kunkka_3"
-		"Ability17"		"special_bonus_unique_kunkka_4"
+				
 		"AbilityDraftIgnoreCount"		"7"
 		"ArmorPhysical"		"2"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"26"
+		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"36"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.400000"
@@ -6929,6 +7268,12 @@
 				"SlotText" "kunkka_x_marks_the_spot"
 				"DisplayInLoadout" "0"
 			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_kunkka"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
@@ -7065,8 +7410,17 @@
 		"Ability2"		"lina_light_strike_array"
 		"Ability3"		"lina_fiery_soul"
 		"Ability4"		"lina_flame_cloak"
-		"Ability5"		"generic_hidden"
+		"Ability5"		"lina_combustion"
 		"Ability6"		"lina_laguna_blade"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"lina_dragon_slave"
+			"Ability2"		"lina_light_strike_array"
+			"Ability3"		"lina_flame_cloak"
+			"Ability6"		"lina_laguna_blade"
+		}
+
 		"Ability10"		"special_bonus_attack_damage_25"
 		"Ability11"		"special_bonus_unique_lina_1"
 		"Ability12"		"special_bonus_unique_lina_4"
@@ -7074,7 +7428,7 @@
 		"Ability14"		"special_bonus_unique_lina_6"
 		"Ability15"		"special_bonus_unique_lina_2"
 		"Ability16"		"special_bonus_unique_lina_7"
-		"Ability17"		"special_bonus_unique_lina_dragon_slave_crits"
+		"Ability17"		"special_bonus_unique_lina_crit_debuff"
 		
 		"Facets"
 		{
@@ -7099,8 +7453,6 @@
 					}
 				}
 			}
-
-
 		}
 		
 		"ArmorPhysical"		"0"
@@ -7200,6 +7552,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "lina_laguna_blade"
 				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -7341,6 +7699,15 @@
 		"Ability4"		"lich_ice_spire"
 		"Ability5"		"lich_death_charge"
 		"Ability6"		"lich_chain_frost"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"lich_frost_nova"
+			"Ability2"	"lich_frost_shield"
+			"Ability3"	"lich_sinister_gaze"
+			"Ability4"	"lich_chain_frost"
+		}
+
 		"Ability10"		"special_bonus_unique_lich_8"
 		"Ability11"		"special_bonus_unique_lich_6"
 		"Ability12"		"special_bonus_unique_lich_2"
@@ -7473,6 +7840,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "lich_chain_frost"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lich.vsndevts"
@@ -7618,6 +7991,15 @@
 		"Ability4"		"lion_to_hell_and_back"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"lion_finger_of_death"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"lion_impale"
+			"Ability2"	"lion_voodoo"
+			"Ability3"	"lion_mana_drain"
+			"Ability4"	"lion_finger_of_death"
+		}
+
 		"Ability10"		"special_bonus_unique_lion_6"
 		"Ability11"		"special_bonus_unique_lion_3"
 		"Ability12"		"special_bonus_unique_lion_5"
@@ -7760,6 +8142,12 @@
 				"SlotText"		"lion_finger_of_death"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -7899,11 +8287,20 @@
 		"Ability4"		"shadow_shaman_fowl_play"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"shadow_shaman_mass_serpent_ward"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"shadow_shaman_ether_shock"
+			"Ability2"	"shadow_shaman_voodoo"
+			"Ability3"	"shadow_shaman_shackles"
+			"Ability4"	"shadow_shaman_mass_serpent_ward"
+		}
+
 		"Ability10"		"special_bonus_unique_shadow_shaman_6"
-		"Ability11"		"special_bonus_unique_shadow_shaman_hex_damage_amp"
+		"Ability11"		"special_bonus_mp_regen_175"
 		"Ability12"		"special_bonus_unique_shadow_shaman_8"
-		"Ability13"		"special_bonus_unique_shadow_shaman_2"
-		"Ability14"		"special_bonus_unique_shadow_shaman_7"
+		"Ability13"		"special_bonus_unique_shadow_shaman_7"
+		"Ability14"		"special_bonus_unique_shadow_shaman_2"
 		"Ability15"		"special_bonus_unique_shadow_shaman_1"
 		"Ability16"		"special_bonus_unique_shadow_shaman_3"
 		"Ability17"		"special_bonus_unique_shadow_shaman_4"
@@ -7938,7 +8335,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_shadowshaman/shadowshaman_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"23"
+		"AttributeBaseStrength"		"20"
 		"AttributeStrengthGain"		"2.300000"
 		"AttributeBaseIntelligence"		"25"
 		"AttributeIntelligenceGain"		"3.500000"
@@ -8056,6 +8453,12 @@
 				"SlotName" "ability_effects_3"
 				"SlotText" "shadow_shaman_shackles"
 				"DisplayInLoadout" "0"
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -8188,9 +8591,18 @@
 		"Ability4"		"slardar_seaborn_sentinel"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"slardar_amplify_damage"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"slardar_sprint"
+			"Ability2"	"slardar_slithereen_crush"
+			"Ability3"	"slardar_bash"
+			"Ability4"	"slardar_amplify_damage"
+		}
+
 		"Ability10"		"special_bonus_unique_slardar_7"
 		"Ability11"		"special_bonus_unique_slardar_slithereen_crush_stun"
-		"Ability12"		"special_bonus_hp_325"
+		"Ability12"		"special_bonus_hp_300"
 		"Ability13"		"special_bonus_unique_slardar_2"
 		"Ability14"		"special_bonus_unique_slardar"
 		"Ability15"		"special_bonus_unique_slardar_5"
@@ -8227,7 +8639,7 @@
 		"AttributeBaseIntelligence"		"15"
 		"AttributeIntelligenceGain"		"1.500000"
 		"AttributeBaseAgility"		"17"
-		"AttributeAgilityGain"		"2.400000"
+		"AttributeAgilityGain"		"2.100000"
 		"StatusHealthRegen"		"0.5"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_slardar.vsndevts"
@@ -8323,6 +8735,12 @@
 				"SlotText" "slardar_amplify_damage"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"RenderablePortrait"
 		{
@@ -8404,6 +8822,15 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"tidehunter_ravage"
 		"Ability7"		"tidehunter_blubber"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"tidehunter_gush"
+			"Ability2"	"tidehunter_kraken_shell"
+			"Ability3"	"tidehunter_anchor_smash"
+			"Ability4"	"tidehunter_ravage"
+		}
+
 		"Ability10"		"special_bonus_unique_tidehunter_9"
 		"Ability11"		"special_bonus_unique_tidehunter_5"
 		"Ability12"		"special_bonus_unique_tidehunter_2"
@@ -8428,8 +8855,8 @@
 
 				"KeyValueOverrides"
 				{
-					"AttributeBaseStrength"		"22"
-					"AttributeStrengthGain"		"4.0"
+					"AttributeBaseStrength"		"24"
+					"AttributeStrengthGain"		"4.1"
 				}
 				"Abilities"
 				{
@@ -8450,8 +8877,8 @@
 		"AttackRange"		"150"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"27"
-		"AttributeStrengthGain"		"3.500000"
-		"AttributeBaseIntelligence"		"18"
+		"AttributeStrengthGain"		"3.600000"
+		"AttributeBaseIntelligence"		"20"
 		"AttributeIntelligenceGain"		"1.700000"
 		"StatusManaRegen"	"0.5"
 		"AttributeBaseAgility"		"15"
@@ -8555,6 +8982,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "tidehunter_ravage"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -8707,6 +9140,15 @@
 		"Ability4"		"witch_doctor_voodoo_switcheroo"
 		"Ability5"		"witch_doctor_gris_gris"
 		"Ability6"		"witch_doctor_death_ward"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"witch_doctor_paralyzing_cask"
+			"Ability2"	"witch_doctor_voodoo_restoration"
+			"Ability3"	"witch_doctor_maledict"
+			"Ability4"	"witch_doctor_death_ward"
+		}
+
 		"Ability10"		"special_bonus_unique_witch_doctor_4"
 		"Ability11"		"special_bonus_hp_200"
 		"Ability12"		"special_bonus_unique_witch_doctor_3"
@@ -8856,6 +9298,12 @@
 				"SlotName" "ability_effects_3"
 				"SlotText" "witch_doctor_maledict"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_witchdoctor"
@@ -9010,6 +9458,15 @@
 		"Ability4"		"riki_innate_backstab"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"riki_backstab"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"riki_smoke_screen"
+			"Ability2"	"riki_blink_strike"
+			"Ability3"	"riki_tricks_of_the_trade"
+			"Ability4"	"riki_backstab"
+		}
+
 		"Ability10"		"special_bonus_unique_riki_7"
 		"Ability11"		"special_bonus_unique_riki_8"
 		"Ability12"		"special_bonus_unique_riki_2"
@@ -9161,6 +9618,12 @@
 				"SlotText" "riki_tricks_of_the_trade"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_riki"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts"
@@ -9310,6 +9773,15 @@
 		"Ability4"		"enigma_gravity_well"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"enigma_black_hole"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"enigma_malefice"
+			"Ability2"	"enigma_demonic_conversion"
+			"Ability3"	"enigma_midnight_pulse"
+			"Ability4"	"enigma_black_hole"
+		}
+
 		"Ability10"		"special_bonus_unique_enigma_4"
 		"Ability11"		"special_bonus_unique_enigma_6"
 		"Ability12"		"special_bonus_hp_250"
@@ -9369,7 +9841,7 @@
 		"AttributeBaseAgility"		"14"
 		"AttributeAgilityGain"		"1.0"
 		"StatusManaRegen"	"0.5"
-		"MovementSpeed"		"290"
+		"MovementSpeed"		"280"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"RingRadius"		"90"
 		"particle_folder"		"particles/units/heroes/hero_enigma"
@@ -9455,6 +9927,12 @@
 				"SlotText"		"enigma_black_hole"
 				"DisplayInLoadout"		"0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -9524,10 +10002,10 @@
 		"Ability10"		"special_bonus_unique_tinker_march_duration"
 		"Ability11"		"special_bonus_mana_reduction_8"
 		"Ability12"		"special_bonus_unique_tinker_7"
-		"Ability13"		"special_bonus_unique_tinker_4"
+		"Ability13"		"special_bonus_unique_tinker"
 		"Ability14"		"special_bonus_unique_tinker_defense_matrix_status_resistance"
 		"Ability15"		"special_bonus_unique_tinker_5"
-		"Ability16"		"special_bonus_unique_tinker"
+		"Ability16"		"special_bonus_unique_tinker_4"
 		"Ability17"		"special_bonus_unique_tinker_rearm_magic_resistance"
 		
 		"Facets"
@@ -9677,6 +10155,12 @@
 				"SlotText" "tinker_keen_teleport"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -9749,12 +10233,21 @@
 		"Ability4"		"sniper_concussive_grenade"
 		"Ability5"		"sniper_keen_scope"
 		"Ability6"		"sniper_assassinate"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"sniper_shrapnel"
+			"Ability2"	"sniper_headshot"
+			"Ability3"	"sniper_take_aim"
+			"Ability4"	"sniper_assassinate"
+		}
+
 		"Ability10"		"special_bonus_unique_sniper_5"
 		"Ability11"		"special_bonus_unique_sniper_headshot_damage"
 		"Ability12"		"special_bonus_attack_speed_30"
 		"Ability13"		"special_bonus_unique_sniper_4"
 		"Ability14"		"special_bonus_unique_sniper_take_aim_armor"
-		"Ability15"		"special_bonus_attack_range_100"
+		"Ability15"		"special_bonus_unique_sniper_shrapnel_damage"
 		"Ability16"		"special_bonus_unique_sniper_2"
 		"Ability17"		"special_bonus_unique_sniper_3"
 		"Facets"
@@ -9886,6 +10379,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "sniper_assassinate"
 				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_sniper"
@@ -10043,6 +10542,15 @@
 		"Ability4"		"necrolyte_death_seeker"
 		"Ability5"		"necrolyte_sadist"
 		"Ability6"		"necrolyte_reapers_scythe"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"necrolyte_death_pulse"
+			"Ability2"	"necrolyte_ghost_shroud"
+			"Ability3"	"necrolyte_heartstopper_aura"
+			"Ability4"	"necrolyte_reapers_scythe"
+		}
+
 		"Ability10"		"special_bonus_unique_necrophos_6"
 		"Ability11"		"special_bonus_unique_necrophos_heartstopper_regen_duration"
 		"Ability12"		"special_bonus_unique_necrophos_3"
@@ -10081,7 +10589,7 @@
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"		"18"
 		"AttributeStrengthGain"		"2.300000"
-		"AttributeBaseIntelligence"		"21"
+		"AttributeBaseIntelligence"		"22"
 		"AttributeIntelligenceGain"		"2.700000"
 		"AttributeBaseAgility"		"12"
 		"AttributeAgilityGain"		"1.300000"
@@ -10181,6 +10689,12 @@
 				"SlotText" "necrolyte_reapers_scythe"
 				"DisplayInLoadout" "0"
 			}		
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_necrolyte"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
@@ -10348,6 +10862,15 @@
 		"Ability4"		"warlock_eldritch_summoning"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"warlock_rain_of_chaos"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"warlock_fatal_bonds"
+			"Ability2"	"warlock_shadow_word"
+			"Ability3"	"warlock_upheaval"
+			"Ability4"	"warlock_rain_of_chaos"
+		}
+
 		"Ability10"		"special_bonus_unique_warlock_5"
 		"Ability11"		"special_bonus_unique_warlock_upheaval_aoe"
 		"Ability12"		"special_bonus_unique_warlock_10"
@@ -10527,6 +11050,12 @@
 				"SlotText" "warlock_upheaval"
 				"DisplayInLoadout" "0"
 			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -10664,7 +11193,7 @@
 		"Ability4"		"beastmaster_inner_beast"
 		"Ability5"		"beastmaster_drums_of_slom"
 		"Ability6"		"beastmaster_primal_roar"
-		"Ability7"		"generic_hidden"
+		"Ability7"		"beastmaster_rugged"
 		"Ability10"		"special_bonus_unique_beastmaster_3"
 		"Ability11"		"special_bonus_unique_beastmaster_9"
 		"Ability12"		"special_bonus_unique_beastmaster_5"
@@ -10695,7 +11224,6 @@
 			"Ability3"		"beastmaster_inner_beast"
 			"Ability4"		"beastmaster_primal_roar"
 		}
-		"AbilityDraftDisabled"		"0"
 		"ArmorPhysical"		"-1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"5"
@@ -10817,6 +11345,12 @@
 				"SlotText" "beastmaster_primal_roar"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_beastmaster"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
@@ -10897,10 +11431,19 @@
 		"Ability4"		"queenofpain_bondage"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"queenofpain_sonic_wave"
-		"Ability10"		"special_bonus_attack_damage_20"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"queenofpain_shadow_strike"
+			"Ability2"	"queenofpain_blink"
+			"Ability3"	"queenofpain_scream_of_pain"
+			"Ability4"	"queenofpain_sonic_wave"
+		}
+
+		"Ability10"		"special_bonus_unique_queen_of_pain_1"
 		"Ability11"		"special_bonus_strength_8"
 		"Ability12"		"special_bonus_unique_queen_of_pain_4"
-		"Ability13"		"special_bonus_unique_queen_of_pain_1"
+		"Ability13"		"special_bonus_attack_damage_30"
 		"Ability14"		"special_bonus_unique_queen_of_pain_2"
 		"Ability15"		"special_bonus_unique_queen_of_pain_3"
 		"Ability16"		"special_bonus_unique_queen_of_pain_6"
@@ -10972,7 +11515,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_queenofpain/queen_base_attack.vpcf"
 		"ProjectileSpeed"		"1500"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"18"
+		"AttributeBaseStrength"		"20"
 		"AttributeStrengthGain"		"2.4"
 		"AttributeBaseIntelligence"		"25"
 		"AttributeIntelligenceGain"		"3.400000"
@@ -11076,6 +11619,12 @@
 				"SlotText" "queenofpain_sonic_wave"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -11140,9 +11689,18 @@
 		"Ability1"		"venomancer_venomous_gale"
 		"Ability2"		"venomancer_poison_sting"
 		"Ability3"		"venomancer_plague_ward"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"venomancer_sepsis"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"venomancer_noxious_plague"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"venomancer_venomous_gale"
+			"Ability2"	"venomancer_poison_sting"
+			"Ability3"	"venomancer_plague_ward"
+			"Ability4"	"venomancer_noxious_plague"
+		}
+
 		"Ability10"		"special_bonus_unique_venomancer_3"
 		"Ability11"		"special_bonus_unique_venomancer_poisonsting_regen_reduction"
 		"Ability12"		"special_bonus_unique_venomancer_8"
@@ -11170,8 +11728,8 @@
 		
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"-1"
-		"AttackDamageMax"		"2"
+		"AttackDamageMin"		"-3"
+		"AttackDamageMax"		"0"
 		"AttackRate"		"1.700000"
 		"BaseAttackSpeed"		"115"
 		"AttackAnimationPoint"		"0.300000"
@@ -11302,6 +11860,12 @@
 				"SlotText" "venomancer_poison_nova"
 				"DisplayInLoadout" "0"
 			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -11369,7 +11933,16 @@
 		"Ability3"		"faceless_void_time_lock"
 		"Ability4"		"faceless_void_time_walk_reverse"
 		"Ability5"		"faceless_void_distortion_field"
-		"Ability6"		"faceless_void_chronosphere"
+		"Ability6"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"faceless_void_time_walk"
+			"Ability2"	"faceless_void_time_dilation"
+			"Ability3"	"faceless_void_time_lock"
+			"Ability4"	"faceless_void_chronosphere"
+		}
+
 		"Ability10"		"special_bonus_unique_faceless_void_6"
 		"Ability11"		"special_bonus_unique_faceless_void_7"
 		"Ability12"		"special_bonus_unique_faceless_void_3"
@@ -11386,6 +11959,23 @@
 				"Icon"				"armor"
 				"Color"				"Green"
 				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"faceless_void_chronosphere"
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Green"
+				"GradientID"		"0"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"faceless_void_chronosphere"
+						"AbilityIndex"	"5"
+						"AutoLevelAbility"	"false"
+					}
+				}
 			}
 
 			"faceless_void_time_zone"
@@ -11399,7 +11989,7 @@
 					"Ability1"
 					{
 						"AbilityName"		"faceless_void_time_zone"
-						"ReplaceAbility"   	"faceless_void_chronosphere"
+						"AbilityIndex"	"5"
 						"AutoLevelAbility" 	"false"
 					}
 				}
@@ -11511,6 +12101,12 @@
 				"SlotText" "faceless_void_time_walk"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_faceless_void"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
@@ -11604,7 +12200,7 @@
 		"AbilityDraftAbilities"
 		{
 			"Ability1"		"skeleton_king_hellfire_blast"
-			"Ability2"		"skeleton_king_bone_guard"
+			"Ability2"		"skeleton_king_bone_guard,skeleton_king_spectral_blade"
 			"Ability3"		"skeleton_king_mortal_strike"
 			"Ability4"		"skeleton_king_reincarnation"
 		}
@@ -11798,6 +12394,12 @@
 				"SlotText" "skeleton_king_bone_guard"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -11943,11 +12545,20 @@
 		"Ability4"		"death_prophet_witchcraft"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"death_prophet_exorcism"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"death_prophet_carrion_swarm"
+			"Ability2"	"death_prophet_silence"
+			"Ability3"	"death_prophet_spirit_siphon"
+			"Ability4"	"death_prophet_exorcism"
+		}
+
 		"Ability10"		"special_bonus_attack_speed_40"
 		"Ability11"		"special_bonus_magic_resistance_12"
-		"Ability12"		"special_bonus_hp_250"
+		"Ability12"		"special_bonus_unique_death_prophet_silence_aoe"
 		"Ability13"		"special_bonus_unique_death_prophet_2"
-		"Ability14"		"special_bonus_unique_death_prophet_crypt_swarm_damage"
+		"Ability14"		"special_bonus_hp_400"
 		"Ability15"		"special_bonus_unique_death_prophet_3"
 		"Ability16"		"special_bonus_unique_death_prophet_5"
 		"Ability17"		"special_bonus_unique_death_prophet"
@@ -11972,6 +12583,20 @@
 					"Ability1"
 					{
 						"AbilityName"	"death_prophet_spirit_collector"
+					}
+				}
+			}
+			"death_prophet_delayed_damage"
+			{
+				"Icon"				"healing"
+				"Color"				"Red"
+				"GradientID"		"1"
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"death_prophet_mourning_ritual"
+						"AutoLevelAbility"	"false"
 					}
 				}
 			}
@@ -12118,6 +12743,12 @@
 				"SlotText" "death_prophet_silence"
 				"DisplayInLoadout" "0"
 			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -12250,6 +12881,15 @@
 		"Ability4"		"phantom_assassin_fan_of_knives"
 		"Ability5"		"phantom_assassin_immaterial"
 		"Ability6"		"phantom_assassin_coup_de_grace"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"phantom_assassin_stifling_dagger"
+			"Ability2"	"phantom_assassin_phantom_strike"
+			"Ability3"	"phantom_assassin_blur"
+			"Ability4"	"phantom_assassin_coup_de_grace"
+		}
+
 		"Ability10"		"special_bonus_unique_phantom_assassin_4"
 		"Ability11"		"special_bonus_unique_phantom_assassin_7"
 		"Ability12"		"special_bonus_unique_phantom_assassin_3"
@@ -12276,8 +12916,8 @@
 		}
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"33"
-		"AttackDamageMax"		"35"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"37"
 		"AttackRate"		"1.700000"
 		"BaseAttackSpeed"		"110"
 		"StatusHealthRegen"		"1.0"
@@ -12456,14 +13096,25 @@
 				"DisplayInLoadout" "1"
 			}
 
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
 			"13"
 			{
 				"SlotIndex"		"13"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
 			}
-
+			"14"
+			{
+				"SlotIndex"		"14"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"particle_folder"		"particles/units/heroes/hero_phantom_assassin"
@@ -12624,10 +13275,19 @@
 		"Ability4"		"pugna_oblivion_savant"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"pugna_life_drain"
-		"Ability10"		"special_bonus_unique_pugna_decrepify_ally_movespeed"
-		"Ability11"		"special_bonus_hp_200"
-		"Ability12"		"special_bonus_unique_pugna_4"
-		"Ability13"		"special_bonus_unique_pugna_6"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"pugna_nether_blast"
+			"Ability2"	"pugna_decrepify"
+			"Ability3"	"pugna_nether_ward"
+			"Ability4"	"pugna_life_drain"
+		}
+
+		"Ability10"		"special_bonus_unique_pugna_4"
+		"Ability11"		"special_bonus_unique_pugna_6"
+		"Ability12"		"special_bonus_unique_pugna_decrepify_ally_movespeed"
+		"Ability13"		"special_bonus_hp_350"
 		"Ability14"		"special_bonus_unique_pugna_1"
 		"Ability15"		"special_bonus_unique_pugna_5"
 		"Ability16"		"special_bonus_unique_pugna_2"
@@ -12774,6 +13434,12 @@
 				"SlotText" "pugna_life_drain"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_pugna"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
@@ -12849,6 +13515,7 @@
 		"Ability4"		"templar_assassin_trap"
 		"Ability5"		"templar_assassin_trap_teleport"
 		"Ability6"		"templar_assassin_psionic_trap"
+		"Ability7"		"templar_assassin_third_eye"
 		"Ability10"		"special_bonus_unique_templar_assassin_refraction_damage"
 		"Ability11"		"special_bonus_unique_templar_assassin_3"
 		"Ability12"		"special_bonus_unique_templar_assassin_refraction_disable_cast"
@@ -12862,7 +13529,7 @@
 		{
 			"templar_assassin_voidblades" 
 			{
-				"Icon"				"slow"
+				"Icon"				"ricochet"
 				"Color"				"Gray"
 				"GradientID"		"3"
 			}
@@ -12997,6 +13664,12 @@
 				"SlotText" "templar_assassin_psionic_trap"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -13068,14 +13741,23 @@
 		"Ability2"		"viper_nethertoxin"
 		"Ability3"		"viper_corrosive_skin"
 		"Ability4"		"viper_nose_dive"
-		"Ability5"		"generic_hidden"
+		"Ability5"		"viper_predator"
 		"Ability6"		"viper_viper_strike"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"viper_poison_attack"
+			"Ability2"	"viper_nethertoxin"
+			"Ability3"	"viper_corrosive_skin"
+			"Ability4"	"viper_viper_strike"
+		}
+
 		"Ability10"		"special_bonus_unique_viper_4"
 		"Ability11"		"special_bonus_unique_viper_1"
 		"Ability12"		"special_bonus_unique_viper_3"
-		"Ability13"		"special_bonus_unique_viper_6"
+		"Ability13"		"special_bonus_unique_viper_7"
 		"Ability14"		"special_bonus_unique_viper_2"
-		"Ability15"		"special_bonus_unique_viper_7"
+		"Ability15"		"special_bonus_unique_viper_predator_damage"
 		"Ability16"		"special_bonus_unique_viper_5"
 		"Ability17"		"special_bonus_unique_viper_8"
 		"Facets"		
@@ -13196,6 +13878,12 @@
 				"SlotName" "ability_effects_2"
 				"SlotText" "viper_nethertoxin"
 				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -13334,12 +14022,12 @@
 		"NameAliases"	"Moon Rider"
 		"GibType"		"default"
 		"Ability1"		"luna_lucent_beam"
-		"Ability2"		"luna_moon_glaive"
-		"Ability3"		"luna_lunar_blessing"
-		"Ability4"		"generic_hidden"
+		"Ability2"		"luna_lunar_orbit"
+		"Ability3"		"luna_moon_glaive"
+		"Ability4"		"luna_lunar_blessing"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"luna_eclipse"
-		"Ability7"		"luna_selemenes_favor"
+		"Ability7"		"generic_hidden"
 		"Ability10"		"special_bonus_unique_luna_7"
 		"Ability11"		"special_bonus_unique_luna_4"
 		"Ability12"		"special_bonus_unique_luna_1"
@@ -13352,6 +14040,13 @@
 		"Facets"
 		{
 			"luna_lunar_orbit" 
+			{
+				"Icon"				"armor"
+				"Color"				"Gray"
+				"GradientID"		"3"
+				"Deprecated"		"true"
+			}
+			"luna_moonshield" 
 			{
 				"Icon"				"armor"
 				"Color"				"Gray"
@@ -13481,7 +14176,13 @@
 				"SlotName" "ability_effects_1"
 				"SlotText" "luna_lucent_beam"
 				"DisplayInLoadout" "0"
-			}			
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -13642,7 +14343,6 @@
 		"Ability15"		"special_bonus_unique_dragon_knight_9"
 		"Ability16"		"special_bonus_unique_dragon_knight"
 		"Ability17"		"special_bonus_unique_dragon_knight_8"
-		
 		"Facets"
 		{
 			"dragon_knight_fire_dragon" 
@@ -13935,13 +14635,25 @@
 				"SlotName" "ability_effects_2"
 				"SlotText" "dragon_knight_dragon_tail"
 				"DisplayInLoadout" "0"
-			}		
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			}
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
 			"14"
 			{
 				"SlotIndex"		"14"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+			"15"
+			{
+				"SlotIndex"		"15"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"16"
+			{
+				"SlotIndex"		"16"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"precache"
@@ -14143,6 +14855,12 @@
 				"SlotText" "dazzle_shadow_wave"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_dazzle"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
@@ -14274,6 +14992,15 @@
 		"Ability5"		"rattletrap_jetpack"
 		"Ability6"		"rattletrap_hookshot"
 		"Ability7"		"rattletrap_armor_power"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"rattletrap_battery_assault"
+			"Ability2"	"rattletrap_power_cogs"
+			"Ability3"	"rattletrap_rocket_flare"
+			"Ability4"	"rattletrap_hookshot"
+		}
+
 		"Ability10"		"special_bonus_unique_clockwerk_7"
 		"Ability11"		"special_bonus_unique_clockwerk_9"
 		"Ability12"		"special_bonus_unique_clockwerk_5"
@@ -14412,6 +15139,12 @@
 				"SlotText" "rattletrap_hookshot"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -14480,6 +15213,15 @@
 		"Ability4"		"leshrac_greater_lightning_storm"
 		"Ability5"		"leshrac_defilement"
 		"Ability6"		"leshrac_pulse_nova"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"leshrac_split_earth"
+			"Ability2"	"leshrac_diabolic_edict"
+			"Ability3"	"leshrac_lightning_storm"
+			"Ability4"	"leshrac_pulse_nova"
+		}
+
 		"Ability10"		"special_bonus_mp_regen_150"
 		"Ability11"		"special_bonus_armor_4"
 		"Ability12"		"special_bonus_unique_leshrac_6"
@@ -14620,6 +15362,12 @@
 				"SlotText" "leshrac_diabolic_edict"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -14687,6 +15435,15 @@
 		"Ability4"		"furion_curse_of_the_forest"
 		"Ability5"		"furion_spirit_of_the_forest"
 		"Ability6"		"furion_wrath_of_nature"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"furion_sprout"
+			"Ability2"	"furion_teleportation"
+			"Ability3"	"furion_force_of_nature"
+			"Ability4"	"furion_wrath_of_nature"
+		}
+
 		"Ability10"		"special_bonus_unique_furion_6"
 		"Ability11"		"special_bonus_unique_furion_5"
 		"Ability12"		"special_bonus_unique_furion_2"
@@ -14839,6 +15596,12 @@
 				"SlotText" "furion_teleportation"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -14899,7 +15662,7 @@
 		"LastHitChallengeRival"		"npc_dota_hero_skeleton_king"
 		"HeroSelectSoundEffect"		"Hero_LifeStealer.Pick"
 		"GibType"		"default"
-		"Ability1"		"life_stealer_rage"
+		"Ability1"		"generic_hidden"
 		"Ability2"		"life_stealer_open_wounds"
 		"Ability3"		"life_stealer_ghoul_frenzy"
 		"Ability4"		"life_stealer_feast"
@@ -14930,12 +15693,29 @@
 				"Icon"				"armor"
 				"Color"				"Yellow"
 				"GradientID"		"3"
+				"Deprecated"		"true"
 
 				"Abilities"
 				{
 					"Ability1"
 					{
 						"AbilityName"	"life_stealer_corpse_eater"
+					}
+				}
+			}
+			"life_stealer_rage"
+			{
+				"Icon"				"lifestealer_rage"
+				"Color"				"Yellow"
+				"GradientID"		"3"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"life_stealer_rage"
+						"AbilityIndex"	"0"
+						"AutoLevelAbility"	"false"
 					}
 				}
 			}
@@ -14950,7 +15730,7 @@
 					"Ability1"
 					{
 						"AbilityName"	"life_stealer_unfettered"
-						"ReplaceAbility"   	"life_stealer_rage"
+						"AbilityIndex"	"0"
 						"AutoLevelAbility" 	"false"
 					}					
 				}
@@ -15073,7 +15853,13 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "life_stealer_infest"
 				"DisplayInLoadout" "0"
-			}	
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -15139,6 +15925,15 @@
 		"Ability4"		"dark_seer_normal_punch"
 		"Ability5"		"dark_seer_mental_fortitude"
 		"Ability6"		"dark_seer_wall_of_replica"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"dark_seer_vacuum"
+			"Ability2"	"dark_seer_ion_shell"
+			"Ability3"	"dark_seer_surge"
+			"Ability4"	"dark_seer_wall_of_replica"
+		}
+
 		"Ability10"		"special_bonus_unique_dark_seer_7"
 		"Ability11"		"special_bonus_unique_dark_seer_5"
 		"Ability12"		"special_bonus_unique_dark_seer_2"
@@ -15195,7 +15990,7 @@
 		"AttackAcquisitionRange"		"600"
 		"AttackRange"		"150"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
-		"AttributeBaseStrength"		"22"
+		"AttributeBaseStrength"		"20"
 		"AttributeStrengthGain"		"2.600000"
 		"AttributeBaseAgility"		"19"
 		"AttributeAgilityGain"		"1.800000"
@@ -15300,6 +16095,12 @@
 				"SlotText" "dark_seer_wall_of_replica"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -15367,6 +16168,15 @@
 		"Ability5"		"clinkz_burning_army"
 		"Ability6"		"clinkz_wind_walk"
 		"Ability7"		"clinkz_bone_and_arrow"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"clinkz_strafe"
+			"Ability2"	"clinkz_tar_bomb"
+			"Ability3"	"clinkz_death_pact"
+			"Ability4"	"clinkz_wind_walk"
+		}
+
 		"Ability10"		"special_bonus_unique_clinkz_1"
 		"Ability11"		"special_bonus_unique_clinkz_10"
 		"Ability12"		"special_bonus_attack_range_75"
@@ -15523,6 +16333,12 @@
 				"SlotText" "clinkz_searing_arrows"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -15590,12 +16406,21 @@
 		"Ability4"		"omniknight_degen_aura"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"omniknight_guardian_angel"
-		"Ability10"		"special_bonus_unique_omniknight_6"
-		"Ability11"		"special_bonus_attack_base_damage_50"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"omniknight_purification"
+			"Ability2"	"omniknight_martyr"
+			"Ability3"	"omniknight_hammer_of_purity"
+			"Ability4"	"omniknight_guardian_angel"
+		}
+
+		"Ability10"		"special_bonus_unique_omniknight_guardian_angel_duration"
+		"Ability11"		"special_bonus_attack_base_damage_35"
 		"Ability12"		"special_bonus_unique_omniknight_2"
 		"Ability13"		"special_bonus_unique_omniknight_7"
 		"Ability14"		"special_bonus_unique_omniknight_5"
-		"Ability15"		"special_bonus_unique_omniknight_3"
+		"Ability15"		"special_bonus_unique_omniknight_6"
 		"Ability16"		"special_bonus_unique_omniknight_1"
 		"Ability17"		"special_bonus_unique_omniknight_4"
 		
@@ -15752,6 +16577,12 @@
 				"SlotText" "omniknight_martyr"
 				"DisplayInLoadout" "0"
 			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -15890,10 +16721,19 @@
 		"Ability4"		"enchantress_bunny_hop"
 		"Ability5"		"enchantress_little_friends"
 		"Ability6"		"enchantress_untouchable"
-		"Ability7"		"enchantress_forest_freebie"
+		"Ability7"		"enchantress_rabblerouser"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"enchantress_impetus"
+			"Ability2"	"enchantress_enchant"
+			"Ability3"	"enchantress_natures_attendants"
+			"Ability4"	"enchantress_untouchable"
+		}
+
 		"Ability10"		"special_bonus_unique_enchantress_enchant_armor"
 		"Ability11"		"special_bonus_unique_enchantress_6"
-		"Ability12"		"special_bonus_attack_damage_45"
+		"Ability12"		"special_bonus_unique_enchantress_enchant_attackspeed"
 		"Ability13"		"special_bonus_unique_enchantress_5"
 		"Ability14"		"special_bonus_unique_enchantress_3"
 		"Ability15"		"special_bonus_unique_enchantress_enchant_health_damage"
@@ -15934,6 +16774,7 @@
 		"AttributeBaseIntelligence"		"22"
 		"AttributeIntelligenceGain"		"3.80000"
 		"MovementSpeed"		"320"
+		"StatusManaRegen"	"0.5"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"ItemSlots"
 		{
@@ -16020,6 +16861,12 @@
 				"SlotText" "enchantress_untouchable"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_enchantress.vsndevts"
 		"particle_folder"		"particles/units/heroes/hero_enchantress"
@@ -16097,6 +16944,15 @@
 		"Ability4"		"huskar_blood_magic"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"huskar_life_break"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"huskar_inner_fire"
+			"Ability2"	"huskar_burning_spear"
+			"Ability3"	"huskar_berserkers_blood"
+			"Ability4"	"huskar_life_break"
+		}
+
 		"Ability10"		"special_bonus_unique_huskar_3"
 		"Ability11"		"special_bonus_unique_huskar_4"
 		"Ability12"		"special_bonus_unique_huskar_2"
@@ -16119,8 +16975,14 @@
 				"Color"				"Blue"
 				"GradientID"		"2"
 			}
+			"huskar_nothl_conflagration" 
+			{
+				"Icon"				"damage"
+				"Color"				"Yellow"
+				"GradientID"		"0"
+			}
 		}
-		"ArmorPhysical"		"0"
+		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"21"
 		"AttackDamageMax"		"26"
@@ -16237,6 +17099,12 @@
 				"SlotText" "huskar_life_break"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -16348,6 +17216,15 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"night_stalker_darkness"
 		"Ability7"		"night_stalker_heart_of_darkness"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"night_stalker_void"
+			"Ability2"	"night_stalker_crippling_fear"
+			"Ability3"	"night_stalker_hunter_in_the_night"
+			"Ability4"	"night_stalker_darkness"
+		}
+
 		"Ability10"		"special_bonus_unique_night_stalker_4"
 		"Ability11"		"special_bonus_unique_night_stalker_7"
 		"Ability12"		"special_bonus_unique_night_stalker_3"
@@ -16395,7 +17272,7 @@
 		"AttributeIntelligenceGain"		"1.600000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"2.20000"
-		"StatusHealthRegen"		"2.0"
+		"StatusHealthRegen"		"1.5"
 		"StatusManaRegen"	"0.25"
 		"MovementSpeed"		"295"
 		"VisionDaytimeRange"		"800"
@@ -16494,6 +17371,12 @@
 				"SlotText" "night_stalker_void"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -16566,6 +17449,15 @@
 		"Ability4"		"broodmother_sticky_snare"
 		"Ability5"		"broodmother_spiders_milk"
 		"Ability6"		"broodmother_spawn_spiderlings"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"broodmother_insatiable_hunger"
+			"Ability2"	"broodmother_spin_web"
+			"Ability3"	"broodmother_incapacitating_bite"
+			"Ability4"	"broodmother_spawn_spiderlings"
+		}
+
 		"Ability10"		"special_bonus_unique_broodmother_3"
 		"Ability11"		"special_bonus_unique_broodmother_6"
 		"Ability12"		"special_bonus_unique_broodmother_5"
@@ -16697,6 +17589,12 @@
 				"SlotText" 		"broodmother_spin_web"
 				"DisplayInLoadout" 	"0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -16761,6 +17659,15 @@
 		"Ability4"		"bounty_hunter_wind_walk_ally"
 		"Ability5"		"bounty_hunter_big_game_hunter"
 		"Ability6"		"bounty_hunter_track"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"bounty_hunter_shuriken_toss"
+			"Ability2"	"bounty_hunter_jinada"
+			"Ability3"	"bounty_hunter_wind_walk"
+			"Ability4"	"bounty_hunter_track"
+		}
+
 		"Ability10"		"special_bonus_unique_bounty_hunter_5"
 		"Ability11"		"special_bonus_unique_bounty_hunter_4"
 		"Ability12"		"special_bonus_unique_bounty_hunter_9"
@@ -16808,7 +17715,7 @@
 		"AttributeStrengthGain"		"2.500000"
 		"AttributeBaseAgility"		"21"
 		"AttributeAgilityGain"		"2.600000"
-		"AttributeBaseIntelligence"		"22"
+		"AttributeBaseIntelligence"		"20"
 		"AttributeIntelligenceGain"		"1.900000"
 		"MovementSpeed"		"325"
 		"StatusHealthRegen"		"0.75"
@@ -16927,6 +17834,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "bounty_hunter_track"
 				"DisplayInLoadout" "0"
+			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -17059,8 +17972,18 @@
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"weaver_time_lapse"
+		"Ability7"		"weaver_rewoven"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"weaver_the_swarm"
+			"Ability2"	"weaver_shukuchi"
+			"Ability3"	"weaver_geminate_attack"
+			"Ability4"	"weaver_time_lapse"
+		}
+
 		"Ability10"		"special_bonus_unique_weaver_1"
-		"Ability11"		"special_bonus_strength_8"
+		"Ability11"		"special_bonus_strength_7"
 		"Ability12"		"special_bonus_mana_break_20"
 		"Ability13"		"special_bonus_unique_weaver_4"
 		"Ability14"		"special_bonus_unique_weaver_2"
@@ -17193,6 +18116,12 @@
 				"SlotText" "weaver_shukuchi"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -17268,7 +18197,16 @@
 		"Ability4"		"generic_hidden"
 		"Ability5"		"jakiro_double_trouble"
 		"Ability6"		"jakiro_macropyre"
-		"Ability10"		"special_bonus_attack_range_200"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"jakiro_dual_breath"
+			"Ability2"		"jakiro_ice_path"
+			"Ability3"		"jakiro_liquid_fire,jakiro_liquid_ice"
+			"Ability6"		"jakiro_macropyre"
+		}
+
+		"Ability10"		"special_bonus_attack_range_150"
 		"Ability11"		"special_bonus_unique_jakiro_dualbreath_slow"
 		"Ability12"		"special_bonus_unique_jakiro_4"
 		"Ability13"		"special_bonus_unique_jakiro_6"
@@ -17420,6 +18358,12 @@
 				"SlotText" "jakiro_macropyre"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -17546,6 +18490,15 @@
 		"Ability4"		"batrider_sticky_napalm_application_damage"
 		"Ability5"		"batrider_smoldering_resin"
 		"Ability6"		"batrider_flaming_lasso"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"batrider_sticky_napalm"
+			"Ability2"	"batrider_flamebreak"
+			"Ability3"	"batrider_firefly"
+			"Ability4"	"batrider_flaming_lasso"
+		}
+
 		"Ability10"		"special_bonus_unique_batrider_7"
 		"Ability11"		"special_bonus_unique_batrider_3"
 		"Ability12"		"special_bonus_movement_speed_20"
@@ -17588,8 +18541,8 @@
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
-		"AttributeBaseStrength"		"28"
-		"AttributeStrengthGain"		"2.2"
+		"AttributeBaseStrength"		"25"
+		"AttributeStrengthGain"		"2.6"
 		"AttributeBaseAgility"		"15"
 		"AttributeAgilityGain"		"1.4"
 		"AttributeBaseIntelligence"		"22"
@@ -17659,6 +18612,12 @@
 				"SlotName" "ability_effects_3"
 				"SlotText" "batrider_firefly"
 				"DisplayInLoadout" "0"
+			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_batrider"
@@ -17904,6 +18863,12 @@
 				"SlotText"		"#LoadoutSlot_Ambient_Effects"
 				"DisplayInLoadout"		"0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"RenderablePortrait"
 		{
@@ -17983,7 +18948,7 @@
 		"Ability6"		"spectre_haunt_single"
 		"Ability7"		"spectre_spectral"
 		"Ability10"		"special_bonus_unique_spectre"
-		"Ability11"		"special_bonus_unique_spectre_desolate_radius"
+		"Ability11"		"special_bonus_hp_regen_5"
 		"Ability12"		"special_bonus_unique_spectre_2"
 		"Ability13"		"special_bonus_unique_spectre_6"
 		"Ability14"		"special_bonus_hp_350"
@@ -18121,6 +19086,12 @@
 				"SlotText" "spectre_spectral_dagger"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -18223,6 +19194,13 @@
 						"AbilityName"	"doom_bringer_devils_bargain"
 					}
 				}
+			}
+
+			"doom_bringer_impending_doom"
+			{
+				"Icon"				"cooldown"
+				"Color"				"Gray"
+				"GradientID"		"0"			
 			}
 		}
 
@@ -18354,6 +19332,12 @@
 				"SlotText" "doom_bringer_infernal_blade"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -18426,6 +19410,15 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"ancient_apparition_ice_blast"
 		"Ability7"		"ancient_apparition_ice_blast_release"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"ancient_apparition_cold_feet"
+			"Ability2"	"ancient_apparition_ice_vortex"
+			"Ability3"	"ancient_apparition_chilling_touch"
+			"Ability4"	"ancient_apparition_ice_blast"
+		}
+
 		"Ability10"		"special_bonus_unique_ancient_apparition_7"
 		"Ability11"		"special_bonus_unique_ancient_apparition_8"
 		"Ability12"		"special_bonus_unique_ancient_apparition_3"
@@ -18564,6 +19557,12 @@
 				"SlotText"		"ancient_apparition_ice_blast"
 				"DisplayInLoadout" "0"
 			}			
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -18631,10 +19630,10 @@
 		"Ability6"		"ursa_enrage"
 		"Ability10"		"special_bonus_unique_ursa_4"
 		"Ability11"		"special_bonus_mp_regen_175"
-		"Ability12"		"special_bonus_unique_ursa_earthshock_furyswipes"
+		"Ability12"		"special_bonus_unique_ursa"
 		"Ability13"		"special_bonus_unique_ursa_8"
 		"Ability14"		"special_bonus_unique_ursa_2"
-		"Ability15"		"special_bonus_unique_ursa"
+		"Ability15"		"special_bonus_unique_ursa_earthshock_furyswipes"
 		"Ability16"		"special_bonus_unique_ursa_3"
 		"Ability17"		"special_bonus_unique_ursa_7"
 		"Facets"
@@ -18760,6 +19759,12 @@
 				"SlotText" "ursa_earthshock"
 				"DisplayInLoadout" "0"
 			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -18826,6 +19831,15 @@
 		"Ability4"		"spirit_breaker_planar_pocket"
 		"Ability5"		"spirit_breaker_herd_mentality"
 		"Ability6"		"spirit_breaker_nether_strike"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"spirit_breaker_charge_of_darkness"
+			"Ability2"	"spirit_breaker_bulldoze"
+			"Ability3"	"spirit_breaker_greater_bash"
+			"Ability4"	"spirit_breaker_nether_strike"
+		}
+
 		"Ability10"		"special_bonus_night_vision_500"
 		"Ability11"		"special_bonus_armor_4"
 		"Ability12"		"special_bonus_unique_spirit_breaker_2"
@@ -18965,6 +19979,12 @@
 				"SlotName" "ability_effects_1"
 				"SlotText" "spirit_breaker_charge_of_darkness"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -19201,6 +20221,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "gyrocopter_call_down"
 				"DisplayInLoadout" "0"
+			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"RenderablePortrait"
@@ -19448,17 +20474,23 @@
 			}
 			"12"
 			{
-				"SlotIndex"		"11"
+				"SlotIndex"		"12"
 				"SlotName"		"ability_effects_5"
 				"SlotText"		"alchemist_goblins_greed"
 				"DisplayInLoadout" "0"
 			}
 			"13"
 			{
-				"SlotIndex"		"11"
+				"SlotIndex"		"13"
 				"SlotName"		"ability_effects_2"
 				"SlotText"		"alchemist_unstable_concoction"
 				"DisplayInLoadout" "0"
+			}
+			"14"
+			{
+				"SlotIndex"		"14"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -19591,12 +20623,11 @@
 		"Ability22"		"special_bonus_unique_invoker_5"
 		"Ability23"		"special_bonus_unique_invoker_2"
 		"Ability24"		"special_bonus_unique_invoker_13"
-		"AbilityDraftDisabled"		"0"
 		"ArmorPhysical"		"-1"
 		"StatusHealthRegen"		"0.5"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"1"
-		"AttackDamageMax"		"9"
+		"AttackDamageMin"		"3"
+		"AttackDamageMax"		"11"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"		"800"
@@ -19872,12 +20903,24 @@
 				"SlotText" "invoker_deafening_blast"
 				"DisplayInLoadout" "0"
 			}
-			// NOTE: PERSONAL SELECTOR MUST BE LAST!
+			// NOTE: persona_selector should be after persona item slots, so that those item slots can override its asset modifiers. See CEconItemView::CacheAssetModifiers
 			"25"
 			{
 				"SlotIndex"		"25"
 				"SlotName"		"persona_selector"
 				"SlotText"		"#LoadoutSlot_Persona_Selector"
+			}
+			"26"
+			{
+				"SlotIndex"		"26"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+			"27"
+			{
+				"SlotIndex"		"27"
+				"SlotName"		"hero_effigy_persona_1"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -19942,12 +20985,21 @@
 		"Ability4"		"silencer_brain_drain"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"silencer_global_silence"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"silencer_curse_of_the_silent"
+			"Ability2"	"silencer_glaives_of_wisdom"
+			"Ability3"	"silencer_last_word"
+			"Ability4"	"silencer_global_silence"
+		}
+
 		"Ability10"		"special_bonus_unique_silencer"
 		"Ability11"		"special_bonus_attack_speed_20"
 		"Ability12"		"special_bonus_unique_silencer_7"
-		"Ability13"		"special_bonus_unique_silencer_4"
+		"Ability13"		"special_bonus_unique_silencer_arcane_curse_duration"
 		"Ability14"		"special_bonus_unique_silencer_glaives_bounces"
-		"Ability15"		"special_bonus_unique_silencer_arcane_curse_undispellable"
+		"Ability15"		"special_bonus_unique_silencer_4"
 		"Ability16"		"special_bonus_unique_silencer_3"
 		"Ability17"		"special_bonus_unique_silencer_arcane_curse_charges"
 
@@ -20093,6 +21145,12 @@
 				"SlotText" "silencer_last_word"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -20162,6 +21220,15 @@
 		"Ability4"		"generic_hidden"
 		"Ability5"		"obsidian_destroyer_ominous_discernment"
 		"Ability6"		"obsidian_destroyer_sanity_eclipse"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"obsidian_destroyer_arcane_orb"
+			"Ability2"	"obsidian_destroyer_astral_imprisonment"
+			"Ability3"	"obsidian_destroyer_equilibrium"
+			"Ability4"	"obsidian_destroyer_sanity_eclipse"
+		}
+
 		"Ability10"		"special_bonus_hp_200"
 		"Ability11"		"special_bonus_mp_250"
 		"Ability12"		"special_bonus_unique_outworld_devourer_astral_castrange"
@@ -20186,7 +21253,7 @@
 				"GradientID"		"2"
 			}
 		}
-		"ArmorPhysical"		"2"
+		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"19"
 		"AttackDamageMax"		"31"
@@ -20292,6 +21359,12 @@
 				"SlotText" "obsidian_destroyer_sanity_eclipse"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -20371,7 +21444,7 @@
 		{
 			"lycan_pack_leader"
 			{
-				"Icon"				"wolf"
+				"Icon"				"summons"
 				"Color"				"Gray"
 				"GradientID"		"1"
 			}
@@ -20384,6 +21457,12 @@
 				{
 					"lycan_summon_wolves"	"lycan_summon_spirit_wolves"
 				}
+			}
+			"lycan_alpha_wolves"
+			{
+				"Icon"				"wolf"
+				"Color"				"Green"
+				"GradientID"		"2"
 			}
 		}
 		
@@ -20528,6 +21607,12 @@
 				"SlotText" "lycan_howl"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -20596,6 +21681,16 @@
 		"Ability4"		"brewmaster_primal_companion"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"brewmaster_primal_split"
+		"Ability7"		"brewmaster_belligerent"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"brewmaster_thunder_clap"
+			"Ability2"	"brewmaster_cinder_brew"
+			"Ability3"	"brewmaster_drunken_brawler"
+			"Ability4"	"brewmaster_primal_split"
+		}
+
 		"Ability10"		"special_bonus_unique_brewmaster_2"
 		"Ability11"		"special_bonus_unique_brewmaster_7"
 		"Ability12"		"special_bonus_unique_brewmaster_5"
@@ -20722,6 +21817,12 @@
 				"SlotName"		"ability_effects_1"
 				"SlotText"		"brewmaster_thunder_clap"
 				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -20931,6 +22032,12 @@
 				"SlotText" "shadow_demon_shadow_poison"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -20994,16 +22101,16 @@
 		"Ability1"		"lone_druid_spirit_bear"
 		"Ability2"		"lone_druid_spirit_link"
 		"Ability3"		"lone_druid_savage_roar"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"lone_druid_gift_bearer"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"lone_druid_true_form"
 		"Ability10"		"special_bonus_hp_200"
 		"Ability11"		"special_bonus_unique_lone_druid_11"
 		"Ability12"		"special_bonus_unique_lone_druid_4"
 		"Ability13"		"special_bonus_unique_lone_druid_2"
-		"Ability14"		"special_bonus_unique_lone_druid_8"
+		"Ability14"		"special_bonus_unique_lone_druid_savage_roar_aoe"
 		"Ability15"		"special_bonus_unique_lone_druid_entangle_dps"
-		"Ability16"		"special_bonus_unique_lone_druid_savage_roar_aoe"
+		"Ability16"		"special_bonus_unique_lone_druid_8"
 		"Ability17"		"special_bonus_unique_lone_druid_spirit_link_attack_speed"
 		"Facets"
 		{
@@ -21018,6 +22125,21 @@
 				"Icon"				"overshadow"
 				"Color"				"Yellow"
 				"GradientID"		"1"
+			}
+			"lone_druid_bear_necessities"
+			{
+				"Icon"				"item"
+				"Color"				"Gray"
+				"GradientID"		"1"
+				
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"lone_druid_bear_necessities"
+
+					}
+				}
 			}
 		}
 
@@ -21159,6 +22281,12 @@
 				"SlotText" "lone_druid_spirit_link"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -21226,10 +22354,19 @@
 		"Ability4"		"generic_hidden"
 		"Ability5"		"chaos_knight_reins_of_chaos"
 		"Ability6"		"chaos_knight_phantasm"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"chaos_knight_chaos_bolt"
+			"Ability2"	"chaos_knight_reality_rift"
+			"Ability3"	"chaos_knight_chaos_strike"
+			"Ability4"	"chaos_knight_phantasm"
+		}
+
 		"Ability10"		"special_bonus_unique_chaos_knight_6"
 		"Ability11"		"special_bonus_unique_chaos_knight_2"
 		"Ability12"		"special_bonus_unique_chaos_knight_8"
-		"Ability13"		"special_bonus_strength_12"
+		"Ability13"		"special_bonus_strength_10"
 		"Ability14"		"special_bonus_unique_chaos_knight_3"
 		"Ability15"		"special_bonus_unique_chaos_knight"
 		"Ability16"		"special_bonus_unique_chaos_knight_5"
@@ -21270,7 +22407,7 @@
 		"AttackRange"		"150"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"24"
-		"AttributeStrengthGain"		"3.200000"
+		"AttributeStrengthGain"		"3.100000"
 		"AttributeBaseAgility"		"18"
 		"AttributeAgilityGain"		"1.400000"
 		"AttributeBaseIntelligence"		"18"
@@ -21350,6 +22487,12 @@
 				"SlotName" "ability_effects_2"
 				"SlotText" "chaos_knight_reality_rift"
 				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -21486,7 +22629,6 @@
 			"Cute"			"1"
 		}
 		"LastHitChallengeRival"		"npc_dota_hero_sand_king"
-		"AbilityDraftDisabled"		"0"
 		"ARDMDisabled"		"1"
 		"HeroSelectSoundEffect"		"Hero_Meepo.Pick"
 		"GibType"		"default"
@@ -21555,7 +22697,7 @@
 		"StatusHealthRegen"		"0.25"
 		"StatusManaRegen"	"0.25"
 		"VisionDaytimeRange"		"1800"
-		"MovementSpeed"		"330"
+		"MovementSpeed"		"320"
 		"MovementTurnRate"		"0.90000"
 		"particle_folder"		"particles/units/heroes/hero_meepo"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_meepo.vsndevts"
@@ -21654,6 +22796,12 @@
 				"SlotName" "ability_effects_1"
 				"SlotText" "meepo_earthbind"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -21852,6 +23000,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "treant_overgrowth"
 				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -22071,6 +23225,12 @@
 				"SlotText" "ogre_magi_multicast"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -22140,6 +23300,15 @@
 		"Ability4"		"undying_ceaseless_dirge"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"undying_flesh_golem"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"undying_decay"
+			"Ability2"		"undying_soul_rip"
+			"Ability3"		"undying_tombstone"
+			"Ability4"		"undying_flesh_golem"
+		}
+
 		"Ability10"		"special_bonus_unique_undying_8"
 		"Ability11"		"special_bonus_unique_undying_7"
 		"Ability12"		"special_bonus_unique_undying"
@@ -22283,6 +23452,12 @@
 				"SlotText" "undying_soul_rip"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -22375,7 +23550,6 @@
 				"GradientID"		"0"
 			}
 		}
-		"AbilityDraftDisabled"		"0"
 		"AbilityDraftIgnoreCount" "11"
 		"AbilityDraftAbilities"
 		{
@@ -22406,7 +23580,7 @@
 		"AttributeStrengthGain"		"2.00000"
 		"AttributeBaseAgility"		"23"
 		"AttributeAgilityGain"		"2.500000"
-		"AttributeBaseIntelligence"		"25"
+		"AttributeBaseIntelligence"		"24"
 		"AttributeIntelligenceGain"		"3.700000"
 		"MovementSpeed"		"290"
 		"MovementTurnRate"		"0.700000"
@@ -22496,6 +23670,12 @@
 				"SlotText" "rubick_fade_bolt"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -22560,6 +23740,15 @@
 		"Ability4"		"disruptor_electromagnetic_repulsion"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"disruptor_static_storm"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"disruptor_thunder_strike"
+			"Ability2"		"disruptor_glimpse"
+			"Ability3"		"disruptor_kinetic_field"
+			"Ability4"		"disruptor_static_storm"
+		}
+
 		"Ability10"		"special_bonus_unique_disruptor_2"
 		"Ability11"		"special_bonus_unique_disruptor_consecutive_strike_damage"
 		"Ability12"		"special_bonus_unique_disruptor_9"
@@ -22719,7 +23908,13 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "disruptor_static_storm"
 				"DisplayInLoadout" "0"
-			}			
+			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}	
 		}
 		"Bot"
 		{
@@ -22791,7 +23986,7 @@
 		"Ability14"		"special_bonus_unique_nyx_6"
 		"Ability15"		"special_bonus_unique_nyx_2"
 		"Ability16"		"special_bonus_unique_nyx"
-		"Ability17"		"special_bonus_unique_nyx_vendetta_cd_manacost"
+		"Ability17"		"special_bonus_agility_80"
 		"AbilityDraftIgnoreCount" "7"
 		"AbilityDraftAbilities"
 		{
@@ -22916,6 +24111,12 @@
 				"SlotText" "nyx_assassin_spiked_carapace"
 				"DisplayInLoadout" "0"
 			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -23030,6 +24231,13 @@
 
 		}
 		"AbilityDraftIgnoreCount" "7"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"naga_siren_mirror_image"
+			"Ability2"		"naga_siren_ensnare"
+			"Ability3"		"naga_siren_rip_tide,naga_siren_deluge"
+			"Ability4"		"naga_siren_song_of_the_siren"
+		}
 		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"23"
@@ -23158,6 +24366,12 @@
 				"SlotText" "naga_siren_song_of_the_siren"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"precache"
 		{
@@ -23212,6 +24426,15 @@
 		"Ability8"		"keeper_of_the_light_mana_magnifier"
 		"Ability9"		"generic_hidden"
 		"Ability10"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"keeper_of_the_light_illuminate"
+			"Ability2"		"keeper_of_the_light_blinding_light"
+			"Ability3"		"keeper_of_the_light_chakra_magic"
+			"Ability4"		"keeper_of_the_light_spirit_form"
+		}
+
 		"Ability11"		"special_bonus_unique_keeper_of_the_light_8"
 		"Ability12"		"special_bonus_unique_keeper_of_the_light_illuminate_cooldown"
 		"Ability13"		"special_bonus_unique_keeper_of_the_light_7"
@@ -23257,13 +24480,7 @@
 		}		
 		"AbilityTalentStart" "11"
 		"AbilityDraftIgnoreCount" "10"
-		"AbilityDraftAbilities"
-		{
-			"Ability1"		"keeper_of_the_light_illuminate"
-			"Ability2"		"keeper_of_the_light_blinding_light"
-			"Ability3"		"keeper_of_the_light_chakra_magic"
-			"Ability4"		"keeper_of_the_light_spirit_form"
-		}
+
 		"ArmorPhysical"		"0.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"20"
@@ -23363,6 +24580,12 @@
 				"SlotText" "keeper_of_the_light_blinding_light"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -23419,7 +24642,6 @@
 		"NameAliases"		"wisp"
 		"NoCombine"		"1"
 		"LastHitChallengeRival"		"npc_dota_hero_zuus"
-		"AbilityDraftDisabled"		"0"
 		"HeroSelectSoundEffect"		"Hero_Wisp.Pick"
 		"GibType"		"ethereal"
 		"GibTintColor"	"171 230 255 255"
@@ -23431,6 +24653,15 @@
 		"Ability6"		"wisp_relocate"
 		"Ability7"		"wisp_tether_break"
 		"Ability8"		"wisp_sight_seer"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"wisp_tether"
+			"Ability2"		"wisp_spirits"
+			"Ability3"		"wisp_overcharge"
+			"Ability4"		"wisp_relocate"
+		}
+
 		"Ability10"		"special_bonus_unique_wisp_11"
 		"Ability11"		"special_bonus_unique_wisp_8"
 		"Ability12"		"special_bonus_unique_wisp_3"
@@ -23528,6 +24759,12 @@
 				"SlotText" "wisp_relocate"
 				"DisplayInLoadout" "0"
 			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -23595,6 +24832,16 @@
 		"Ability5"		"visage_silent_as_the_grave"
 		"Ability6"		"visage_summon_familiars"
 		"Ability7"		"visage_summon_familiars_stone_form"
+		"Ability8"		"visage_lurker"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"visage_grave_chill"
+			"Ability2"		"visage_soul_assumption"
+			"Ability3"		"visage_gravekeepers_cloak"
+			"Ability4"		"visage_summon_familiars"
+		}
+
 		"AbilityDraftIgnoreCount" "7"
 		"Ability10"		"special_bonus_unique_visage_8"
 		"Ability11"		"special_bonus_unique_visage_7"
@@ -23617,6 +24864,12 @@
 				"Icon"				"summons"
 				"Color"				"Blue"
 				"GradientID"		"2"
+			}
+			"visage_gold_assumption"
+			{
+				"Icon"				"gold"
+				"Color"				"Yellow"
+				"GradientID"		"0"
 			}
 		}
 		"ArmorPhysical"		"0"
@@ -23707,6 +24960,12 @@
 				"SlotText" "visage_summon_familiars"
 				"DisplayInLoadout" "0"
 			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -23774,6 +25033,15 @@
 		"Ability4"		"slark_depth_shroud"
 		"Ability5"		"slark_barracuda"
 		"Ability6"		"slark_shadow_dance"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"slark_dark_pact"
+			"Ability2"		"slark_pounce"
+			"Ability3"		"slark_essence_shift"
+			"Ability4"		"slark_shadow_dance"
+		}
+
 		"Ability10"		"special_bonus_unique_slark_6"
 		"Ability11"		"special_bonus_unique_slark"
 		"Ability12"		"special_bonus_unique_slark_2"
@@ -23801,8 +25069,8 @@
 
 		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"34"
-		"AttackDamageMax"		"40"
+		"AttackDamageMin"		"37"
+		"AttackDamageMax"		"43"
 		"BaseAttackSpeed"		"120"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.500000"
@@ -23929,6 +25197,12 @@
 				"SlotText" "slark_shadow_dance"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -23990,17 +25264,26 @@
 		"GibType"		"default"
 		"Ability1"		"medusa_split_shot"
 		"Ability2"		"medusa_mystic_snake"
-		"Ability3"		"medusa_mana_shield"
+		"Ability3"		"medusa_gorgon_grasp"
 		"Ability4"		"medusa_cold_blooded"
-		"Ability5"		"generic_hidden"
+		"Ability5"		"medusa_mana_shield"
 		"Ability6"		"medusa_stone_gaze"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"medusa_split_shot"
+			"Ability2"		"medusa_mystic_snake"
+			"Ability3"		"medusa_mana_shield"
+			"Ability4"		"medusa_stone_gaze"
+		}
+
 		"Ability10"		"special_bonus_unique_medusa_snake_damage"
 		"Ability11"		"special_bonus_unique_medusa_8"
 		"Ability12"		"special_bonus_unique_medusa_2"
 		"Ability13"		"special_bonus_unique_medusa_5"
 		"Ability14"		"special_bonus_unique_medusa_3"
 		"Ability15"		"special_bonus_unique_medusa"
-		"Ability16"		"special_bonus_unique_medusa_6"
+		"Ability16"		"special_bonus_special_bonus_unique_medusa_gorgons_grasp_volleys"
 		"Ability17"		"special_bonus_unique_medusa_4"
 		"Facets"
 		{
@@ -24015,6 +25298,21 @@
 				"Icon"				"mana"
 				"Color"				"Blue"
 				"GradientID"		"1"
+				"Deprecated"		"true"
+			}
+			"medusa_slow_attacks"
+			{
+				"Icon"				"slow"
+				"Color"				"Yellow"
+				"GradientID"		"2"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"medusa_venomed_volley"
+					}
+				}
 			}
 		}
 		"ArmorPhysical"		"-1"
@@ -24129,6 +25427,12 @@
 				"SlotText" "medusa_mana_shield"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -24186,11 +25490,11 @@
 		"HeroSelectSoundEffect"		"Hero_TrollWarlord.Pick"
 		"GibType"		"default"
 		"AbilityLayout"		"5"
-		"Ability1"		"troll_warlord_berserkers_rage"
+		"Ability1"		"troll_warlord_switch_stance"
 		"Ability2"		"troll_warlord_whirling_axes_ranged"
 		"Ability3"		"troll_warlord_whirling_axes_melee"
 		"Ability4"		"troll_warlord_fervor"
-		"Ability5"		"generic_hidden"
+		"Ability5"		"troll_warlord_berserkers_rage"
 		"Ability6"		"troll_warlord_battle_trance"
 		"Ability10"		"special_bonus_unique_troll_warlord_whirling_axes_debuff_duration"
 		"Ability11"		"special_bonus_unique_troll_warlord_2"
@@ -24329,6 +25633,12 @@
 				"SlotText" "troll_warlord_whirling_axes_ranged"
 				"DisplayInLoadout" "0"
 			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -24398,9 +25708,18 @@
 		"Ability5"		"centaur_work_horse"
 		"Ability6"		"centaur_stampede"
 		"Ability7"		"centaur_rawhide"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"centaur_hoof_stomp"
+			"Ability2"	"centaur_double_edge"
+			"Ability3"	"centaur_return"
+			"Ability4"	"centaur_stampede"
+		}
+
 		"Ability10"		"special_bonus_hp_regen_4"
 		"Ability11"		"special_bonus_movement_speed_20"
-		"Ability12"		"special_bonus_strength_15"
+		"Ability12"		"special_bonus_strength_12"
 		"Ability13"		"special_bonus_unique_centaur_4"
 		"Ability14"		"special_bonus_unique_centaur_3"
 		"Ability15"		"special_bonus_unique_centaur_5"
@@ -24427,15 +25746,12 @@
 					{
 						"AbilityName"	"centaur_horsepower"
 					}
-					
 				}
 			}
-
-
 		}
 		
 		"ArmorPhysical"		"-2"
-		"StatusHealthRegen"		"4"
+		"StatusHealthRegen"		"3"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"36"
 		"AttackDamageMax"		"38"
@@ -24602,6 +25918,12 @@
 				"SlotText" "centaur_return"
 				"DisplayInLoadout" "0"
 			}
+			"14"
+			{
+				"SlotIndex"		"14"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"precache"
 		{
@@ -24652,6 +25974,15 @@
 		"Ability4"		"magnataur_horn_toss"
 		"Ability5"		"magnataur_solid_core"
 		"Ability6"		"magnataur_reverse_polarity"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"magnataur_shockwave"
+			"Ability2"		"magnataur_empower"
+			"Ability3"		"magnataur_skewer"
+			"Ability4"		"magnataur_reverse_polarity"
+		}
+
 		"Ability10"		"special_bonus_unique_magnus_4"
 		"Ability11"		"special_bonus_unique_magnus_6"
 		"Ability12"		"special_bonus_unique_magnus_reverse_polarity_stats"
@@ -24667,7 +25998,13 @@
 				"Icon"				"movement"
 				"Color"				"Gray"
 				"GradientID"		"3"
-				
+				"Deprecated"		"true"	
+			}
+			"magnataur_reverse_polarity" 
+			{
+				"Icon"				"vortex_in"
+				"Color"				"Gray"
+				"GradientID"		"3"
 			}
 			"magnataur_reverse_reverse_polarity" 
 			{
@@ -24692,9 +26029,9 @@
 		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
 		"AttributeBaseStrength"		"25"
 		"AttributeStrengthGain"		"3.10000"
-		"AttributeBaseIntelligence"		"19"
+		"AttributeBaseIntelligence"		"20"
 		"AttributeIntelligenceGain"		"1.60000"
-		"AttributeBaseAgility"		"9"
+		"AttributeBaseAgility"		"12"
 		"AttributeAgilityGain"		"2.000000"
 		"StatusHealthRegen"		"0.5"
 		"StatusManaRegen"	"0.5"
@@ -24790,6 +26127,12 @@
 				"SlotName" "ability_effects_1"
 				"SlotText" "magnataur_shockwave"
 				"DisplayInLoadout" "0"
+			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -25023,6 +26366,12 @@
 				"SlotText" "shredder_chakram"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -25088,6 +26437,15 @@
 		"Ability4"		"bristleback_hairball"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"bristleback_warpath"
+		"Ability7"		"bristleback_prickly"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"bristleback_viscous_nasal_goo"
+			"Ability2"	"bristleback_quill_spray"
+			"Ability3"	"bristleback_bristleback"
+			"Ability4"	"bristleback_warpath"
+		}
+
 		"Ability10"		"special_bonus_attack_speed_25"
 		"Ability11"		"special_bonus_mp_regen_150"
 		"Ability12"		"special_bonus_unique_bristleback_5"
@@ -25102,21 +26460,27 @@
 			"bristleback_berserk" 
 			{
 				"Icon"				"damage"
-				"Color"				"Red"
+				"Color"				"Yellow"
 				"GradientID"		"0"
 			}
 			"bristleback_snot_rocket" 
 			{
 				"Icon"				"snot"
 				"Color"				"Green"
-				"GradientID"		"3"
+				"GradientID"		"0"
+			}
+			"bristleback_seeing_red"
+			{
+				"Icon"				"no_vision"
+				"Color"				"Red"
+				"GradientID"		"0"
 			}
 		}
 		
 		"ArmorPhysical"		"1.000000"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"25"
-		"AttackDamageMax"		"31"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"37"
 		"AttackRate"		"1.800000"
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"		"600"
@@ -25246,6 +26610,12 @@
 				"SlotText" "bristleback_bristleback"
 				"DisplayInLoadout" "0"
 			}			
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -25438,7 +26808,7 @@
 		{
 			"Ability1"		"tusk_ice_shards"
 			"Ability2"		"tusk_snowball"
-			"Ability3"		"tusk_tag_team"
+			"Ability3"		"tusk_tag_team,tusk_drinking_buddies"
 			"Ability4"		"tusk_walrus_punch"
 		}
 
@@ -25575,6 +26945,12 @@
 				"SlotText" "tusk_ice_shards"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -25645,10 +27021,19 @@
 		"Ability4"		"generic_hidden"	// RESERVED FOR FACET ABILITY
 		"Ability5"		"skywrath_mage_ruin_and_restoration"
 		"Ability6"		"skywrath_mage_mystic_flare"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"skywrath_mage_arcane_bolt"
+			"Ability2"		"skywrath_mage_concussive_shot"
+			"Ability3"		"skywrath_mage_ancient_seal"
+			"Ability4"		"skywrath_mage_mystic_flare"
+		}
+
 		"Ability10"		"special_bonus_mp_regen_150"
 		"Ability11"		"special_bonus_unique_skywrath_2"
 		"Ability12"		"special_bonus_unique_skywrath"
-		"Ability13"		"special_bonus_unique_skywrath_arcane_bolt_lifesteal"
+		"Ability13"		"special_bonus_unique_skywrath_concussive_shot_slow"
 		"Ability14"		"special_bonus_unique_skywrath_4"
 		"Ability15"		"special_bonus_unique_skywrath_3"
 		"Ability16"		"special_bonus_unique_skywrath_6"
@@ -25819,6 +27204,12 @@
 				"SlotText" "skywrath_mage_mystic_flare"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -25960,9 +27351,18 @@
 		"Ability1"		"abaddon_death_coil"
 		"Ability2"		"abaddon_aphotic_shield"
 		"Ability3"		"abaddon_frostmourne"
-		"Ability4"		"abaddon_font_of_avernus"
+		"Ability4"		"abaddon_withering_mist"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"abaddon_borrowed_time"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"abaddon_death_coil"
+			"Ability2"		"abaddon_aphotic_shield"
+			"Ability3"		"abaddon_frostmourne"
+			"Ability4"		"abaddon_borrowed_time"
+		}
+
 		"Ability10"		"special_bonus_unique_abaddon_6"
 		"Ability11"		"special_bonus_unique_abaddon_7"
 		"Ability12"		"special_bonus_unique_abaddon_5"
@@ -26123,6 +27523,12 @@
 				"SlotText"		"abaddon_borrowed_time"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -26191,6 +27597,7 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"elder_titan_earth_splitter"
 		"Ability7"		"elder_titan_return_spirit"
+		"Ability8"		"elder_titan_tip_the_scales"
 		"Ability10"		"special_bonus_unique_elder_titan_bonus_spirit_speed"
 		"Ability11"		"special_bonus_attack_speed_25"
 		"Ability12"		"special_bonus_unique_elder_titan_2"
@@ -26339,6 +27746,12 @@
 				"SlotText" "elder_titan_earth_splitter"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -26397,9 +27810,18 @@
 		"Ability1"		"legion_commander_overwhelming_odds"
 		"Ability2"		"legion_commander_press_the_attack"
 		"Ability3"		"legion_commander_moment_of_courage"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"legion_commander_outfight_them"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"legion_commander_duel"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"legion_commander_overwhelming_odds"
+			"Ability2"		"legion_commander_press_the_attack"
+			"Ability3"		"legion_commander_moment_of_courage"
+			"Ability4"		"legion_commander_duel"
+		}
+
 		"Ability10"		"special_bonus_unique_legion_commander_9"
 		"Ability11"		"special_bonus_unique_legion_commander_pta_movespeed"
 		"Ability12"		"special_bonus_unique_legion_commander_6"
@@ -26548,6 +27970,12 @@
 				"SlotText" "legion_commander_press_the_attack"
 				"DisplayInLoadout" "0"
 			}
+			"11"
+			{
+				"SlotIndex"		"11"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -26617,7 +28045,7 @@
 		"Ability2"		"ember_spirit_sleight_of_fist"
 		"Ability3"		"ember_spirit_flame_guard"
 		"Ability4"		"ember_spirit_activate_fire_remnant"
-		"Ability5"		"generic_hidden"
+		"Ability5"		"ember_spirit_immolation"
 		"Ability6"		"ember_spirit_fire_remnant"
 		"Ability10"		"special_bonus_attack_damage_12"
 		"Ability11"		"special_bonus_unique_ember_spirit_1"
@@ -26760,6 +28188,12 @@
 				"SlotText" "ember_spirit_flame_guard"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -26805,7 +28239,6 @@
 		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_earth_spirit.vsndevts"
 		"workshop_guide_name"		"Earth Spirit"
 		"NoCombine"		"0"
-		"AbilityDraftDisabled"		"0"
 		"HeroSelectSoundEffect"		"Hero_EarthSpirit.Pick"
 		"GibType"		"stone"
 		"SimilarHeroes"		"126,106,17"
@@ -26855,6 +28288,12 @@
 				"Icon"				"cooldown"
 				"Color"				"Gray"
 				"GradientID"		"2"
+			}
+			"earth_spirit_ready_to_roll"
+			{
+				"Icon"				"spinning"
+				"Color"				"Yellow"
+				"GradientID"		"1"
 			}
 		}
 		"ArmorPhysical"		"0.00000"
@@ -26975,6 +28414,12 @@
 				"SlotName" "ability_effects_2"
 				"SlotText" "earth_spirit_rolling_boulder"
 				"DisplayInLoadout" "0"
+			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"RenderablePortrait"
@@ -27187,6 +28632,12 @@
 				"SlotName" "ability_effects_4"
 				"SlotText" "terrorblade_sunder"
 				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -27412,6 +28863,12 @@
 				"SlotText" "phoenix_supernova"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -27481,6 +28938,15 @@
 		"Ability4"		"oracle_rain_of_destiny"
 		"Ability5"		"oracle_prognosticate"
 		"Ability6"		"oracle_false_promise"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"oracle_fortunes_end"
+			"Ability2"		"oracle_fates_edict"
+			"Ability3"		"oracle_purifying_flames"
+			"Ability4"		"oracle_false_promise"
+		}
+
 		"Ability10"		"special_bonus_unique_oracle_2"
 		"Ability11"		"special_bonus_unique_oracle_9"
 		"Ability12"		"special_bonus_unique_oracle_damage_per_purge"
@@ -27629,6 +29095,12 @@
 				"SlotText" "oracle_purifying_flames"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -27750,7 +29222,6 @@
 		"HeroSelectSoundEffect"		"Hero_Techies.Pick"
 		"GibType"		"default"
 		"NameAliases"	"Squee;Spleen;Spoon"
-		"AbilityDraftDisabled"		"0"
 		"Ability1"		"techies_sticky_bomb"
 		"Ability2"		"techies_reactive_tazer"
 		"Ability3"		"techies_suicide"
@@ -27820,7 +29291,7 @@
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.500000"
 		"AttackAcquisitionRange"		"800"
-		"AttackRange"		"550"
+		"AttackRange"		"600"
 		"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_ALL"
@@ -27831,6 +29302,7 @@
 		"AttributeBaseAgility"		"14"
 		"AttributeAgilityGain"		"1.300000"
 		"StatusManaRegen"	"1.0"
+		"StatusHealthRegen"		"1.0"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		"RingRadius"		"70"
 		"particle_folder"		"particles/units/heroes/hero_techies"
@@ -27968,6 +29440,12 @@
 				"SlotText" "techies_sticky_bomb"
 				"DisplayInLoadout" "0"
 			}
+			"12"
+			{
+				"SlotIndex"		"12"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -28101,8 +29579,17 @@
 		"Ability4"		"winter_wyvern_eldwurm_scholar"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"winter_wyvern_winters_curse"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"winter_wyvern_arctic_burn"
+			"Ability2"		"winter_wyvern_splinter_blast"
+			"Ability3"		"winter_wyvern_cold_embrace"
+			"Ability4"		"winter_wyvern_winters_curse"
+		}
+
 		"Ability10"		"special_bonus_unique_winter_wyvern_5"
-		"Ability11"		"special_bonus_attack_damage_35"
+		"Ability11"		"special_bonus_attack_damage_30"
 		"Ability12"		"special_bonus_unique_winter_wyvern_6"
 		"Ability13"		"special_bonus_unique_winter_wyvern_2"
 		"Ability14"		"special_bonus_unique_winter_wyvern_1"
@@ -28237,6 +29724,12 @@
 				"SlotText" "winter_wyvern_cold_embrace"
 				"DisplayInLoadout" "0"
 			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -28317,7 +29810,7 @@
 		"Ability14"		"special_bonus_unique_arc_warden"
 		"Ability15"		"special_bonus_unique_arc_warden_9"
 		"Ability16"		"special_bonus_unique_arc_warden_8"
-		"Ability17"		"special_bonus_unique_arc_warden_7"
+		"Ability17"		"special_bonus_unique_arc_warden_flux_silences"
 		
 		"Facets"
 		{
@@ -28462,6 +29955,12 @@
 				"SlotText" "arc_warden_spark_wraith"
 				"DisplayInLoadout" "0"
 			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -28529,9 +30028,18 @@
 		"Ability1"		"abyssal_underlord_firestorm"
 		"Ability2"		"abyssal_underlord_pit_of_malice"
 		"Ability3"		"abyssal_underlord_atrophy_aura"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"abyssal_underlord_raid_boss"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"abyssal_underlord_dark_portal"		
+		"Ability6"		"abyssal_underlord_dark_portal"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"abyssal_underlord_firestorm"
+			"Ability2"		"abyssal_underlord_pit_of_malice"
+			"Ability3"		"abyssal_underlord_atrophy_aura"
+			"Ability4"		"abyssal_underlord_dark_portal"
+		}
+
 		"Ability10"		"special_bonus_unique_underlord_7"
 		"Ability11"		"special_bonus_unique_underlord_8"
 		"Ability12"		"special_bonus_unique_underlord_6"
@@ -28679,6 +30187,12 @@
 				"SlotText"		"abyssal_underlord_dark_portal"
 				"DisplayInLoadout" "0"
 			}
+			"10"
+			{
+				"SlotIndex"		"10"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -28739,7 +30253,6 @@
 		"VersusScale"		"0.81"
 		"LoadoutScale"		"0.8100"
 		"workshop_guide_name"		"Monkey King"
-		"AbilityDraftDisabled"	"0"
 		"Ability1"		"monkey_king_boundless_strike"
 		"Ability2"		"monkey_king_tree_dance"
 		"Ability3"		"monkey_king_primal_spring"
@@ -28884,6 +30397,12 @@
 				"SlotText" "monkey_king_wukongs_command"
 				"DisplayInLoadout" "0"
 			}
+			"7"
+			{
+				"SlotIndex"		"7"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -28953,6 +30472,15 @@
 		"Ability6"					"pangolier_gyroshell"
 		"Ability7"					"pangolier_gyroshell_stop"
 		"Ability8"					"pangolier_rollup_stop"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"			"pangolier_swashbuckle"
+			"Ability2"			"pangolier_shield_crash"
+			"Ability3"			"pangolier_lucky_shot"
+			"Ability4"			"pangolier_gyroshell"
+		}
+
 		"Ability10"					"special_bonus_unique_pangolier_luckyshot_armor"
 		"Ability11"					"special_bonus_unique_pangolier"
 		"Ability12"					"special_bonus_unique_pangolier_6"
@@ -29094,6 +30622,12 @@
 				"SlotName" "ability_effects_2"
 				"SlotText" "pangolier_shield_crash"
 				"DisplayInLoadout" "0"
+			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"Bot"
@@ -29360,6 +30894,12 @@
 				"SlotText" "dark_willow_terrorize"
 				"DisplayInLoadout" "0"
 			}
+			"13"
+			{
+				"SlotIndex"		"13"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"precache"
 		{
@@ -29419,6 +30959,15 @@
 		"Ability5"				"grimstroke_return"
 		"Ability6"				"grimstroke_soul_chain"
 		"Ability7"				"grimstroke_ink_trail"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"			"grimstroke_dark_artistry"
+			"Ability2"			"grimstroke_ink_creature"
+			"Ability3"			"grimstroke_spirit_walk"
+			"Ability4"			"grimstroke_soul_chain"
+		}
+
 		"Ability10"				"special_bonus_unique_grimstroke_8"
 		"Ability11"				"special_bonus_unique_grimstroke_7"
 		"Ability12"				"special_bonus_unique_grimstroke_soul_chain_reflect_damage"
@@ -29562,6 +31111,12 @@
 				"SlotText" "grimstroke_soul_chain"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -29628,11 +31183,20 @@
 		"Ability4"		"mars_dauntless"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"mars_arena_of_blood"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"mars_spear"
+			"Ability2"		"mars_gods_rebuke"
+			"Ability3"		"mars_bulwark"
+			"Ability4"		"mars_arena_of_blood"
+		}
+
 		"Ability10"		"special_bonus_unique_mars_rebuke_radius"
-		"Ability11"		"special_bonus_unique_mars_bulwark_redirect_chance"
+		"Ability11"		"special_bonus_unique_mars_bulwark_damage_reduction"
 		"Ability12"		"special_bonus_unique_mars_rebuke_cooldown"
 		"Ability13"		"special_bonus_unique_mars_spear_bonus_damage"
-		"Ability14"		"special_bonus_unique_mars_bulwark_damage_reduction"
+		"Ability14"		"special_bonus_unique_mars_arena_cooldown"
 		"Ability15"		"special_bonus_unique_mars_spear_stun_duration"
 		"Ability16"		"special_bonus_unique_mars_gods_rebuke_extra_crit"
 		"Ability17"		"special_bonus_unique_mars_arena_of_blood_hp_regen"
@@ -29767,6 +31331,12 @@
 				"SlotText" "mars_gods_rebuke"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -29830,6 +31400,15 @@
 		"Ability4"					"void_spirit_intrinsic_edge"
 		"Ability5"					"generic_hidden"
 		"Ability6"					"void_spirit_astral_step"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"				"void_spirit_aether_remnant"
+			"Ability2"				"void_spirit_dissimilate"
+			"Ability3"				"void_spirit_resonant_pulse"
+			"Ability4"				"void_spirit_astral_step"
+		}
+
 		"Ability10"					"special_bonus_mp_regen_175"
 		"Ability11"					"special_bonus_unique_void_spirit_2"
 		"Ability12"					"special_bonus_unique_void_spirit_7"
@@ -29852,6 +31431,7 @@
 				"Icon"				"nuke"
 				"Color"				"Gray"
 				"GradientID"		"3"
+				"Deprecated"		"true"
 
 				"Abilities"
 				{
@@ -29861,7 +31441,12 @@
 					}
 				}
 			}
-
+			"void_spirit_aether_artifice"
+			{
+				"Icon"				"illusion"
+				"Color"				"Gray"
+				"GradientID"		"3"
+			}
 
 		}
 
@@ -29977,6 +31562,12 @@
 				"SlotText" "void_spirit_astral_step"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"RenderablePortrait"
 		{
@@ -30088,8 +31679,8 @@
 
 		"ArmorPhysical"				"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"8"
-		"AttackDamageMax"			"14"
+		"AttackDamageMin"			"11"
+		"AttackDamageMax"			"17"
 		"AttackRate"				"1.8"
 		"AttackAnimationPoint"		"0.350000"
 		"AttackSpeedActivityModifiers"
@@ -30202,6 +31793,12 @@
 				"SlotText" "snapfire_mortimer_kisses"
 				"DisplayInLoadout" "0"
 			}
+			"9"
+			{
+				"SlotIndex"		"9"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -30273,7 +31870,6 @@
 		"workshop_guide_name"		"Hoodwink"
 		"LastHitChallengeRival"		"npc_dota_hero_snapfire"
 		"HeroSelectSoundEffect"		"Hero_Hoodwink.Pick"
-		"AbilityDraftDisabled"		"0"
 		"AbilityLayout"					"5"
 		"Ability1"					"hoodwink_acorn_shot"
 		"Ability2"					"hoodwink_bushwhack"
@@ -30288,7 +31884,7 @@
 		"Ability12"					"special_bonus_unique_hoodwink_bushwhack_damage"
 		"Ability13"					"special_bonus_unique_hoodwink_acorn_shot_bounces"
 		"Ability14"					"special_bonus_unique_hoodwink_sharpshooter_damage"
-		"Ability15"					"special_bonus_corruption_4"
+		"Ability15"					"special_bonus_corruption_3"
 		"Ability16"					"special_bonus_unique_hoodwink_acorn_shot_charges"
 		"Ability17"					"special_bonus_unique_hoodwink_sharpshooter_pure_damage"
 
@@ -30430,6 +32026,12 @@
 				"SlotText" "hoodwink_sharpshooter"
 				"DisplayInLoadout" "0"
 			}
+			"8"
+			{
+				"SlotIndex"		"8"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"showcase_attachments"
 		{
@@ -30484,6 +32086,15 @@
 		"Ability5"		"dawnbreaker_break_of_dawn"
 		"Ability6"		"dawnbreaker_solar_guardian"
 		"Ability7"		"dawnbreaker_land"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"dawnbreaker_fire_wreath"
+			"Ability2"	"dawnbreaker_celestial_hammer"
+			"Ability3"	"dawnbreaker_luminosity"
+			"Ability4"	"dawnbreaker_solar_guardian"
+		}
+
 		"Ability10"		"special_bonus_unique_dawnbreaker_fire_wreath_swipe"
 		"Ability11"		"special_bonus_unique_dawnbreaker_celestial_hammer_slow"
 		"Ability12"		"special_bonus_unique_dawnbreaker_luminosity_crit"
@@ -30620,6 +32231,12 @@
 				"SlotName"		"taunt"
 				"SlotText"		"#LoadoutSlot_Taunt"
 			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"Bot"
 		{
@@ -30692,7 +32309,7 @@
 		{
 			"Ability1"		"marci_grapple"
 			"Ability2"		"marci_companion_run"
-			"Ability3"		"marci_guardian"
+			"Ability3"		"marci_guardian,marci_bodyguard"
 			"Ability6"		"marci_unleash"
 		}	
 
@@ -30827,6 +32444,12 @@
 				"SlotIndex"		"4"
 				"SlotName"		"taunt"
 				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
 			}
 		}
 		"particle_folder"		"particles/units/heroes/hero_marci"
@@ -31027,6 +32650,12 @@
 				"SlotText" "primal_beast_onslaught"
 				"DisplayInLoadout" "0"
 			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"showcase_attachments"
 		{
@@ -31089,6 +32718,15 @@
 		"Ability7"		"muerta_supernatural"
 		"Ability8"		"generic_hidden"
 		"Ability9"		"generic_hidden"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"muerta_dead_shot"
+			"Ability2"		"muerta_the_calling"
+			"Ability3"		"muerta_gunslinger"
+			"Ability4"		"muerta_pierce_the_veil"
+		}
+
 		"Ability10"		"special_bonus_unique_muerta_dead_shot_range"
 		"Ability11"		"special_bonus_unique_muerta_calling_hp_regen"
 		"Ability12"		"special_bonus_unique_muerta_dead_shot_damage"
@@ -31122,7 +32760,7 @@
 				}
 			}
 		}
-		"ArmorPhysical"		"-1"
+		"ArmorPhysical"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"		"24"
 		"AttackDamageMax"		"32"
@@ -31234,6 +32872,12 @@
 				"SlotName"		"taunt"
 				"SlotText"		"#LoadoutSlot_Taunt"
 			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
 		}
 		"showcase_attachments"
 		{
@@ -31251,5 +32895,203 @@
 		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_muerta.vpcf"
 	}
 
+	"npc_dota_hero_ringmaster"
+	{
+		"Model"		"models/heroes/ringmaster/ringmaster_base.vmdl"
+		"IdleExpression"		"scenes/ringmaster/ringmaster_exp_idle_01.vcd"
+		"SoundSet"		"Hero_RingMaster"
+		"IdleSoundLoop"		"Hero_RingMaster.IdleLoop"
+		"Enabled"		"1"
+		"RandomEnabled"		"0"
+		"Role"			"Support,Nuker,Escape,Disabler"
+		"Rolelevels"	"2,2,2,1"
+		"Complexity"	"2"
+		"Team"			"Good"
+		"HeroID"		"131"
+		"HeroOrderID"			"125"
+		"ModelScale"			"0.92"
+		"LoadoutScale"			"0.96"
+		"SpectatorLoadoutScale"		"0.87"
+		"workshop_guide_name"		"Ring Master"
+		"HeroGlowColor"		"40 160 255"
+		"PickSound"		"ringmaster_ringmaster_debut_06"
+		"BanSound"		"ringmaster_ringmaster_anger_03"
+		"CMEnabled"		"0"
+		"NameAliases"		"rm;marionetto;cogliostro"
+		"LastHitChallengeRival"		"npc_dota_hero_omniknight"
+		"HeroSelectSoundEffect"		"Hero_RingMaster.Pick"
+		"HealthBarOffset"		"240"
+		"GibType"		"motor"
+		"Ability1"		"ringmaster_tame_the_beasts"
+		"Ability2" 		"ringmaster_the_box"
+		"Ability3"		"ringmaster_impalement"
+		"Ability4"		"ringmaster_empty_souvenir"
+		"Ability5"		"ringmaster_spotlight"
+		"Ability6"		"ringmaster_wheel"
+		"Ability7"		"ringmaster_tame_the_beasts_crack"
+
+		"AbilityDraftAbilities"
+		{
+			"Ability1"	"ringmaster_tame_the_beasts"
+			"Ability2"	"ringmaster_the_box"
+			"Ability3"	"ringmaster_impalement"
+			"Ability4"	"ringmaster_wheel"
+		}
+
+		"Ability10"		"special_bonus_unique_ringmaster_whip_radius"
+		"Ability11"		"special_bonus_unique_ringmaster_box_cast_range"
+		"Ability12"		"special_bonus_unique_ringmaster_dagger_penetrates"
+		"Ability13"		"special_bonus_unique_ringmaster_whip_debuff_immunity"
+		"Ability14"		"special_bonus_unique_ringmaster_dagger_bleed_and_slow_duration"
+		"Ability15"		"special_bonus_unique_ringmaster_whip_damage"
+		"Ability16"		"special_bonus_unique_ringmaster_wheel_radius"
+		"Ability17"		"special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying"
+		"Ability18"		"ringmaster_dark_carnival_souvenirs"
+		"Ability19"		"ringmaster_funhouse_mirror"
+		"Ability20"		"ringmaster_strongman_tonic"
+		"Ability21"		"ringmaster_whoopee_cushion"
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"33"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.50000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"575"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"150"
+		}
+		"ProjectileModel"		"particles/units/heroes/hero_ringmaster/ringmaster_base_attack.vpcf"
+
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"23"
+		"AttributeStrengthGain"		"2.4"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"3.0"
+		"AttributeBaseAgility"		"13"
+		"AttributeAgilityGain"		"1.4"
+		"MovementSpeed"				"315"
+		"HasAggressiveStance"		"1"
+		"MovementSpeedActivityModifiers"
+		{
+			"walk"		"0"
+			"run"		"340"
+		}
+		"MovementTurnRate"		"0.600000"
+		"animation_transitions"
+		{
+			"ACT_DOTA_RUN"
+			{
+				"regular"		"0.300000"
+				"aggressive"		"0.3"
+			}
+			"ACT_DOTA_IDLE"
+			{
+				"regular"		"0.40000"
+				"aggressive"		"0.3"
+			}
+		}
+		"particle_folder"		"particles/units/heroes/hero_ringmaster"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_ringmaster.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_ringmaster.vsndevts"
+		"RenderablePortrait"
+		{
+		}
+		"precache"
+		{
+			"model"		"models/heroes/ringmaster/ringmaster_box.vmdl"
+			"particle"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_ringmaster.vpcf"
+		}
+		"party_hat_effect"			"particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_ringmaster.vpcf"
+		"Facets"
+		{
+			"ringmaster_default"	
+			{
+				"Icon"				"item"
+				"Color"				"Gray"
+				"GradientID"		"3"
+			}
+		}
+		"ItemSlots"
+		{
+			"0"
+			{
+				"SlotIndex"		"0"
+				"SlotName"		"weapon"
+				"SlotText"		"#LoadoutSlot_Weapon"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"1"
+			{
+				"SlotIndex"		"1"
+				"SlotName"		"head"
+				"SlotText"		"#LoadoutSlot_Head_Accessory"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"1000"
+				"MaxPolygonsLOD1"		"500"
+			}
+			"2"
+			{
+				"SlotIndex"		"2"
+				"SlotName"		"armor"
+				"SlotText"		"#LoadoutSlot_Armor"
+				"TextureWidth"		"512"
+				"TextureHeight"		"512"
+				"MaxPolygonsLOD0"	"6000"
+				"MaxPolygonsLOD1"	"2400"
+			}
+			"3"
+			{
+				"SlotIndex"		"3"
+				"SlotName"		"arms"
+				"SlotText"		"#LoadoutSlot_Arms"
+				"TextureWidth"		"256"
+				"TextureHeight"		"256"
+				"MaxPolygonsLOD0"		"500"
+				"MaxPolygonsLOD1"		"350"
+			}
+			"4"
+			{
+				"SlotIndex"		"4"
+				"SlotName"		"taunt"
+				"SlotText"		"#LoadoutSlot_Taunt"
+			}
+			"5"
+			{
+				"SlotIndex"		"5"
+				"SlotName"		"ambient_effects"
+				"SlotText"		"#LoadoutSlot_Ambient_Effects"
+				"DisplayInLoadout"	"0"
+			}
+			"6"
+			{
+				"SlotIndex"		"6"
+				"SlotName"		"hero_effigy"
+				"SlotText"		"#LoadoutSlot_HeroEffigy"
+			}
+		}
+		"Bot"
+		{
+			"HeroType"		"DOTA_BOT_GANKER | DOTA_BOT_HARD_CARRY"
+			"LaningInfo"
+			{
+				"SoloDesire"		"0"
+				"RequiresBabysit"		"2"
+				"ProvidesBabysit"		"0"
+				"SurvivalRating"		"1"
+				"RequiresFarm"		"2"
+				"ProvidesSetup"		"1"
+				"RequiresSetup"		"0"
+			}
+
+		}
+	}
+	
 }
 

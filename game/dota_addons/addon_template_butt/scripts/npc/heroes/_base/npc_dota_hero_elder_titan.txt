@@ -1,4 +1,3 @@
-// Abilities for elder_titan
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -136,7 +135,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_ANCESTRAL_SPIRIT"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		
 		// Time		
@@ -151,6 +149,10 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCastRange"
+			{
+				"value"						"1200"
+			}
 			"radius"						
 			{
 				"value"			"275"
@@ -159,11 +161,21 @@
 			"pass_damage"								
 			{
 				"value"	"50"
-				"CalculateSpellDamageTooltip"				"1"
+				"CalculateSpellDamageTooltip"		"1"
 			}
-			"spirit_duration"				"10.0"
-			"buff_duration"					"10.0"
+			"spirit_duration"
+			{
+				"value"								"10.0"
+			}
+			"buff_duration"
+			{
+				"value"								"10.0"
+			}
 			"speed"							"900"
+			"controllable"
+			{
+				"value"						"1"
+			}
 			"move_pct_creeps"				"1.5"
 			"move_pct_heroes"				
 			{
@@ -246,6 +258,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
  		"AbilityCastAnimation"			"ACT_INVALID"
+		"IsBreakable"					"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -255,9 +268,26 @@
 				{
 					"value"		"350"
 					"special_bonus_unique_elder_titan_5"	"+100"
+					"affected_by_aoe_increase"	"1"
 				}
 				"armor_reduction_pct"	    "40 60 80 100"
 				"magic_resistance_pct"		"40 60 80 100"
+				"max_stacks"				
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"20"
+				}
+				"magic_resistance_per_tick"		
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"1"
+				}
+				"armor_per_tick"				
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"1"
+				}
+				"tick_rate"						
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"1"		
+				}
 		}
 	}
 
@@ -282,9 +312,27 @@
 				{
 					"value"		"350"
 					"special_bonus_unique_elder_titan_5"	"+100"
+					"affected_by_aoe_increase"	"1"
 				}
 				"armor_reduction_pct"	    "40 60 80 100"
 				"magic_resistance_pct"		"40 60 80 100"
+				"max_stacks"				
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"20"
+				}
+				"magic_resistance_per_tick"		
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"1"
+				}
+				"armor_per_tick"				
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"1"
+				}
+				"tick_rate"						
+				{
+					"special_bonus_facet_elder_titan_deconstruction"		"1"		
+				}
+				
 		}
 	}
 
@@ -313,7 +361,6 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"100"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -323,6 +370,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+				"AbilityCooldown"
+				{
+					"value"				"100"
+					"special_bonus_unique_elder_titan_3"			"-60"
+				}
+
 				"crack_time"				"2.7182"
 				"crack_width"				
 				{
@@ -353,6 +406,44 @@
 				"slow_duration_scepter"		"4.0 5.0 6.0"
 		}
 	}
+
+	//=================================================================================================================
+	// Dark Seer Innate Inertia
+	//=================================================================================================================
+	"elder_titan_momentum"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"attack_speed_from_movespeed"			"25"
+			"attack_speed_penalty"					"85"
+		}
+	}	
+	//=================================================================================================================
+	// Constructor Innate
+	//=================================================================================================================
+	"elder_titan_tip_the_scales"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage_bonus"			"100"
+		}
+	}
+
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -399,18 +490,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"60"
-				"ad_linked_abilities"			"elder_titan_earth_splitter"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
+		"BaseClass"						"special_bonus_base"
+
 	}
 
 	//=================================================================================================================

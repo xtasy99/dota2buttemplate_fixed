@@ -1,4 +1,3 @@
-// Abilities for kunkka
 "DOTAAbilities"
 {
     "Version"       "1"
@@ -64,8 +63,6 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Ability.Torrent"
-		"HasScepterUpgrade"			"1"
-		"AbilityDraftScepterAbility"    "kunkka_torrent_storm"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -79,7 +76,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
+		"AbilityManaCost"				"90"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -91,22 +88,21 @@
 		{
 			"radius"
 			{
-				"value"					"225"
-				"special_bonus_unique_kunkka"		"+65"
+				"value"					"250"
 				"affected_by_aoe_increase"	"1"
 			}
 			"movespeed_bonus"			"-40"
 			"slow_duration"				"1 2 3 4"
 			"stun_duration"
 			{
-				"value"								"1.6"
-				"special_bonus_unique_kunkka_7"		"+25%"
+				"value"								"1.4"
+				"special_bonus_unique_kunkka_7"		"+20%"
 			}
 			"delay"						"1.6 1.6 1.6 1.6"
 			"torrent_damage"
 			{
 				"value"			"80 160 240 320"
-				"special_bonus_unique_kunkka_7"		"+25%"
+				"special_bonus_unique_kunkka_7"		"+20%"
 			}
 			"percent_instant"			"0"
 			"damage_tick_interval"				"0.2"
@@ -132,7 +128,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"MaxLevel"						"1"
 		"FightRecapLevel"				"1"
-		"IsGrantedByScepter"			"1"
+		"IsGrantedByScepter"			"0"
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Ability.Torrent"
 
@@ -184,11 +180,12 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilitySound"					"Hero_Kunkka.Tidebringer.Attack"
+		"IsBreakable"					"1"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
@@ -200,14 +197,30 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{		
-			"cleave_starting_width"			"150"
-			"cleave_ending_width"			"500 550 600 650"
-			"cleave_distance"			"650 800 950 1100"
-			"damage_bonus"				"30 60 90 120"
+			"cleave_starting_width"			
+			{
+				"value"			"150"
+				"affected_by_aoe_increase"	"1"
+			}
+			"cleave_ending_width"			
+			{	
+				"value"		"500 550 600 650"
+				"affected_by_aoe_increase"	"1"
+			}
+			"cleave_distance"			
+			{
+				"value"			"650 800 950 1100"
+				"affected_by_aoe_increase"	"1"
+			}
+			"damage_bonus"				
+			{
+				"value"			"30 60 90 120"
+				"special_bonus_unique_kunkka_2"		"+60"
+			}
 			"cleave_damage"				
 			{
 				"value"								"150"
-				"special_bonus_unique_kunkka_4"		"+70"
+				"special_bonus_unique_kunkka_4"		"+100"
 			}
 			"movespeed_slow"
 			{
@@ -222,7 +235,11 @@
 			"AbilityCooldown"				
 			{
 				"value"					"13.0 10.0 7.0 4.0"
-				"special_bonus_unique_kunkka_5"			"-2"
+			}
+			"cooldown_reduction_per_hero_hit"
+			{
+				"value"												"0.0"
+				"special_bonus_facet_kunkka_high_tide"		"+0.8"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -260,8 +277,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"4.0"
-				"allied_duration"	"8.0"
+				"duration"					"3.0"
+				"allied_duration"	"6.0"
 				"fow_range"				"400"
 				"fow_duration"				"5.94"
 				"ally_ms"	
@@ -270,6 +287,23 @@
 					"special_bonus_unique_kunkka_6"	"+25"
 				}
 				"ally_armor"			"0"
+				"rum_allies_radius"
+				{
+					"value"						"0"
+					"special_bonus_facet_kunkka_grog"	"+400"
+					"affected_by_aoe_increase"	"1"
+				}
+				"buff_duration"					// rum buff, must be named buff_duration
+				{
+					"value"						"0"
+					"special_bonus_facet_kunkka_grog"	"+3"
+				}
+				"movespeed_bonus"				"15"
+				"ghostship_absorb"
+				{
+					"value"						"35"
+					"special_bonus_unique_kunkka_rum"	"+15"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -315,6 +349,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Ability.Ghostship"
 		"AbilityDraftUltShardAbility"		"kunkka_tidal_wave"
+		"HasScepterUpgrade"				"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -346,31 +381,98 @@
 				"value"				"450"
 				"affected_by_aoe_increase"	"1"
 			}
-			"movespeed_bonus"			"15"
+			"movespeed_bonus"			"15"	// If changing this, update value in x marks for variant 1
 			"buff_duration"				"10"
 			"stun_duration"				"1.2"
 			"ghostship_speed"			"650"
-			"ghostship_absorb"			"35"
+			"ghostship_absorb"
+			{
+				"value"								"35"	// If changing this, update value in x marks for variant 1
+				"special_bonus_unique_kunkka_rum"	"+15"
+			}
 			"AbilityCooldown"				
 			{
 				"value"					"80 70 60"
-				"special_bonus_unique_kunkka_ghostship_cooldown"	"-15"
 			}
 
+			"fleet_interval"
+			{
+				"special_bonus_scepter"		"2.5"
+			}
+
+			"fleet_count"
+			{
+				"special_bonus_scepter"		"2"
+			}
+
+			"fire_cannons"
+			{
+				"special_bonus_scepter"	"1"
+			}
+
+			"cannon_ball_damage_pct"		
+			{
+				"special_bonus_scepter"	"40"
+			}
+
+			"cannon_ball_distance"			
+			{
+				"special_bonus_scepter"	"1200"
+			}
+
+			"cannon_ball_speed"				
+			{
+				"special_bonus_scepter"	"1400"
+			}
+
+			"cannon_count"					
+			{
+				"special_bonus_scepter"	"4"
+			}
+
+			"cannon_ball_radius"			
+			{
+				"special_bonus_scepter"	"100"
+			}
+
+			"num_cannon_volleys"		"3"
+			"cannon_fire_interval"			
+			{
+				"special_bonus_scepter"	"0.78"
+			}
+
+			"base_cannon_rotation"		"20"
+			"rotation_per_cannon"		"12"
+			"initial_cannon_offset"		"-150"
+			"distance_between_cannons"	"75"
 		}
 	}
 
 	//=================================================================================================================
-	// Ability: Special Bonus
+	// Kunkka: Stalwart
 	//=================================================================================================================
-	"special_bonus_unique_kunkka"
+	"kunkka_admirals_rum"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+		"AbilityCooldown"				"60"
 
+		"AbilityValues"
+		{
+			"damage_threshold"			"65"
+			"ghostship_absorb"
+			{
+				"value"					"20"
+				"special_bonus_unique_kunkka_rum" "+15"
+			}
+
+			"buff_duration"				"10"
+			"movespeed_bonus"			"10"
+		}
 	}
 
 	//=================================================================================================================
@@ -382,20 +484,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"100"
-				"ad_linked_abilities"			"kunkka_torrent"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
-			}
-		}
 	}
-
 	//=================================================================================================================
 	// Ability: Special Bonus
 	//=================================================================================================================
@@ -405,16 +494,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"3.5" // Ship Spawn Interval
-				"ad_linked_abilities"			"kunkka_ghostship"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "3.5"
+				"ad_linked_abilities" "kunkka_ghostship"
 			}
 		}
 	}
@@ -428,30 +513,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"value"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"70"
-				"ad_linked_abilities"			"kunkka_tidebringer"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value" "70"
+				"ad_linked_abilities" "kunkka_tidebringer"
 			}
 		}
-	}
-
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_kunkka_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
 	}
 
 	//=================================================================================================================
@@ -470,17 +539,6 @@
 	// Ability: Special Bonus
 	//=================================================================================================================
 	"special_bonus_unique_kunkka_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"special_bonus_base"
-	}
-	//=================================================================================================================
-	// Ability: Special Bonus
-	//=================================================================================================================
-	"special_bonus_unique_kunkka_ghostship_cooldown"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -510,6 +568,26 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"						"special_bonus_base"
 	}
-
-	
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_kunkka_rum"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_kunkka_admirals_rum_delay"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"special_bonus_base"
+	}
 }

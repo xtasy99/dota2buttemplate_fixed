@@ -17,6 +17,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Abaddon.DeathCoil.Cast"
+		"HasShardUpgrade"				"1"
 
 
 		// Casting
@@ -30,7 +31,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"50 55 60 65"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -45,23 +46,21 @@
 			"target_damage"
 			{
 				"value"			"100 175 250 325"
-				"special_bonus_unique_abaddon_2"	"+40"
+				"special_bonus_unique_abaddon_2"	"+35"
 			}
 			"heal_amount"
 			{
 				"value"			"100 175 250 325"
-				"special_bonus_unique_abaddon_2"	"+40"
+				"special_bonus_unique_abaddon_2"	"+35"
 			}			
 			
 			"effect_radius"
 			{
 				"value"				"0"
-				"special_bonus_unique_abaddon_4"	"+400"
+				"special_bonus_unique_abaddon_4"	"+350"
 				"affected_by_aoe_increase"	"1"
 			}
-			"effect_duration"				"0"
-			"magic_resistance"				"0"
-			"armor_bonus"					"0"
+			
 
 
 
@@ -91,10 +90,6 @@
 		"AbilityCastRange"				"550"
 		"AbilityCastPoint"				"0.3"
 		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12 10 8 6"
-		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"95 110 125 140"
@@ -104,26 +99,101 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"15.0"
+			"AbilityCooldown"
+			{
+				"value"				"12 10 8 6"
+				"special_bonus_facet_abaddon_mephitic_shroud" "+2"
+			}
+
+			"duration"			
+			{
+				"value"				"15.0"
+				"special_bonus_facet_abaddon_mephitic_shroud"	"+2"
+
+			}	
 			"radius"				
 			{
 				"value"	"675"
+				"special_bonus_facet_abaddon_mephitic_shroud"	"=0"
 				"affected_by_aoe_increase"	"1"
 			}
 			"damage_absorb"
 			{
 				"value"			"120 150 180 210"
-				"special_bonus_unique_abaddon"		"+100"
+				"special_bonus_facet_abaddon_mephitic_shroud"		"=170 =210 =250 =290"
+				"special_bonus_unique_abaddon"		"+80"				
 				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
 			}
 			"regen"
 			{
 				"value"			"0"
-				"special_bonus_unique_abaddon_7"		"+15"
+				"special_bonus_unique_abaddon_7"		"+12"
 
+			}
+			
+			"absorb_to_damage"
+			{
+				"value"			"0"
+				"special_bonus_facet_abaddon_mephitic_shroud"	"75"
+			}
+
+			"absorb_damage_aoe"
+			{
+				"value"			"0"
+				"special_bonus_facet_abaddon_mephitic_shroud"	"675"
+				"affected_by_aoe_increase"			"1"
+				"CalculateSpellDamageTooltip"		"0"
+				"DamageTypeTooltip"					"DAMAGE_TYPE_NONE"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+	// Abaddon: Innate Death Dude
+	//=================================================================================================================
+	"abaddon_the_quickening"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"IsBreakable"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"cooldown_reduction_creeps"		"0.2"
+			"cooldown_reduction_heroes"		"4.0"
+			"radius"	
+			{
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability:
+	//=================================================================================================================
+	"abaddon_withering_mist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"hp_threshold_pct"		"40.0"
+			"heal_reduction_pct"	"35"
+			"duration"				"5.0"
+		}
 	}
 
 	//=================================================================================================================
@@ -137,41 +207,41 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		
-        "HasShardUpgrade"               "1"
+		"MaxLevel"						"4"
+		"IsBreakable"					"1"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"slow_duration"				"5"
-			"movement_speed"
-			{
-				"value"						"10 15 20 25"
-				"special_bonus_shard" 		"+5"		
-			}
+			"slow_duration"				"2"
 			"hit_count"
 			{
-				"value"					"4"
-				"special_bonus_unique_abaddon_3" "-1"
+				"value"					"1"
 			}
-			"curse_duration"			"4.0"
+			"curse_duration"			"2.0"
 			"curse_slow"				
 			{
-				"value"									"15 30 45 60"
+				"value"									"10 15 20 25"
 				"special_bonus_unique_abaddon_6"		"+15"
 			}
-			"curse_attack_speed"		"60 80 100 120"
+			"curse_attack_speed"		
+			{
+				"value"				"10 20 30 40"
+				"special_bonus_unique_abaddon_3" "+80"
+			}
+				
 			"curse_dps"					
 			{
-				"value" "20 30 40 50"
-				"special_bonus_unique_abaddon_5"	"+80"
+				"value" "15 25 35 45"
+				"special_bonus_unique_abaddon_5"	"+50"
 			}
 			"tower_dps_pct"				"70"
 			"curse_interval"			"0.5"
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+
 
 	//=================================================================================================================
 	// Abaddon: Borrowed Time
@@ -187,6 +257,7 @@
 		"AbilitySound"					"Hero_Abaddon.BorrowedTime"
 		"HasShardUpgrade"				"0"
 		"HasScepterUpgrade"				"1"
+		"IsBreakable"					"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -207,7 +278,7 @@
 		{
 			"AbilityCooldown"				
 			{
-				"value"								"80 70 60"
+				"value"								"90 80 70"
 			}
 			"hp_threshold"							"400"
 			"duration"								"4.0 5.0 6.0"
@@ -218,19 +289,19 @@
 			}
 			"ally_threshold_scepter"
 			{
-				"value"								"525"
+				"value"								"550"
 				"RequiresScepter"					"1"
 			}
 			"redirect_range_scepter"
 			{
-				"value"								"1200"
+				"value"								"900"
 				"RequiresScepter"					"1"
 				"affected_by_aoe_increase"	"1"
 			}
 			"immolate_damage"
 			{
 				"value"								"0"
-				"special_bonus_unique_abaddon_immolation"	"+95"
+				"special_bonus_unique_abaddon_immolation"	"+100"
 			}
 			"immolate_aoe"
 			{
