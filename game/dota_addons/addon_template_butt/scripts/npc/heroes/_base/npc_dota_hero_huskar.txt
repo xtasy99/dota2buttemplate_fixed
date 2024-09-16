@@ -453,20 +453,3 @@
 		}
 	}
 }
-===========================
-	"special_bonus_unique_huskar_7"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value"
-			{
-				"value" "5"
-				"ad_linked_abilities" "huskar_life_break"
-			}
-		}
-	}
-}
