@@ -1,2 +1,10 @@
-You can find the hero abilities KVs file on the folder "_base". 
-Make a copy of any KV file and paste in the folder "heroes" to customize the KVs.
+You can find the hero abilities/talents Key Values (KV) file on the folder "_base/".
+
+Summons and some neutral creeps abilities are also in this heroes KV.
+
+Make a copy of any KV file and paste in the folder "heroes/" to customize the KVs.
+
+Only KVs in the folder "heroes/" will be loaded into the game.
+
+If you don't want to modify all the abilities of a hero, leave only the modified abilities and erase unmodified ones. The game will load them normally.
+This can make it easier for you to keep track of your modifications. 
