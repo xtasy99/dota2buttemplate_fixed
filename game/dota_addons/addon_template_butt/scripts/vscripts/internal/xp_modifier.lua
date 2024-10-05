@@ -114,8 +114,13 @@ function XPModifier:OnTakeDamage(event)
 	local damageFlags = event.damage_flags
 
 	if (1==Buttings:GetQuick("MAGIC_RES_CAP") ) and (damageType == DAMAGE_TYPE_MAGICAL) and (0 == bit.band(DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR, damageFlags)) then
-		local armor = victim:GetMagicalArmorValue() -- 0 .. 1 .. infinity
-		local betterDamageMultiplier = 1 - math.exp( -armor )
+		local armor = victim:Script_GetMagicalArmorValue(false, nil) -- 0 .. 1 .. infinity
+		
+		if armor>3 then		-- making a limit so it never pass 88% reduction. Increase this armor limit to increase reduction.
+			armor=3			-- Doesn't metter the armor limit, it will never reduce 100%, but 99% reduction can be bad too.
+		end
+		
+		local betterDamageMultiplier = 1 - ( armor / ( 0.4 + armor ))
 		local extraDamage = originalDamage * betterDamageMultiplier - damage
 
 		ApplyDamage({
