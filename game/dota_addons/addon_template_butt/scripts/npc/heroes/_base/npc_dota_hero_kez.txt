@@ -51,7 +51,6 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"800"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -72,7 +71,7 @@
 			}
 			"echo_hero_damage"				
 			{
-				"value"													"30 45 60 75"
+				"value"													"25 45 65 85"
 				"DamageTypeTooltip"										"DAMAGE_TYPE_PHYSICAL"
 			}
 			"katana_strikes"			
@@ -93,7 +92,6 @@
 			"katana_distance"			
 			{
 				"value"					"800"
-				"affected_by_aoe_increase"	"1"	
 			}
 			"travel_distance"			"250"
 			"tag_slow"					"100"
@@ -133,15 +131,16 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"AbilityCooldown"			"15 12 9 6"		
+			"AbilityCooldown"			"16 13 10 7"		
 
 			"AbilityCastRange"			"700 800 900 1000"	
 			
 			"land_distance"					"75"
 			"projectile_speed"				"3000"
 			"grapple_speed"					"1800"
+			"max_distance_break"			"2000"
 			
-			"bonus_flat_lifesteal"			"50 100 150 200"
+			"bonus_flat_lifesteal"			"30 60 90 120"
 			"lifesteal_pct"					"100"
 			"creep_lifesteal_reduction_pct"				"40"
 			"katana_ms_slow_pct"			"80"		
@@ -184,7 +183,7 @@
 			"katana_bleed_duration"							"5.0 6.0 7.0 8.0"
 			"katana_bleed_attack_damage_pct"						
 			{
-				"value" 														"7 8 9 10"   
+				"value" 														"6 7 8 9"   
 				"DamageTypeTooltip"												"DAMAGE_TYPE_PHYSICAL"	
 				"special_bonus_unique_kez_kazura_katana_bleed_damage"			"+5.0"
 			}	
@@ -253,7 +252,7 @@
 		{
 			"AbilityCooldown"				
 			{
-				"value"		"40 32 24"
+				"value"		"40 35 30"
 				"special_bonus_unique_kez_ultimate_cooldown"		"-4"
 			}
 			
@@ -318,12 +317,12 @@
 		{
 			"duration"					
 			{
-				"value" 												"7.0"
+				"value" 												"3.0 4.0 5.0 6.0"
 				"special_bonus_unique_kez_falcon_rush_duration"			"+2.0"
 			}
 			"rush_range"			
 			{	
-				"value"									"650"
+				"value"									"575"
 				"affected_by_aoe_increase"				"1"	
 			}
 			
@@ -333,7 +332,8 @@
 				"special_bonus_unique_kez_falcon_rush_evasion"			"+50"
 			}
 			"rush_speed"				"1000"
-			"base_attack_rate"			"1.3 1.2 1.1 1.0"
+			"base_attack_rate_katana"		"1.4 1.3 1.2 1.1"
+			"base_attack_rate_sai"			"1.2 1.1 1.0 0.9"
 			"attack_speed_factor"		"6 7 8 9"
 			"current_attack_rate_tooltip"
 			{
@@ -345,6 +345,13 @@
 				"DamageTypeTooltip"		"DAMAGE_TYPE_PHYSICAL"
 			}
 		}
+	}
+
+	"kez_falcon_rush_ad"
+	{
+		"_base"							"kez_falcon_rush"
+		"BaseClass"						"kez_falcon_rush"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 	}
 
 	//=================================================================================================================
@@ -373,7 +380,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75"	
-		"AbilityCooldown"				"15 12 9 6"		
+		"AbilityCooldown"				"16 13 10 7"		
 
 
 		// Values
@@ -393,6 +400,13 @@
 			"speed"						"2000"
 			"silence_duration"			"1.75 2.0 2.25 2.5"
 		}
+	}
+
+	"kez_talon_toss_ad"
+	{
+		"_base"						"kez_talon_toss"
+		"BaseClass"					"kez_talon_toss"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 	}
 
 	//=================================================================================================================
@@ -458,13 +472,20 @@
 		}
 	}
 
+	"kez_shodo_sai_ad"
+	{
+		"_base"							"kez_shodo_sai"
+		"BaseClass"						"kez_shodo_sai"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+	}
+
 	//=================================================================================================================
 	// Kez: Shodo Sai Parry Cancel
 	//=================================================================================================================
 	"kez_shodo_sai_parry_cancel"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
-		"AbilityCooldown"				"1.0"
+		"AbilityCooldown"				"0.0"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"0"
 		"MaxLevel"						"1"
@@ -505,7 +526,7 @@
 		{
 			"AbilityCooldown"				
 			{
-				"value"		"40 32 24"
+				"value"		"40 35 30"
 				"special_bonus_unique_kez_ultimate_cooldown"		"-4"
 			}
 			
@@ -520,10 +541,21 @@
 			"bonus_ms"												"15 25 35"
 			"basic_dispel"											"1"										
 			"fade_delay"											"0.0"
-			"apply_parry_bonus"										"1"
+			"apply_parry_bonus"										
+			{
+				"value"															"0"
+				"special_bonus_unique_kez_ravens_veil_mark_parry_bonus"			"+1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
+	}
+
+	"kez_ravens_veil_ad"
+	{
+		"_base"							"kez_ravens_veil"
+		"BaseClass"						"kez_ravens_veil"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 	}
 }
 

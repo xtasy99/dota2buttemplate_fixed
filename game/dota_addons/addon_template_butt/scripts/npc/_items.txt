@@ -2272,7 +2272,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"50"
-		"ItemQuality"					"common"
+		"ItemQuality"					"consumable"
 		"ItemAliases"					"ward"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasable"				"0"
@@ -3475,7 +3475,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"600"	
+		"ItemCost"						"500"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3506,7 +3506,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5200"
+		"ItemCost"						"5100"
 		"ItemShopTags"					"hard_to_tag"
 		"ItemQuality"					"common"
 		"ItemAliases"					"angel;demise"
@@ -3518,7 +3518,7 @@
 		{
 			"bonus_damage"			"50"
 			"crit_chance"			"30"
-			"spell_crit_multiplier"		"75"
+			"spell_crit_multiplier"		"60"
 			"spell_crit_flat"			"150"
 			"crit_multiplier"		"160"
 			"tooltip_crit_damage"	"60"
@@ -6127,6 +6127,7 @@
 			"01"						"item_ultimate_scepter"
 		}
 
+		"SuggestLategame"				"1"
 	}
 	
 	//=================================================================================================================
@@ -11121,7 +11122,7 @@
 		"ItemShopTags"					""
 		"ItemQuality"					"rare"
 		"ItemAliases"					"glimmer cape"
-		"SuggestEarlygame"				"1"
+		"SuggestLategame"				"1"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
